@@ -1,57 +1,59 @@
 import React from 'react';
-import { Leaf, Star, Mail, MapPin, Clock } from 'lucide-react';
+import {
+  Leaf,
+  Star,
+  Mail,
+  MapPin,
+  Clock,
+  ShieldCheck,
+  ThumbsUp,
+  PhoneCall
+} from 'lucide-react';
 
 /* ================= SERVICES DATA ================= */
 const services = [
   {
     name: 'Ant Control',
     image:
-      'https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&w=1200&q=80',
     desc:
       'Targeted ant control treatments that eliminate nests at the source using family and pet-safe products.'
   },
   {
     name: 'Termite Control',
     image:
-      'https://images.unsplash.com/photo-1598514982846-5d5b4b2d64f8?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1626178793926-22b5c8eab7c3?auto=format&fit=crop&w=1200&q=80',
     desc:
-      'Professional termite inspections, chemical barriers, and long-term protection to safeguard your property.'
+      'Professional termite inspections and treatments to protect your property from structural damage.'
   },
   {
     name: 'Rodent Control',
     image:
-      'https://images.unsplash.com/photo-1604908554164-9f7b1c1b1c18?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1600691214933-7b1c82f69571?auto=format&fit=crop&w=1200&q=80',
     desc:
-      'Humane rodent control including baiting, trapping, and exclusion to prevent re-infestation.'
+      'Humane rodent control including trapping, baiting, and entry-point sealing.'
   },
   {
     name: 'Cockroach Control',
     image:
-      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1624958723474-92d7f60b2fbd?auto=format&fit=crop&w=1200&q=80',
     desc:
-      'Targeted cockroach treatments designed for kitchens, restaurants, and residential spaces.'
+      'Targeted cockroach treatments ideal for kitchens, apartments, and commercial properties.'
   },
   {
     name: 'Mosquito Control',
     image:
-      'https://images.unsplash.com/photo-1595433707802-46c7d1e4b9c0?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1598511723693-1b3bfc6d3b9c?auto=format&fit=crop&w=1200&q=80',
     desc:
-      'Outdoor mosquito reduction treatments to protect your family from bites and disease.'
+      'Outdoor mosquito reduction programs to protect your family and outdoor areas.'
   },
   {
     name: 'Bed Bug Treatment',
     image:
-      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1588776814546-1ffcf47267f2?auto=format&fit=crop&w=1200&q=80',
     desc:
-      'Complete bed bug eradication using professional-grade treatments with follow-up inspections.'
+      'Complete bed bug eradication using professional-grade treatments and follow-up inspections.'
   }
-];
-
-/* ================= TECHNICIANS ================= */
-const technicians = [
-  { name: 'Alex Thompson', role: 'Senior Technician' },
-  { name: 'Daniel Brooks', role: 'Pest Control Specialist' },
-  { name: 'Michael Lee', role: 'Rodent & Termite Expert' }
 ];
 
 /* ================= REVIEWS ================= */
@@ -59,19 +61,22 @@ const reviews = [
   {
     name: 'Sarah M.',
     location: 'Southport, QLD',
-    text: 'Very professional service. Explained everything clearly and the results were excellent.',
+    text:
+      'Extremely professional and knowledgeable. Our pest issue was resolved quickly.',
     rating: 5
   },
   {
     name: 'Michael R.',
     location: 'Robina, QLD',
-    text: 'On time, friendly and eco-friendly solutions. Highly recommended.',
+    text:
+      'Friendly team, on time, and eco-friendly solutions. Highly recommended.',
     rating: 5
   },
   {
     name: 'Jennifer L.',
     location: 'Tweed Heads, NSW',
-    text: 'Great experience from booking to completion. Will definitely use again.',
+    text:
+      'Smooth booking process and fantastic results. Will use again.',
     rating: 5
   }
 ];
@@ -89,39 +94,74 @@ const renderStars = (rating) =>
 /* ================= APP ================= */
 export default function App() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white">
 
       {/* NAV */}
       <nav className="bg-white shadow sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center">
-          <Leaf className="h-7 w-7 text-green-600" />
-          <span className="ml-2 font-bold text-lg">
-            EcoShield Pest Control
-          </span>
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center">
+            <Leaf className="h-7 w-7 text-green-600" />
+            <span className="ml-2 font-bold text-lg">
+              EcoShield Pest Control
+            </span>
+          </div>
+          <a
+            href="tel:+614XXXXXXXX"
+            className="hidden sm:flex items-center text-green-600 font-semibold"
+          >
+            <PhoneCall className="h-4 w-4 mr-1" />
+            Call Now
+          </a>
         </div>
       </nav>
 
       {/* HERO */}
       <section
-        className="py-28 px-4 text-center bg-cover bg-center"
+        className="py-32 px-4 text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1601758123927-196d0c22c09e?auto=format&fit=crop&w=1600&q=80')"
+            "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1601758123927-196d0c22c09e?auto=format&fit=crop&w=1600&q=80')"
         }}
       >
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Professional Pest Control – Gold Coast
+          Trusted Pest Control Experts on the Gold Coast
         </h1>
-        <p className="text-gray-200 max-w-2xl mx-auto mb-6">
-          Licensed & insured technicians delivering safe, effective pest control
-          solutions for homes and businesses across South East Queensland.
+        <p className="text-gray-200 max-w-2xl mx-auto mb-8">
+          Safe, effective and professional pest control solutions for homes and businesses.
         </p>
         <a
           href="tel:+614XXXXXXXX"
-          className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold inline-block"
+          className="bg-green-600 hover:bg-green-700 transition text-white px-8 py-3 rounded-lg font-semibold"
         >
-          Call Now for a Free Quote
+          Get a Free Quote
         </a>
+      </section>
+
+      {/* WHY US */}
+      <section className="py-20 bg-white px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <ShieldCheck className="h-10 w-10 mx-auto text-green-600 mb-3" />
+            <h3 className="font-semibold mb-2">Licensed & Insured</h3>
+            <p className="text-gray-600 text-sm">
+              Fully qualified professionals you can trust.
+            </p>
+          </div>
+          <div>
+            <Leaf className="h-10 w-10 mx-auto text-green-600 mb-3" />
+            <h3 className="font-semibold mb-2">Eco-Friendly Treatments</h3>
+            <p className="text-gray-600 text-sm">
+              Safe for children, pets, and the environment.
+            </p>
+          </div>
+          <div>
+            <ThumbsUp className="h-10 w-10 mx-auto text-green-600 mb-3" />
+            <h3 className="font-semibold mb-2">Guaranteed Results</h3>
+            <p className="text-gray-600 text-sm">
+              Long-lasting protection and reliable service.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* SERVICES */}
@@ -134,54 +174,27 @@ export default function App() {
           {services.map((s, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
-            >
-              <div className="h-40 w-full overflow-hidden">
-                <img
-                  src={s.image}
-                  alt={s.name}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {s.name}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TECHNICIANS */}
-      <section className="py-20 bg-white px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Our Experienced Technicians
-        </h2>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {technicians.map((t, i) => (
-            <div
-              key={i}
-              className="bg-gray-50 rounded-xl p-6 text-center"
+              className="bg-white rounded-xl shadow hover:shadow-xl transition overflow-hidden"
             >
               <img
-                src={`https://placehold.co/200x200/E5E7EB/333333?text=${t.name.split(
-                  ' '
-                )[0]}`}
-                alt={t.name}
-                className="w-28 h-28 mx-auto rounded-full mb-4"
+                src={s.image}
+                alt={s.name}
+                className="h-48 w-full object-cover"
               />
-              <h3 className="font-semibold text-gray-900">
-                {t.name}
-              </h3>
-              <p className="text-gray-500 text-sm">
-                {t.role}
-              </p>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2">
+                  {s.name}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {s.desc}
+                </p>
+                <a
+                  href="tel:+614XXXXXXXX"
+                  className="text-green-600 font-semibold text-sm"
+                >
+                  Enquire Now →
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -190,7 +203,7 @@ export default function App() {
       {/* REVIEWS */}
       <section className="py-20 bg-[#EAF7EF] px-4">
         <h2 className="text-3xl font-bold text-center mb-12">
-          What Our Customers Say
+          Customer Reviews
         </h2>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -202,12 +215,8 @@ export default function App() {
               <p className="text-gray-600 text-sm mb-4">
                 "{r.text}"
               </p>
-              <p className="font-semibold text-gray-900">
-                {r.name}
-              </p>
-              <p className="text-gray-500 text-xs">
-                {r.location}
-              </p>
+              <p className="font-semibold">{r.name}</p>
+              <p className="text-gray-500 text-xs">{r.location}</p>
             </div>
           ))}
         </div>
@@ -219,20 +228,18 @@ export default function App() {
           Contact Us
         </h2>
 
-        <div className="max-w-xl mx-auto bg-gray-50 p-8 rounded-xl">
-          <div className="space-y-4 text-gray-700">
-            <div className="flex items-center">
-              <Mail className="h-5 w-5 mr-2 text-green-600" />
-              info@ecoshieldpest.com
-            </div>
-            <div className="flex items-center">
-              <MapPin className="h-5 w-5 mr-2 text-green-600" />
-              Gold Coast & Surrounding Areas
-            </div>
-            <div className="flex items-center">
-              <Clock className="h-5 w-5 mr-2 text-green-600" />
-              7 AM – 8 PM, 7 Days
-            </div>
+        <div className="max-w-xl mx-auto bg-gray-50 p-8 rounded-xl space-y-4 text-gray-700">
+          <div className="flex items-center">
+            <Mail className="h-5 w-5 mr-2 text-green-600" />
+            info@ecoshieldpest.com
+          </div>
+          <div className="flex items-center">
+            <MapPin className="h-5 w-5 mr-2 text-green-600" />
+            Gold Coast & Surrounding Areas
+          </div>
+          <div className="flex items-center">
+            <Clock className="h-5 w-5 mr-2 text-green-600" />
+            7 AM – 8 PM, 7 Days
           </div>
         </div>
       </section>
