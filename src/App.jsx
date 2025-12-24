@@ -1,74 +1,60 @@
 import React from 'react';
-import {
-  Leaf,
-  Star,
-  Bug,
-  Mouse,
-  ShieldCheck,
-  Wind,
-  Bed,
-  Mail,
-  MapPin,
-  Clock
-} from 'lucide-react';
+import { Leaf, Star, Mail, MapPin, Clock } from 'lucide-react';
 
+/* ================= SERVICES DATA ================= */
 const services = [
   {
     name: 'Ant Control',
-    icon: Bug,
     image:
-      'https://images.unsplash.com/photo-1586788224331-947f68671cf1',
+      'https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?auto=format&fit=crop&w=800&q=80',
     desc:
-      'Our ant control treatments target nests at the source using eco-friendly products that are safe for families, pets, and food areas.'
+      'Targeted ant control treatments that eliminate nests at the source using family and pet-safe products.'
   },
   {
     name: 'Termite Control',
-    icon: ShieldCheck,
     image:
-      'https://images.unsplash.com/photo-1621905251918-48416bd85791',
+      'https://images.unsplash.com/photo-1598514982846-5d5b4b2d64f8?auto=format&fit=crop&w=800&q=80',
     desc:
-      'We provide thorough termite inspections, barriers, and long-term protection plans to safeguard your home and investment.'
+      'Professional termite inspections, chemical barriers, and long-term protection to safeguard your property.'
   },
   {
     name: 'Rodent Control',
-    icon: Mouse,
     image:
-      'https://images.unsplash.com/photo-1595433707802-46c7d1e4b9c0',
+      'https://images.unsplash.com/photo-1604908554164-9f7b1c1b1c18?auto=format&fit=crop&w=800&q=80',
     desc:
-      'Humane rodent control solutions including baiting, trapping, and exclusion methods to prevent future infestations.'
+      'Humane rodent control including baiting, trapping, and exclusion to prevent re-infestation.'
   },
   {
     name: 'Cockroach Control',
-    icon: Bug,
     image:
-      'https://images.unsplash.com/photo-1586796671956-07f8e62c1b74',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
     desc:
-      'Targeted cockroach treatments designed to eliminate infestations fast while remaining safe for indoor environments.'
+      'Targeted cockroach treatments designed for kitchens, restaurants, and residential spaces.'
   },
   {
     name: 'Mosquito Control',
-    icon: Wind,
     image:
-      'https://images.unsplash.com/photo-1595433562696-19ed5b7b2a1b',
+      'https://images.unsplash.com/photo-1595433707802-46c7d1e4b9c0?auto=format&fit=crop&w=800&q=80',
     desc:
-      'Reduce mosquitoes around your property with outdoor treatments that protect your family from bites and disease.'
+      'Outdoor mosquito reduction treatments to protect your family from bites and disease.'
   },
   {
     name: 'Bed Bug Treatment',
-    icon: Bed,
     image:
-      'https://images.unsplash.com/photo-1582719478171-2f9d3f4d9f09',
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80',
     desc:
-      'Complete bed bug eradication using professional-grade treatments with follow-up inspections for peace of mind.'
+      'Complete bed bug eradication using professional-grade treatments with follow-up inspections.'
   }
 ];
 
+/* ================= TECHNICIANS ================= */
 const technicians = [
   { name: 'Alex Thompson', role: 'Senior Technician' },
   { name: 'Daniel Brooks', role: 'Pest Control Specialist' },
   { name: 'Michael Lee', role: 'Rodent & Termite Expert' }
 ];
 
+/* ================= REVIEWS ================= */
 const reviews = [
   {
     name: 'Sarah M.',
@@ -90,16 +76,17 @@ const reviews = [
   }
 ];
 
-const stars = (r) =>
+const renderStars = (rating) =>
   Array.from({ length: 5 }).map((_, i) => (
     <Star
       key={i}
       className={`h-4 w-4 ${
-        i < r ? 'text-yellow-400 fill-current' : 'text-gray-300'
+        i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
       }`}
     />
   ));
 
+/* ================= APP ================= */
 export default function App() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -108,22 +95,30 @@ export default function App() {
       <nav className="bg-white shadow sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center">
           <Leaf className="h-7 w-7 text-green-600" />
-          <span className="ml-2 font-bold text-lg">EcoShield Pest Control</span>
+          <span className="ml-2 font-bold text-lg">
+            EcoShield Pest Control
+          </span>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="bg-[#EAF7EF] py-24 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Eco-Friendly Pest Control on the Gold Coast
+      <section
+        className="py-28 px-4 text-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1601758123927-196d0c22c09e?auto=format&fit=crop&w=1600&q=80')"
+        }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Professional Pest Control – Gold Coast
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-          Licensed and insured technicians providing safe, effective pest control
+        <p className="text-gray-200 max-w-2xl mx-auto mb-6">
+          Licensed & insured technicians delivering safe, effective pest control
           solutions for homes and businesses across South East Queensland.
         </p>
         <a
           href="tel:+614XXXXXXXX"
-          className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold"
+          className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold inline-block"
         >
           Call Now for a Free Quote
         </a>
@@ -135,15 +130,21 @@ export default function App() {
           Our Pest Control Services
         </h2>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {services.map((s, i) => (
-            <div key={i} className="bg-white rounded-xl shadow overflow-hidden">
-              <img
-                src={s.image}
-                alt={s.name}
-                className="h-48 w-full object-cover"
-              />
-              <div className="p-6">
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+            >
+              <div className="h-40 w-full overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {s.name}
                 </h3>
@@ -169,12 +170,18 @@ export default function App() {
               className="bg-gray-50 rounded-xl p-6 text-center"
             >
               <img
-                src={`https://placehold.co/200x200/E5E7EB/333333?text=${t.name.split(' ')[0]}`}
+                src={`https://placehold.co/200x200/E5E7EB/333333?text=${t.name.split(
+                  ' '
+                )[0]}`}
                 alt={t.name}
                 className="w-28 h-28 mx-auto rounded-full mb-4"
               />
-              <h3 className="font-semibold text-gray-900">{t.name}</h3>
-              <p className="text-gray-500 text-sm">{t.role}</p>
+              <h3 className="font-semibold text-gray-900">
+                {t.name}
+              </h3>
+              <p className="text-gray-500 text-sm">
+                {t.role}
+              </p>
             </div>
           ))}
         </div>
@@ -189,10 +196,18 @@ export default function App() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
             <div key={i} className="bg-white p-6 rounded-xl shadow">
-              <div className="flex mb-2">{stars(r.rating)}</div>
-              <p className="text-gray-600 text-sm mb-4">"{r.text}"</p>
-              <p className="font-semibold text-gray-900">{r.name}</p>
-              <p className="text-gray-500 text-xs">{r.location}</p>
+              <div className="flex mb-2">
+                {renderStars(r.rating)}
+              </div>
+              <p className="text-gray-600 text-sm mb-4">
+                "{r.text}"
+              </p>
+              <p className="font-semibold text-gray-900">
+                {r.name}
+              </p>
+              <p className="text-gray-500 text-xs">
+                {r.location}
+              </p>
             </div>
           ))}
         </div>
@@ -203,6 +218,7 @@ export default function App() {
         <h2 className="text-3xl font-bold text-center mb-10">
           Contact Us
         </h2>
+
         <div className="max-w-xl mx-auto bg-gray-50 p-8 rounded-xl">
           <div className="space-y-4 text-gray-700">
             <div className="flex items-center">
@@ -220,6 +236,7 @@ export default function App() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
