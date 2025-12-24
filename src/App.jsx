@@ -15,42 +15,42 @@ const services = [
   {
     name: 'Ant Control',
     image:
-      'https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/3/32/Ant_closeup.jpg',
     desc:
       'Targeted ant control treatments that eliminate nests at the source using family and pet-safe products.'
   },
   {
     name: 'Termite Control',
     image:
-      'https://images.unsplash.com/photo-1626178793926-22b5c8eab7c3?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/6/6b/Termite_damage.jpg',
     desc:
-      'Professional termite inspections and treatments to protect your property from structural damage.'
+      'Professional termite inspections and treatments to protect your property from costly structural damage.'
   },
   {
     name: 'Rodent Control',
     image:
-      'https://images.unsplash.com/photo-1600691214933-7b1c82f69571?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/8/8c/House_mouse.jpg',
     desc:
-      'Humane rodent control including trapping, baiting, and entry-point sealing.'
+      'Humane rodent control including trapping, baiting, and sealing entry points.'
   },
   {
     name: 'Cockroach Control',
     image:
-      'https://images.unsplash.com/photo-1624958723474-92d7f60b2fbd?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/5/5f/Cockroach_closeup.jpg',
     desc:
-      'Targeted cockroach treatments ideal for kitchens, apartments, and commercial properties.'
+      'Effective cockroach treatments ideal for kitchens, apartments, and commercial properties.'
   },
   {
     name: 'Mosquito Control',
     image:
-      'https://images.unsplash.com/photo-1598511723693-1b3bfc6d3b9c?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/1/1c/Aedes_aegypti.jpg',
     desc:
-      'Outdoor mosquito reduction programs to protect your family and outdoor areas.'
+      'Outdoor mosquito reduction programs to protect your family from bites and disease.'
   },
   {
     name: 'Bed Bug Treatment',
     image:
-      'https://images.unsplash.com/photo-1588776814546-1ffcf47267f2?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/8/86/Bed_bug.jpg',
     desc:
       'Complete bed bug eradication using professional-grade treatments and follow-up inspections.'
   }
@@ -61,22 +61,19 @@ const reviews = [
   {
     name: 'Sarah M.',
     location: 'Southport, QLD',
-    text:
-      'Extremely professional and knowledgeable. Our pest issue was resolved quickly.',
+    text: 'Very professional service. The technician was thorough and helpful.',
     rating: 5
   },
   {
     name: 'Michael R.',
     location: 'Robina, QLD',
-    text:
-      'Friendly team, on time, and eco-friendly solutions. Highly recommended.',
+    text: 'On time, friendly, and the pest problem was solved quickly.',
     rating: 5
   },
   {
     name: 'Jennifer L.',
     location: 'Tweed Heads, NSW',
-    text:
-      'Smooth booking process and fantastic results. Will use again.',
+    text: 'Great service from start to finish. Highly recommended.',
     rating: 5
   }
 ];
@@ -115,36 +112,30 @@ export default function App() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section
-        className="py-32 px-4 text-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1601758123927-196d0c22c09e?auto=format&fit=crop&w=1600&q=80')"
-        }}
-      >
+      {/* HERO (NO IMAGE, CLEAN & PROFESSIONAL) */}
+      <section className="py-28 px-4 text-center bg-green-700">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Trusted Pest Control Experts on the Gold Coast
+          Professional Pest Control – Gold Coast
         </h1>
-        <p className="text-gray-200 max-w-2xl mx-auto mb-8">
-          Safe, effective and professional pest control solutions for homes and businesses.
+        <p className="text-green-100 max-w-2xl mx-auto mb-8">
+          Safe, effective, and reliable pest control solutions for homes and businesses.
         </p>
         <a
           href="tel:+614XXXXXXXX"
-          className="bg-green-600 hover:bg-green-700 transition text-white px-8 py-3 rounded-lg font-semibold"
+          className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold"
         >
           Get a Free Quote
         </a>
       </section>
 
       {/* WHY US */}
-      <section className="py-20 bg-white px-4">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <ShieldCheck className="h-10 w-10 mx-auto text-green-600 mb-3" />
             <h3 className="font-semibold mb-2">Licensed & Insured</h3>
             <p className="text-gray-600 text-sm">
-              Fully qualified professionals you can trust.
+              Fully certified professionals you can trust.
             </p>
           </div>
           <div>
@@ -158,7 +149,7 @@ export default function App() {
             <ThumbsUp className="h-10 w-10 mx-auto text-green-600 mb-3" />
             <h3 className="font-semibold mb-2">Guaranteed Results</h3>
             <p className="text-gray-600 text-sm">
-              Long-lasting protection and reliable service.
+              Long-lasting protection you can rely on.
             </p>
           </div>
         </div>
@@ -174,7 +165,7 @@ export default function App() {
           {services.map((s, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow hover:shadow-xl transition overflow-hidden"
+              className="bg-white rounded-xl shadow overflow-hidden"
             >
               <img
                 src={s.image}
@@ -195,28 +186,6 @@ export default function App() {
                   Enquire Now →
                 </a>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* REVIEWS */}
-      <section className="py-20 bg-[#EAF7EF] px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Customer Reviews
-        </h2>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((r, i) => (
-            <div key={i} className="bg-white p-6 rounded-xl shadow">
-              <div className="flex mb-2">
-                {renderStars(r.rating)}
-              </div>
-              <p className="text-gray-600 text-sm mb-4">
-                "{r.text}"
-              </p>
-              <p className="font-semibold">{r.name}</p>
-              <p className="text-gray-500 text-xs">{r.location}</p>
             </div>
           ))}
         </div>
