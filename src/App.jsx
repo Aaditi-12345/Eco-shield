@@ -3,67 +3,59 @@ import {
   Menu,
   X,
   Phone,
-  Mail,
-  ChevronDown,
-  ShieldCheck,
-  MessageCircle
+  MessageCircle,
+  ShieldCheck
 } from "lucide-react";
 
 /* ================= SERVICES ================= */
 const services = [
   {
     name: "Ant Control",
-    desc: "Targeted ant treatments that remove colonies and prevent return activity.",
-    details:
-      "Our ant control service focuses on identifying nest locations and applying professional-grade treatments that stop ants at the source."
+    desc:
+      "Our ant control services eliminate active infestations while preventing new colonies from forming. We identify nesting sites and apply targeted treatments that disrupt ant trails and breeding cycles."
   },
   {
     name: "Cockroach Control",
-    desc: "Effective cockroach control for kitchens, units, and commercial spaces.",
-    details:
-      "We use low-toxicity treatments that target cockroach breeding zones and provide long-lasting protection."
+    desc:
+      "Cockroaches pose serious health risks and spread bacteria quickly. Our treatments focus on kitchens, bathrooms, and high-risk areas using professional-grade solutions for long-term protection."
   },
   {
     name: "Spider Control",
-    desc: "Reduce spider activity and keep your home web-free.",
-    details:
-      "Spider control treatments designed to minimise webs and reduce future nesting."
+    desc:
+      "Our spider control services reduce spider activity by treating entry points, webbing areas, and harbourage zones, keeping your indoor spaces comfortable and web-free."
   },
   {
     name: "Rodent Control",
-    desc: "Humane rodent removal with entry-point prevention.",
-    details:
-      "Our rodent services focus on removal, exclusion, and prevention to stop reinfestation."
+    desc:
+      "Rodents can cause structural damage and contaminate food. We provide humane removal combined with exclusion methods to block access points and prevent reinfestation."
   },
   {
     name: "Termite Protection",
-    desc: "Professional inspections and termite protection systems.",
-    details:
-      "We provide inspections and protective barriers to safeguard your property’s structure."
+    desc:
+      "Termites can cause extensive damage if left untreated. Our termite services include inspections, preventative treatments, and protective barrier systems for long-term peace of mind."
   },
   {
     name: "Bed Bug Treatment",
-    desc: "Complete bed bug elimination with follow-up monitoring.",
-    details:
-      "Our treatment plans include targeted applications and follow-up checks to ensure full eradication."
+    desc:
+      "Bed bugs are persistent pests that require professional treatment. Our service includes targeted applications, detailed inspections, and follow-up visits to ensure complete eradication."
   }
 ];
 
-/* ================= SCROLL ANIMATION HOOK ================= */
+/* ================= SCROLL REVEAL HOOK ================= */
 function useReveal() {
   const ref = useRef(null);
-  const [show, setShow] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setShow(true),
+      ([entry]) => entry.isIntersecting && setVisible(true),
       { threshold: 0.2 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  return [ref, show];
+  return [ref, visible];
 }
 
 export default function App() {
@@ -71,25 +63,11 @@ export default function App() {
   const [activeService, setActiveService] = useState(null);
   const [bookingOpen, setBookingOpen] = useState(false);
 
+  const [trustRef, trustVisible] = useReveal();
   const [servicesRef, servicesVisible] = useReveal();
 
   return (
     <div className="min-h-screen bg-[#f4f6f9] text-gray-800">
-
-      {/* ================= SEO SCHEMA ================= */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "Eco Shield Pest Control Services",
-            telephone: "+61400000000",
-            areaServed: "Australia",
-            serviceType: "Pest Control"
-          })
-        }}
-      />
 
       {/* ================= NAV ================= */}
       <nav className="bg-white sticky top-0 z-50 shadow-sm">
@@ -105,6 +83,26 @@ export default function App() {
           </button>
         </div>
       </nav>
+
+      {/* ================= MOBILE MENU ================= */}
+      {menuOpen && (
+        <div className="fixed inset-0 bg-black/50 z-50">
+          <div className="absolute right-0 top-0 w-72 h-full bg-white p-6">
+            <button
+              className="absolute top-4 right-4"
+              onClick={() => setMenuOpen(false)}
+            >
+              <X />
+            </button>
+            <nav className="mt-10 space-y-4 font-medium">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Contact</a>
+            </nav>
+          </div>
+        </div>
+      )}
 
       {/* ================= HERO ================= */}
       <section className="bg-gradient-to-br from-[#2f5d8a] to-[#1f3e5f] text-white py-28 px-4 text-center">
@@ -123,6 +121,56 @@ export default function App() {
         </button>
       </section>
 
+      {/* ================= TRUST SECTION ================= */}
+      <section
+        ref={trustRef}
+        className={`bg-white py-16 px-4 transition-all duration-700 ${
+          trustVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#1f3e5f] mb-4">
+            Trusted Pest Control from Eco Shield
+          </h2>
+          <p className="text-gray-600 leading-relaxed text-lg">
+            Pest infestations can cause property damage, health concerns, and
+            ongoing stress if left untreated. Eco Shield Pest Control Services
+            provides professional and affordable solutions designed to eliminate
+            pests and prevent future issues. Our technicians are available 24/7
+            with same-day service options.
+          </p>
+        </div>
+      </section>
+
+      {/* ================= WHY PEST CONTROL ================= */}
+      <section className="bg-[#f4f6f9] py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#1f3e5f] mb-4">
+            Why Professional Pest Control Matters
+          </h2>
+          <p className="text-gray-600 leading-relaxed text-lg">
+            Ignoring pest problems can lead to costly repairs and ongoing hygiene
+            risks. Professional pest control not only removes existing pests but
+            also helps prevent future infestations through expert monitoring and
+            preventative treatments.
+          </p>
+        </div>
+      </section>
+
+      {/* ================= OUR APPROACH ================= */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#1f3e5f] mb-4">
+            Our Approach
+          </h2>
+          <p className="text-gray-600 leading-relaxed text-lg">
+            Every service begins with a detailed assessment followed by a
+            tailored treatment plan. We focus on safe, low-toxicity methods while
+            delivering effective, long-lasting results.
+          </p>
+        </div>
+      </section>
+
       {/* ================= SERVICES ================= */}
       <section
         ref={servicesRef}
@@ -132,23 +180,25 @@ export default function App() {
             : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#1f3e5f]">
-          Our Services
+        <h2 className="text-3xl font-bold text-center text-[#1f3e5f] mb-12">
+          Our Pest Control Services
         </h2>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          {services.map((s, i) => (
+          {services.map((service, i) => (
             <div
               key={i}
               className="bg-white rounded-2xl p-8 shadow hover:shadow-lg hover:-translate-y-1 transition"
             >
               <h3 className="text-xl font-semibold text-[#2f5d8a] mb-3">
-                {s.name}
+                {service.name}
               </h3>
-              <p className="text-gray-600 mb-6">{s.desc}</p>
+              <p className="text-gray-600 mb-6">
+                {service.desc}
+              </p>
               <button
-                onClick={() => setActiveService(s)}
-                className="text-sm font-semibold border border-[#2f5d8a] px-5 py-2 rounded-md text-[#2f5d8a] hover:bg-[#2f5d8a] hover:text-white transition"
+                onClick={() => setActiveService(service)}
+                className="border border-[#2f5d8a] text-[#2f5d8a] px-5 py-2 rounded-md font-semibold hover:bg-[#2f5d8a] hover:text-white transition"
               >
                 Know More
               </button>
@@ -157,7 +207,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ================= SERVICE DETAIL MODAL ================= */}
+      {/* ================= SERVICE MODAL ================= */}
       {activeService && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4">
           <div className="bg-white max-w-md w-full rounded-xl p-6 relative">
@@ -167,11 +217,11 @@ export default function App() {
             >
               <X />
             </button>
-            <h3 className="text-xl font-bold mb-3 text-[#2f5d8a]">
+            <h3 className="text-xl font-bold text-[#2f5d8a] mb-3">
               {activeService.name}
             </h3>
             <p className="text-gray-600 mb-4">
-              {activeService.details}
+              {activeService.desc}
             </p>
             <button
               onClick={() => {
@@ -202,10 +252,7 @@ export default function App() {
             <form className="space-y-4">
               <input className="w-full border p-3 rounded" placeholder="Name" />
               <input className="w-full border p-3 rounded" placeholder="Phone" />
-              <textarea
-                className="w-full border p-3 rounded"
-                placeholder="Message"
-              />
+              <textarea className="w-full border p-3 rounded" placeholder="Message" />
               <button className="bg-[#2f5d8a] text-white w-full py-3 rounded-md">
                 Submit Request
               </button>
@@ -232,7 +279,7 @@ export default function App() {
 
       {/* ================= FOOTER ================= */}
       <footer className="bg-[#1f3e5f] text-blue-100 text-center py-6">
-        © {new Date().getFullYear()} Eco Shield Pest Control Services
+        © {new Date().getFullYear()} Eco Shield Pest Control Services. All rights reserved.
       </footer>
 
     </div>
