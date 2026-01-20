@@ -36,59 +36,72 @@ export default function App() {
       
       {/* 1. NAVIGATION */}
       <nav className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="flex items-center group cursor-pointer">
-            <div className="bg-green-600 p-2 rounded-lg group-hover:bg-green-700 transition">
-              <Leaf className="h-6 w-6 text-white" />
-            </div>
-            <span className="ml-3 font-bold text-xl tracking-tight">
-              Eco<span className="text-green-600">Shield</span>
-            </span>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+    
+    {/* Logo Area */}
+    <div className="flex items-center group cursor-pointer">
+      <div className="bg-green-600 p-2 rounded-lg group-hover:bg-green-700 transition">
+        <Leaf className="h-6 w-6 text-white" />
+      </div>
+      <span className="ml-3 font-bold text-xl tracking-tight">
+        Eco<span className="text-green-600">Shield</span>
+      </span>
+    </div>
 
-          <div className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-            <a href="#services" className="hover:text-green-600 transition">Services</a>
-            <a href="#about" className="hover:text-green-600 transition">About</a>
-            <a href="#reviews" className="hover:text-green-600 transition">Reviews</a>
-            <a href="tel:000000000" className="bg-green-600 text-white px-5 py-2.5 rounded-full flex items-center hover:bg-green-700 transition shadow-lg shadow-green-200">
-              <Phone className="h-4 w-4 mr-2" /> Call Now
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    {/* Navigation Links - Now with Location & Contact */}
+    <div className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+      <a href="#home" className="hover:text-green-600 transition">Home</a>
+      <a href="#services" className="hover:text-green-600 transition">Services</a>
+      <a href="#location" className="hover:text-green-600 transition">Service Area</a>
+      <a href="#contact" className="hover:text-green-600 transition">Contact Us</a>
+      
+      {/* Clickable Phone Button */}
+      <a href="tel:0400000000" className="bg-green-600 text-white px-5 py-2.5 rounded-full flex items-center hover:bg-green-700 transition shadow-lg shadow-green-200">
+        <Phone className="h-4 w-4 mr-2" /> Call Now
+      </a>
+    </div>
+  </div>
+</nav>
       {/* 2. HERO SECTION */}
-     <header id="home" className="relative h-[85vh] flex items-center overflow-hidden bg-[#0a192f]">
-  {/* The Image Container */}
+    <header id="home" className="relative h-[80vh] flex items-center overflow-hidden bg-emerald-950">
+  {/* The Background Image */}
   <div className="absolute inset-0 z-0">
     <img 
-      src="https://images.pexels.com/photos/8963961/pexels-photo-8963961.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-      className="w-full h-full object-cover object-center brightness-40" 
-      alt="Pest Control Technician"
+      src="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=2000" 
+      className="w-full h-full object-cover brightness-50" 
+      alt="Beautiful eco-friendly home"
       onError={(e) => {
-        // This is a backup link just in case the first one fails
-        e.target.src = "https://images.pexels.com/photos/8963957/pexels-photo-8963957.jpeg?auto=compress&cs=tinysrgb&w=1600";
+        // Backup link: Clean modern house with trees
+        e.target.src = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000";
       }}
     />
-    {/* This gradient makes the bottom of the image fade into the next section */}
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a192f]/50"></div>
+    {/* Soft overlay to make text extra readable */}
+    <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/80 to-transparent"></div>
   </div>
   
   <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-    <div className="max-w-2xl bg-black/30 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
-      <span className="text-green-400 font-bold tracking-widest uppercase text-xs mb-4 block">
-        Gold Coast Licensed & Insured
-      </span>
+    <div className="max-w-2xl">
+      <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full mb-6">
+        <Leaf className="h-4 w-4 text-green-400" />
+        <span className="text-white text-xs font-bold uppercase tracking-widest">Safe • Effective • Eco-Friendly</span>
+      </div>
+      
       <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-        The Bug <span className="text-green-500 underline decoration-green-500/30">Busters</span>
+        Protecting Your <br/>
+        <span className="text-green-400">Home & Nature</span>
       </h1>
-      <p className="text-xl text-slate-200 mb-10 leading-relaxed font-medium">
-        Safe, reliable, and eco-friendly solutions for your home. 
-        We protect your family from unwanted pests using the latest technology.
+      
+      <p className="text-xl text-slate-100 mb-10 leading-relaxed">
+        Premium pest protection for Gold Coast families. We keep the bugs out 
+        using methods that are safe for your garden, your pets, and your kids.
       </p>
+      
       <div className="flex flex-col sm:flex-row gap-4">
-        <a href="#contact" className="bg-green-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-green-700 hover:scale-105 transition-all text-center shadow-2xl shadow-green-900/40">
+        <a href="#contact" className="bg-green-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all text-center shadow-xl shadow-green-900/40">
           Get a Free Quote
+        </a>
+        <a href="#services" className="bg-white text-emerald-900 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all text-center">
+          Our Services
         </a>
       </div>
     </div>
@@ -182,6 +195,55 @@ export default function App() {
           </div>
         </div>
       </section>
+      <section id="location" className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left Side: Text & Suburbs */}
+      <div>
+        <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
+          Serving the <span className="text-green-600">Gold Coast</span>
+        </h2>
+        <p className="text-lg text-slate-600 mb-8">
+          We provide rapid-response pest control across the entire region. 
+          From the beaches to the hinterland, we've got you covered.
+        </p>
+        
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            "Surfers Paradise", "Burleigh Heads", 
+            "Robina & Varsity", "Southport", 
+            "Helensvale", "Coolangatta"
+          ].map((suburb) => (
+            <div key={suburb} className="flex items-center text-slate-700 font-medium">
+              <MapPin className="h-5 w-5 text-green-500 mr-2" />
+              {suburb}
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-10 p-6 bg-green-50 rounded-2xl border border-green-100">
+          <p className="text-green-800 font-bold mb-2">Don't see your suburb?</p>
+          <p className="text-green-700 text-sm">We cover all areas within 50km of the Gold Coast CBD. Call us to confirm!</p>
+        </div>
+      </div>
+
+      {/* Right Side: Interactive Map */}
+      <div className="h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d225665.5186047392!2d153.2501064!3d-28.0166665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b911a472b5d60b1%3A0x502a35af3de8d00!2sGold%20Coast%20QLD!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen="" 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* FOOTER */}
       <footer className="py-12 bg-white border-t border-slate-100 text-center">
