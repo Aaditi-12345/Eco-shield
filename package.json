@@ -2,6 +2,7 @@
   "name": "ecoshield-site",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://ecoshieldservices.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
