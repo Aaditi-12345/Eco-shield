@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // Change this to './' or '/'
+  base: '/',  // Make sure this is just a forward slash in quotes
 })
