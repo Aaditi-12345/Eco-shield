@@ -229,16 +229,17 @@ export default function App() {
       </div>
 
       {/* Right Side: Interactive Map */}
-      <div className="h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-        <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d225828.1404494372!2d153.22158888647462!3d-28.016666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b911a472b5d60b1%3A0x502a35af3de8d00!2sGold%20Coast%20QLD!5e0!3m2!1sen!2sau!4v1705750000000!5m2!1sen!2sau" 
-  width="100%" 
-  height="100%" 
-  style={{ border: 0 }} 
-  allowFullScreen="" 
-  loading="lazy">
-</iframe>
-      </div>
+    <div className="h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112832.228965682!2d153.336497!3d-28.016667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b911a472b5d635f%3A0x3302d136f395eff1!2sGold%20Coast%20QLD!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" 
+    width="100%" 
+    height="100%" 
+    style={{ border: 0 }} 
+    allowFullScreen="" 
+    loading="lazy" 
+    referrerPolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
 
     </div>
   </div>
