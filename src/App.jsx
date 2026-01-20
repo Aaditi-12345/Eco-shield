@@ -61,10 +61,10 @@ export default function App() {
       <header id="home" className="relative h-[85vh] flex items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img 
-  src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?auto=format&fit=crop&q=80&w=2000" 
+  src="https://images.unsplash.com/photo-1624969862293-b749659ccc4e?auto=format&fit=crop&q=80&w=2000" 
   className="w-full h-full object-cover" 
-  alt="Pest Free Home"
-  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1585202900225-6d3ac20a6948?auto=format&fit=crop&q=80&w=2000" }}
+  alt="Pest Control Technician at work"
+  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=2000" }}
 />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20"></div>
         </div>
