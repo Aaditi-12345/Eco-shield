@@ -58,36 +58,42 @@ export default function App() {
       </nav>
 
       {/* 2. HERO SECTION */}
-     <header id="home" className="relative h-[85vh] flex items-center overflow-hidden bg-slate-900">
+     <header id="home" className="relative h-[85vh] flex items-center overflow-hidden bg-[#0a192f]">
+  {/* The Image Container */}
   <div className="absolute inset-0 z-0">
     <img 
-      src="https://images.pexels.com/photos/8963953/pexels-photo-8963953.jpeg?auto=compress&cs=tinysrgb&w=2000" 
-      className="w-full h-full object-cover brightness-50" 
-      alt="Professional Pest Control Technician"
+      src="https://images.pexels.com/photos/8963961/pexels-photo-8963961.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+      className="w-full h-full object-cover object-center brightness-40" 
+      alt="Pest Control Technician"
+      onError={(e) => {
+        // This is a backup link just in case the first one fails
+        e.target.src = "https://images.pexels.com/photos/8963957/pexels-photo-8963957.jpeg?auto=compress&cs=tinysrgb&w=1600";
+      }}
     />
+    {/* This gradient makes the bottom of the image fade into the next section */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a192f]/50"></div>
   </div>
   
   <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-    <div className="max-w-2xl">
-      <span className="text-green-400 font-bold tracking-widest uppercase text-sm mb-4 block">
-        Gold Coast Licensed Professionals
+    <div className="max-w-2xl bg-black/30 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
+      <span className="text-green-400 font-bold tracking-widest uppercase text-xs mb-4 block">
+        Gold Coast Licensed & Insured
       </span>
       <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-        The Bug <span className="text-green-500">Busters</span>
+        The Bug <span className="text-green-500 underline decoration-green-500/30">Busters</span>
       </h1>
-      <p className="text-xl text-slate-200 mb-10 leading-relaxed">
-        Expert pest protection for your home and business. 
-        Safe, eco-friendly, and 100% guaranteed results.
+      <p className="text-xl text-slate-200 mb-10 leading-relaxed font-medium">
+        Safe, reliable, and eco-friendly solutions for your home. 
+        We protect your family from unwanted pests using the latest technology.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <a href="#contact" className="bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition text-center shadow-xl">
+        <a href="#contact" className="bg-green-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-green-700 hover:scale-105 transition-all text-center shadow-2xl shadow-green-900/40">
           Get a Free Quote
         </a>
       </div>
     </div>
   </div>
 </header>
-
       {/* 3. TRUST BAR */}
       <section className="py-12 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
