@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Leaf,
   Star,
@@ -6,236 +6,187 @@ import {
   MapPin,
   Clock,
   Bug,
-  ShieldCheck
+  ShieldCheck,
+  Phone,
+  CheckCircle2,
+  ChevronRight
 } from "lucide-react";
 
-/* ================= SERVICES DATA ================= */
+/* ================= DATA ================= */
 const services = [
-  {
-    name: "Ant Control",
-    icon: <Bug className="h-8 w-8 text-green-600" />,
-    desc:
-      "Our ant control service targets nests at the source using proven treatments that disrupt ant trails and breeding cycles, ensuring long-lasting protection for your property."
-  },
-  {
-    name: "Termite Protection",
-    icon: <ShieldCheck className="h-8 w-8 text-green-600" />,
-    desc:
-      "We provide comprehensive termite inspections and preventative treatments designed to protect your structure and prevent costly long-term damage."
-  },
-  {
-    name: "Rodent Control",
-    icon: <Bug className="h-8 w-8 text-green-600" />,
-    desc:
-      "Humane rodent control solutions including removal, exclusion, and prevention methods to keep your home or business rodent-free."
-  },
-  {
-    name: "Cockroach Control",
-    icon: <Bug className="h-8 w-8 text-green-600" />,
-    desc:
-      "Targeted cockroach treatments that focus on high-risk areas like kitchens and bathrooms to eliminate infestations and prevent recurrence."
-  },
-  {
-    name: "Bed Bug Treatment",
-    icon: <Bug className="h-8 w-8 text-green-600" />,
-    desc:
-      "Professional bed bug eradication using detailed inspections and industry-grade treatments to ensure complete elimination."
-  },
-  {
-    name: "Mosquito Control",
-    icon: <Bug className="h-8 w-8 text-green-600" />,
-    desc:
-      "Outdoor mosquito treatments designed to reduce breeding areas and protect your family from bites and mosquito-borne illnesses."
-  }
+  { name: "Ant Control", icon: <Bug />, desc: "Targeted treatments that disrupt breeding cycles for long-term protection." },
+  { name: "Termite Protection", icon: <ShieldCheck />, desc: "Comprehensive inspections and barriers to protect your structure." },
+  { name: "Rodent Control", icon: <Bug />, desc: "Professional exclusion and removal to keep your property rodent-free." },
+  { name: "Cockroach Control", icon: <Bug />, desc: "Eliminate infestations in high-risk areas like kitchens and bathrooms." },
+  { name: "Bed Bug Treatment", icon: <Bug />, desc: "Detailed eradication using industry-grade, eco-friendly treatments." },
+  { name: "Mosquito Control", icon: <Bug />, desc: "Reduce outdoor breeding areas to protect your family from bites." }
 ];
 
-/* ================= REVIEWS ================= */
 const reviews = [
-  {
-    name: "Sarah M.",
-    text:
-      "Very professional service. The team explained everything clearly and the results were excellent.",
-    rating: 5
-  },
-  {
-    name: "Michael R.",
-    text:
-      "Friendly technicians and eco-conscious solutions. Highly recommended.",
-    rating: 5
-  },
-  {
-    name: "Jennifer L.",
-    text:
-      "Smooth experience from booking to completion. Will definitely use again.",
-    rating: 5
-  }
+  { name: "Sarah M.", text: "The team explained everything clearly and the results were excellent.", rating: 5 },
+  { name: "Michael R.", text: "Friendly technicians and eco-conscious solutions. Highly recommended.", rating: 5 },
+  { name: "Jennifer L.", text: "Smooth experience from booking to completion. Will definitely use again.", rating: 5 }
 ];
 
-const renderStars = (rating) =>
-  Array.from({ length: 5 }).map((_, i) => (
-    <Star
-      key={i}
-      className={`h-4 w-4 ${
-        i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
-      }`}
-    />
-  ));
+/* ================= COMPONENTS ================= */
 
-/* ================= APP ================= */
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-
-      {/* ================= NAV ================= */}
-      <nav className="bg-white shadow sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center">
-            <Leaf className="h-7 w-7 text-green-600" />
-            <span className="ml-2 font-bold text-lg">
-              Eco Shield Pest Control Services
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      
+      {/* 1. NAVIGATION */}
+      <nav className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+          <div className="flex items-center group cursor-pointer">
+            <div className="bg-green-600 p-2 rounded-lg group-hover:bg-green-700 transition">
+              <Leaf className="h-6 w-6 text-white" />
+            </div>
+            <span className="ml-3 font-bold text-xl tracking-tight">
+              Eco<span className="text-green-600">Shield</span>
             </span>
           </div>
 
-          <div className="flex space-x-8 text-sm font-medium">
-            <a href="#home" className="hover:text-green-600">Home</a>
-            <a href="#about" className="hover:text-green-600">About</a>
-            <a href="#services" className="hover:text-green-600">Services</a>
-            <a href="#contact" className="hover:text-green-600">Contact</a>
+          <div className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+            <a href="#services" className="hover:text-green-600 transition">Services</a>
+            <a href="#about" className="hover:text-green-600 transition">About</a>
+            <a href="#reviews" className="hover:text-green-600 transition">Reviews</a>
+            <a href="tel:000000000" className="bg-green-600 text-white px-5 py-2.5 rounded-full flex items-center hover:bg-green-700 transition shadow-lg shadow-green-200">
+              <Phone className="h-4 w-4 mr-2" /> Call Now
+            </a>
           </div>
         </div>
       </nav>
 
-      {/* ================= HERO ================= */}
-      <section
-        id="home"
-        className="py-28 px-4 text-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(/mnt/data/E4B4FFED-E906-401D-A936-58C089CA9479.jpeg)"
-        }}
-      >
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          We’re The Bug Busters
-        </h1>
-        <p className="text-gray-200 max-w-2xl mx-auto mb-6">
-          Unwanted pests can damage property, spread disease, and create stress.
-          Eco Shield Pest Control Services delivers reliable, affordable solutions
-          to protect your home or business -- with fast response and long-lasting results.
-        </p>
-        <a
-          href="#contact"
-          className="bg-green-600 hover:bg-green-700 transition text-white px-8 py-3 rounded-lg font-semibold inline-block"
-        >
-          Get a Free Quote
-        </a>
-      </section>
-
-      {/* ================= ABOUT ================= */}
-      <section id="about" className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <img
-            src="/mnt/data/827D3A44-569D-485A-98D7-52AEE052A544.jpeg"
-            alt="Pest Control Treatment"
-            className="rounded-xl shadow object-cover h-[320px] w-full"
+      {/* 2. HERO SECTION */}
+      <header id="home" className="relative h-[85vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1558905612-da6439162974?auto=format&fit=crop&q=80&w=2000" 
+            className="w-full h-full object-cover" 
+            alt="Pest Free Home"
           />
-          <div>
-            <h2 className="text-3xl font-bold mb-4">
-              Professional & Eco-Focused Pest Control
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              Our approach combines modern pest management techniques with
-              environmentally responsible solutions. Every service starts with
-              a detailed assessment, followed by tailored treatments designed
-              for long-term protection.
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-2xl">
+            <span className="text-green-400 font-bold tracking-widest uppercase text-sm mb-4 block">Certified Eco-Friendly</span>
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+              Safe Homes. <br/><span className="text-green-500">Zero Pests.</span>
+            </h1>
+            <p className="text-xl text-slate-200 mb-10 leading-relaxed">
+              Premium pest protection for Gold Coast families. We use nature-inspired 
+              solutions that are tough on bugs but safe for your kids and pets.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" className="bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition text-center">
+                Get Your Free Quote
+              </a>
+              <a href="#services" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition text-center">
+                View Services
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* ================= SERVICES ================= */}
-      <section id="services" className="py-20 bg-gray-50 px-4">
-        <h2 className="text-3xl font-bold text-center mb-14">
-          Our Pest Control Services
-        </h2>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {services.map((s, i) => (
-            <a
-              key={i}
-              href="#contact"
-              className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
-            >
-              <div className="flex justify-center mb-4">
-                {s.icon}
-              </div>
-              <h3 className="text-lg font-semibold mb-2">
-                {s.name}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {s.desc}
-              </p>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= IMAGE FEATURE ================= */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <img
-            src="/mnt/data/32ABEAB1-2ABA-42A9-BFDC-BBB91F9D79B6.jpeg"
-            alt="Professional Pest Control Technician"
-            className="rounded-xl shadow object-cover w-full h-[400px]"
-          />
-        </div>
-      </section>
-
-      {/* ================= REVIEWS ================= */}
-      <section className="py-20 bg-[#EAF7EF] px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          What Our Customers Say
-        </h2>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((r, i) => (
-            <div key={i} className="bg-white p-6 rounded-xl shadow">
-              <div className="flex mb-2">
-                {renderStars(r.rating)}
-              </div>
-              <p className="text-gray-600 text-sm mb-4">
-                "{r.text}"
-              </p>
-              <p className="font-semibold text-gray-900">
-                {r.name}
-              </p>
+      {/* 3. TRUST BAR */}
+      <section className="py-12 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { label: "Licensed & Insured", icon: <ShieldCheck className="text-green-600"/> },
+            { label: "Pet Safe Methods", icon: <Leaf className="text-green-600"/> },
+            { label: "24/7 Support", icon: <Clock className="text-green-600"/> },
+            { label: "Satisfaction Guaranteed", icon: <CheckCircle2 className="text-green-600"/> }
+          ].map((item, i) => (
+            <div key={i} className="flex items-center space-x-3 justify-center">
+              {item.icon}
+              <span className="font-bold text-slate-700 text-sm md:text-base">{item.label}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ================= CONTACT ================= */}
-      <section id="contact" className="py-20 bg-white px-4">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Contact Us
-        </h2>
+      {/* 4. SERVICES GRID */}
+      <section id="services" className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Our Specialized Solutions</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">Effective pest management tailored to the unique climate of the Gold Coast.</p>
+          </div>
 
-        <div className="max-w-xl mx-auto bg-gray-50 p-8 rounded-xl">
-          <div className="space-y-4 text-gray-700">
-            <div className="flex items-center">
-              <Mail className="h-5 w-5 mr-2 text-green-600" />
-              info@ecoshieldpest.com
-            </div>
-            <div className="flex items-center">
-              <MapPin className="h-5 w-5 mr-2 text-green-600" />
-              Gold Coast & Surrounding Areas
-            </div>
-            <div className="flex items-center">
-              <Clock className="h-5 w-5 mr-2 text-green-600" />
-              7 AM – 8 PM, 7 Days
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((s, i) => (
+              <div key={i} className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div className="bg-green-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors">
+                  <div className="text-green-600 group-hover:text-white transition-colors">
+                    {React.cloneElement(s.icon, { className: "h-8 w-8" })}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3">{s.name}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">{s.desc}</p>
+                <a href="#contact" className="text-green-600 font-bold text-sm flex items-center group-hover:underline">
+                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* 5. CONTACT SECTION (Interactive Form) */}
+      <section id="contact" className="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 relative z-10">
+          <div>
+            <h2 className="text-4xl font-bold mb-6">Ready to live bug-free?</h2>
+            <p className="text-slate-400 mb-10 text-lg">Fill out the form and a technician will contact you within 2 hours for a free, no-obligation assessment.</p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10">
+                <Phone className="h-6 w-6 text-green-500 mr-4" />
+                <div>
+                  <p className="text-sm text-slate-400">Call Us Directly</p>
+                  <p className="font-bold text-lg">0400 000 000</p>
+                </div>
+              </div>
+              <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10">
+                <MapPin className="h-6 w-6 text-green-500 mr-4" />
+                <div>
+                  <p className="text-sm text-slate-400">Service Area</p>
+                  <p className="font-bold text-lg">Gold Coast & Surrounds</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 shadow-2xl">
+            <form className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <input type="text" placeholder="First Name" className="w-full p-4 bg-slate-50 rounded-xl border-none text-slate-900 focus:ring-2 focus:ring-green-500" />
+                <input type="text" placeholder="Phone Number" className="w-full p-4 bg-slate-50 rounded-xl border-none text-slate-900 focus:ring-2 focus:ring-green-500" />
+              </div>
+              <input type="email" placeholder="Email Address" className="w-full p-4 bg-slate-50 rounded-xl border-none text-slate-900 focus:ring-2 focus:ring-green-500" />
+              <select className="w-full p-4 bg-slate-50 rounded-xl border-none text-slate-500 focus:ring-2 focus:ring-green-500">
+                <option>Select Service</option>
+                {services.map(s => <option key={s.name}>{s.name}</option>)}
+              </select>
+              <textarea placeholder="Tell us about your pest problem..." rows="4" className="w-full p-4 bg-slate-50 rounded-xl border-none text-slate-900 focus:ring-2 focus:ring-green-500"></textarea>
+              <button className="w-full bg-green-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition shadow-lg shadow-green-900/20">
+                Send Free Quote Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-12 bg-white border-t border-slate-100 text-center">
+        <div className="flex items-center justify-center mb-6">
+          <Leaf className="h-6 w-6 text-green-600 mr-2" />
+          <span className="font-bold text-lg">EcoShield Pest Control</span>
+        </div>
+        <p className="text-slate-400 text-sm">© 2026 EcoShield Services. All Rights Reserved. Licensed & Insured.</p>
+      </footer>
 
     </div>
   );
