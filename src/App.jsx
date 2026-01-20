@@ -98,26 +98,44 @@ export default function App() {
       </a>
     </div>
     {/* --- UPDATED SERVICES SECTION --- */}
+{/* ================= OUR SERVICES ================= */}
 <section id="services" className="py-24 px-4 bg-slate-50">
-  <div className="max-w-7xl mx-auto text-center">
-    <h2 className="text-4xl font-extrabold mb-12">Click a Service to Learn Our Process</h2>
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Our Specialized Solutions</h2>
+      <p className="text-slate-500 max-w-xl mx-auto italic">
+        Select a service below to see our professional eco-friendly treatment process.
+      </p>
+    </div>
+
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((s, i) => (
         <div 
           key={i} 
           onClick={() => setSelectedService(s)}
-          className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer text-left"
+          className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
         >
-          <div className="text-green-600 mb-4">{React.cloneElement(s.icon, { className: "h-10 w-10" })}</div>
-          <h3 className="text-xl font-bold mb-2">{s.name}</h3>
-          <p className="text-slate-500 text-sm">{s.desc}</p>
-          <div className="mt-4 text-green-600 font-bold text-xs uppercase tracking-widest">View Treatment Plan →</div>
+          {/* Icon Box */}
+          <div className="bg-green-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors">
+            <div className="text-green-600 group-hover:text-white transition-colors">
+              {React.cloneElement(s.icon, { className: "h-8 w-8" })}
+            </div>
+          </div>
+
+          <h3 className="text-xl font-bold mb-3 text-slate-900">{s.name}</h3>
+          <p className="text-slate-600 text-sm leading-relaxed mb-6">
+            {s.desc}
+          </p>
+
+          {/* This is the only "View" button that should exist */}
+          <div className="flex items-center text-green-600 font-bold text-xs uppercase tracking-widest group-hover:underline">
+            View Treatment Process <ChevronRight className="h-4 w-4 ml-1" />
+          </div>
         </div>
       ))}
     </div>
   </div>
 </section>
-
 {/* --- THE POP-UP MODAL (Add this at the very bottom of your return) --- */}
 {selectedService && (
   <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -357,7 +375,60 @@ export default function App() {
         </div>
         <p className="text-slate-400 text-sm">© 2026 EcoShield Services. All Rights Reserved. Licensed & Insured.</p>
       </footer>
+{selectedService && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    {/* 1. Backdrop (Makes everything else blurry and dark) */}
+    <div 
+      className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" 
+      onClick={() => setSelectedService(null)}
+    ></div>
+    
+    {/* 2. The Pop-up Card */}
+    <div className="relative bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in duration-200 max-h-[90vh]">
+      
+      {/* Close Button (X) */}
+      <button 
+        onClick={() => setSelectedService(null)}
+        className="absolute top-4 right-4 z-50 bg-white/80 hover:bg-white text-slate-900 rounded-full p-2 shadow-md transition"
+      >
+        <span className="font-bold text-lg leading-none">✕</span>
+      </button>
 
+      {/* Image Side */}
+      <div className="md:w-1/2 h-48 md:h-auto">
+        <img 
+          src={selectedService.image} 
+          alt={selectedService.name} 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Text Side */}
+      <div className="p-8 md:w-1/2 overflow-y-auto">
+        <h3 className="text-3xl font-bold text-slate-900 mb-4">{selectedService.name}</h3>
+        <p className="text-slate-600 leading-relaxed mb-6">
+          {selectedService.detailedDesc}
+        </p>
+        
+        <div className="space-y-3 mb-8">
+          <div className="flex items-center text-sm font-bold text-green-700">
+            <CheckCircle2 className="h-4 w-4 mr-2" /> Safe for Families & Pets
+          </div>
+          <div className="flex items-center text-sm font-bold text-green-700">
+            <CheckCircle2 className="h-4 w-4 mr-2" /> 12-Month Quality Guarantee
+          </div>
+        </div>
+
+        <button 
+          onClick={() => { setSelectedService(null); window.location.href="#contact"; }}
+          className="w-full bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg"
+        >
+          Book This Treatment
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
