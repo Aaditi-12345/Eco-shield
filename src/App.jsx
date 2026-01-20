@@ -60,15 +60,17 @@ export default function App() {
       {/* 2. HERO SECTION */}
       <header id="home" className="relative h-[85vh] flex items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
-          <img 
-  src="https://images.unsplash.com/photo-1624969862293-b749659ccc4e?auto=format&fit=crop&q=80&w=2000" 
-  className="w-full h-full object-cover" 
-  alt="Pest Control Technician at work"
-  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=2000" }}
+         <img 
+  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2000&auto=format&fit=crop" 
+  className="w-full h-full object-cover object-center" 
+  alt="Pest Control Technician"
+  loading="eager"
+  onError={(e) => { 
+    e.target.src = "https://images.unsplash.com/photo-1590684153400-e3e7a99981ce?q=80&w=2000&auto=format&fit=crop";
+  }}
 />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20"></div>
         </div>
-        
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
             <span className="text-green-400 font-bold tracking-widest uppercase text-sm mb-4 block">Certified Eco-Friendly</span>
