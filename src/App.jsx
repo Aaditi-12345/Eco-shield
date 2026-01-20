@@ -14,12 +14,48 @@ import {
 
 /* ================= DATA ================= */
 const services = [
-  { name: "Ant Control", icon: <Bug />, desc: "Targeted treatments that disrupt breeding cycles for long-term protection." },
-  { name: "Termite Protection", icon: <ShieldCheck />, desc: "Comprehensive inspections and barriers to protect your structure." },
-  { name: "Rodent Control", icon: <Bug />, desc: "Professional exclusion and removal to keep your property rodent-free." },
-  { name: "Cockroach Control", icon: <Bug />, desc: "Eliminate infestations in high-risk areas like kitchens and bathrooms." },
-  { name: "Bed Bug Treatment", icon: <Bug />, desc: "Detailed eradication using industry-grade, eco-friendly treatments." },
-  { name: "Mosquito Control", icon: <Bug />, desc: "Reduce outdoor breeding areas to protect your family from bites." }
+  {
+    name: "Ant Control",
+    icon: <Bug />,
+    image: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&q=80&w=800",
+    desc: "Targeted treatments that disrupt breeding cycles.",
+    detailedDesc: "Our 3-step ant process involves identifying the species, locating the colony, and applying non-repellent barriers that ants carry back to the nest for total elimination."
+  },
+  {
+    name: "Termite Protection",
+    icon: <ShieldCheck />,
+    image: "https://images.unsplash.com/photo-1632733711679-5292d6863670?auto=format&fit=crop&q=80&w=800",
+    desc: "Comprehensive inspections and barriers.",
+    detailedDesc: "We use thermal imaging for detection and install chemical barriers or baiting systems that provide 24/7 protection for your home's structure."
+  },
+  {
+    name: "Rodent Control",
+    icon: <Bug />,
+    image: "https://images.unsplash.com/photo-1454564478170-985698f121df?auto=format&fit=crop&q=80&w=800",
+    desc: "Exclusion and removal for a rodent-free property.",
+    detailedDesc: "We focus on 'Exclusion'—finding every entry point and sealing it. We then use safe, tamper-proof stations to remove any remaining rodents."
+  },
+  {
+    name: "Cockroach Control",
+    icon: <Bug />,
+    image: "https://images.unsplash.com/photo-1626460284906-8927902ba3f7?auto=format&fit=crop&q=80&w=800",
+    desc: "Eliminate infestations in high-risk areas.",
+    detailedDesc: "We use specialized gel baits and growth regulators that stop cockroaches from breeding, specifically targeting kitchens and wet areas."
+  },
+  {
+    name: "Bed Bug Treatment",
+    icon: <Bug />,
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800",
+    desc: "Industry-grade, eco-friendly eradication.",
+    detailedDesc: "Our bed bug treatment involves a deep-room inspection followed by eco-friendly steam and liquid treatments to ensure all life cycles are removed."
+  },
+  {
+    name: "Mosquito Control",
+    icon: <Bug />,
+    image: "https://images.unsplash.com/photo-1573590502999-66005bd44b77?auto=format&fit=crop&q=80&w=800",
+    desc: "Protect your family from bites.",
+    detailedDesc: "We treat foliage where mosquitoes rest and identify standing water sources. Our barrier spray keeps your yard comfortable for up to 4 weeks."
+  }
 ];
 
 const reviews = [
@@ -31,6 +67,7 @@ const reviews = [
 /* ================= COMPONENTS ================= */
 
 export default function App() {
+  const [selectedService, setSelectedService] = useState(null);
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       
@@ -60,6 +97,68 @@ export default function App() {
         <Phone className="h-4 w-4 mr-2" /> Call Now
       </a>
     </div>
+    {/* --- UPDATED SERVICES SECTION --- */}
+<section id="services" className="py-24 px-4 bg-slate-50">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-4xl font-extrabold mb-12">Click a Service to Learn Our Process</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((s, i) => (
+        <div 
+          key={i} 
+          onClick={() => setSelectedService(s)}
+          className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer text-left"
+        >
+          <div className="text-green-600 mb-4">{React.cloneElement(s.icon, { className: "h-10 w-10" })}</div>
+          <h3 className="text-xl font-bold mb-2">{s.name}</h3>
+          <p className="text-slate-500 text-sm">{s.desc}</p>
+          <div className="mt-4 text-green-600 font-bold text-xs uppercase tracking-widest">View Treatment Plan →</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* --- THE POP-UP MODAL (Add this at the very bottom of your return) --- */}
+{selectedService && (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-md" onClick={() => setSelectedService(null)}></div>
+    
+    {/* Modal Content */}
+    <div className="relative bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+      <button 
+        onClick={() => setSelectedService(null)}
+        className="absolute top-4 right-4 bg-white/80 rounded-full p-2 hover:bg-white z-10"
+      >
+        ✕
+      </button>
+      
+      <div className="grid md:grid-cols-2">
+        <img src={selectedService.image} alt={selectedService.name} className="h-64 md:h-full w-full object-cover" />
+        <div className="p-8">
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">{selectedService.name} Treatment</h3>
+          <p className="text-slate-600 leading-relaxed mb-6">
+            {selectedService.detailedDesc}
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-center text-sm font-bold text-green-700">
+              <ShieldCheck className="h-4 w-4 mr-2" /> Safe for Pets & Kids
+            </div>
+            <div className="flex items-center text-sm font-bold text-green-700">
+              <Clock className="h-4 w-4 mr-2" /> 12-Month Protection Guarantee
+            </div>
+          </div>
+          <button 
+            onClick={() => { setSelectedService(null); window.location.href="#contact"; }}
+            className="mt-8 w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition"
+          >
+            Book This Treatment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
   </div>
 </nav>
       {/* 2. HERO SECTION */}
