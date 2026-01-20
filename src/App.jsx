@@ -224,32 +224,37 @@ export default function App() {
       </section>
 
       {/* 4. SERVICES GRID */}
-      <section id="services" className="py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Our Specialized Solutions</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">Effective pest management tailored to the unique climate of the Gold Coast.</p>
-          </div>
+      {/* ================= OUR SERVICES (This is the section to replace) ================= */}
+<section id="services" className="py-24 px-4 bg-slate-50">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Our Specialized Solutions</h2>
+      <p className="text-slate-500 max-w-xl mx-auto">Click any pest below to see our professional treatment process.</p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s, i) => (
-              <div key={i} className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <div className="bg-green-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors">
-                  <div className="text-green-600 group-hover:text-white transition-colors">
-                    {React.cloneElement(s.icon, { className: "h-8 w-8" })}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{s.name}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">{s.desc}</p>
-                <a href="#contact" className="text-green-600 font-bold text-sm flex items-center group-hover:underline">
-                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                </a>
-              </div>
-            ))}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((s, i) => (
+        <div 
+          key={i} 
+          onClick={() => setSelectedService(s)}
+          className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div className="bg-green-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors">
+            <div className="text-green-600 group-hover:text-white transition-colors">
+              {/* This makes the icon grow slightly when hovered */}
+              {React.cloneElement(s.icon, { className: "h-8 w-8" })}
+            </div>
           </div>
+          <h3 className="text-xl font-bold mb-3">{s.name}</h3>
+          <p className="text-slate-600 text-sm leading-relaxed mb-6">{s.desc}</p>
+          <span className="text-green-600 font-bold text-sm flex items-center group-hover:underline">
+            View Treatment Process <ChevronRight className="h-4 w-4 ml-1" />
+          </span>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* 5. CONTACT SECTION (Interactive Form) */}
       <section id="contact" className="py-24 bg-slate-900 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 relative z-10">
