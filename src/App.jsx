@@ -257,7 +257,7 @@ export default function App() {
             </div>
             <div className="h-[500px] rounded-[3rem] overflow-hidden shadow-3xl border-[12px] border-slate-50">
               <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112834.11550186196!2d153.30133481232822!3d-28.021436423021952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b910a4ced58239f%3A0x502a35af3de8d60!2sGold%20Coast%20QLD!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225644.2755294379!2d153.28424563820984!3d-28.00632594611252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b911a472b5d60b1%3A0x302a35a4f2717a0!2sGold%20Coast%20QLD!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" 
   width="100%" 
   height="100%" 
   style={{ border: 0 }} 
