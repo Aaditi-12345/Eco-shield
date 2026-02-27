@@ -3,128 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoShield | Gold Coast Professional Cleaning</title>
+    <title>EcoShield | Gold Coast Cleaning</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .service-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-    </script>
+    <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
 </head>
 <body class="bg-slate-50 font-sans text-gray-900">
 
     <div class="bg-blue-600 text-white py-2 px-6 text-center text-sm font-medium">
-        <span class="flex items-center justify-center gap-2">
-            <i data-lucide="map-pin" size="14"></i> 
-            Serving Gold Coast & Surrounding Areas | 24/7 Booking Available
-        </span>
+        Serving Gold Coast & Surrounding Areas | 24/7 Booking Available
     </div>
 
-    <nav class="sticky top-0 z-50 flex items-center justify-between p-4 bg-white shadow-md">
-        <div class="flex items-center gap-2 text-blue-600 font-bold text-xl md:text-2xl">
+    <nav class="flex items-center justify-between p-4 bg-white shadow-md">
+        <div class="flex items-center gap-2 text-blue-600 font-bold text-xl">
             <i data-lucide="droplets"></i>
             <span>EcoShield Cleaning</span>
         </div>
-        <div class="hidden md:flex gap-6 font-medium text-gray-600">
-            <a href="#services" class="hover:text-blue-600">Services</a>
-            <a href="#booking" class="hover:text-blue-600">Book Now</a>
-        </div>
-        <a href="tel:0400000000" class="bg-blue-600 text-white px-5 py-2 rounded-full flex items-center gap-2 font-semibold">
-            <i data-lucide="phone" size="18"></i> <span class="hidden sm:inline">Call 0400 000 000</span>
+        <a href="tel:0400000000" class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold">
+            Call Now
         </a>
     </nav>
 
-    <header class="bg-white py-16 px-6 text-center border-b">
-        <h1 class="text-4xl md:text-6xl font-black mb-4 text-slate-900">Premium Cleaning for Your Home</h1>
-        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Gold Coast's trusted specialists in upholstery and carpet restoration. 
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#booking" class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-blue-700 transition text-center">
-                Book 24/7 Online
-            </a>
-            <a href="#services" class="bg-slate-100 text-slate-800 text-lg px-8 py-4 rounded-lg font-bold border border-slate-200 hover:bg-slate-200 transition text-center">
-                View Services
-            </a>
-        </div>
+    <header class="py-20 px-6 text-center bg-white">
+        <h1 class="text-4xl font-black mb-4">Professional Couch & Carpet Cleaning</h1>
+        <p class="text-lg text-gray-600 mb-8">Premium cleaning services for Gold Coast homes.</p>
+        <button class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold">Book 24/7 Online</button>
     </header>
 
-    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Our Professional Services</h2>
-            <p class="text-gray-500 mt-2">Professional equipment for the best results</p>
+    <section class="py-12 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+            <i data-lucide="sofa" class="text-blue-600 mb-2"></i>
+            <h3 class="font-bold text-xl">Steam Couch Cleaning</h3>
+            <p class="text-gray-600">Deep extraction for all fabric types.</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="service-card p-8 border rounded-2xl bg-white shadow-sm border-slate-100">
-                <div class="text-blue-600 mb-4"><i data-lucide="sofa" size="32"></i></div>
-                <h3 class="text-xl font-bold mb-2">Steam Couch Cleaning</h3>
-                <p class="text-gray-600 mb-4">Deep steam extraction that removes deep-seated dirt and bacteria from all fabric types.</p>
-                <span class="text-blue-600 font-bold text-sm">FREE Stain Assessment Included</span>
-            </div>
-
-            <div class="service-card p-8 border rounded-2xl bg-white shadow-sm border-slate-100">
-                <div class="text-blue-600 mb-4"><i data-lucide="wind" size="32"></i></div>
-                <h3 class="text-xl font-bold mb-2">Steam Deep Carpet Cleaning</h3>
-                <p class="text-gray-600 mb-4">Heavy-duty cleaning for carpets and rugs. Ideal for high-traffic areas and pet owners.</p>
-                <span class="text-blue-600 font-bold text-sm">Fast Drying Time</span>
-            </div>
-
-            <div class="service-card p-8 border rounded-2xl bg-white shadow-sm border-slate-100">
-                <div class="text-blue-600 mb-4"><i data-lucide="bed" size="32"></i></div>
-                <h3 class="text-xl font-bold mb-2">Mattress Cleaning</h3>
-                <p class="text-gray-600 mb-4">Eliminate dust mites and allergens from your mattress for a healthier night's sleep.</p>
-                <span class="text-blue-600 font-bold text-sm">Sanitization Included</span>
-            </div>
-
-            <div class="service-card p-8 border rounded-2xl bg-white shadow-sm border-slate-100">
-                <div class="text-blue-600 mb-4"><i data-lucide="sparkles" size="32"></i></div>
-                <h3 class="text-xl font-bold mb-2">Leather Cleaning & Conditioning</h3>
-                <p class="text-gray-600 mb-4">Gentle hand-cleaning followed by premium conditioning to prevent cracking and restore shine.</p>
-                <span class="text-blue-600 font-bold text-sm">Premium Leather Care</span>
-            </div>
-
-            <div class="service-card p-8 border rounded-2xl bg-white shadow-sm border-slate-100">
-                <div class="text-blue-600 mb-4"><i data-lucide="shield-alert" size="32"></i></div>
-                <h3 class="text-xl font-bold mb-2">Stain Treatment</h3>
-                <p class="text-gray-600 mb-4">Targeted treatment for wine, coffee, ink, and pet accidents using specialized solutions.</p>
-                <span class="text-blue-600 font-bold text-sm">High Success Rate</span>
-            </div>
-
-            <div id="booking" class="p-8 border rounded-2xl bg-blue-600 text-white shadow-lg flex flex-col justify-center items-center text-center">
-                <i data-lucide="calendar-check" size="48" class="mb-4"></i>
-                <h3 class="text-2xl font-bold mb-2">Book Your Clean</h3>
-                <p class="mb-6 opacity-90">24/7 Booking Available for Gold Coast residents.</p>
-                <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold w-full hover:bg-blue-50">Secure Your Slot</button>
-            </div>
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+            <i data-lucide="wind" class="text-blue-600 mb-2"></i>
+            <h3 class="font-bold text-xl">Carpet Cleaning</h3>
+            <p class="text-gray-600">Heavy-duty steam cleaning & stain removal.</p>
         </div>
     </section>
-
-    <section class="bg-slate-100 py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-4">Service Locations</h2>
-            <p class="text-gray-600 mb-6">We provide mobile cleaning services across the entire Gold Coast including:</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm text-sm border">Surfers Paradise</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm text-sm border">Broadbeach</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm text-sm border">Burleigh Heads</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm text-sm border">Robina</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm text-sm border">Southport</span>
-                <span class="bg-white px-4 py-2 rounded-full shadow-sm text-sm border">Coolangatta</span>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-white py-12 px-6 text-center">
-        <div class="flex items-center justify-center gap-2 text-blue-400 font-bold text-xl mb-4">
-            <i data-lucide="droplets"></i>
-            <span>EcoShield Cleaning</span>
-        </div>
-        <p class="text-gray-400">© 2024 EcoShield Cleaning Services Gold Coast.</p>
-        <p class="text-gray-500 text-sm mt-2 font-mono uppercase tracking-widest">Always Professional • Always Reliable</p>
-    </footer>
 
     <script>
-        lucide.createIcons();
+        // Use a slightly different initialization for icons to be safe
+        window.addEventListener('load', function() {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
     </script>
 </body>
 </html>
