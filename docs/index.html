@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoShield Cleaning Services | Gold Coast's Trusted Cleaners</title>
-    <meta name="description" content="Professional steam cleaning services on the Gold Coast. Same day booking, 24/7 emergency service. 5-star rated.">
+    <meta name="description" content="Professional upholstery and furniture cleaning services on the Gold Coast. Same day booking, 24/7 emergency service. 5-star rated.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,10 +24,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            light: '#e0f2fe',   /* Very light blue */
-                            DEFAULT: '#0284c7', /* Coastal Blue */
-                            dark: '#0c4a6e',    /* Deep Ocean */
-                            accent: '#fbbf24',  /* Gold/Sun accent */
+                            light: '#e0f2fe',
+                            DEFAULT: '#0284c7',
+                            dark: '#0c4a6e',
+                            accent: '#fbbf24',
                         }
                     },
                     fontFamily: {
@@ -40,7 +40,6 @@
     </script>
 
     <style>
-        /* Custom Utilities */
         .accordion-content {
             transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
             max-height: 0;
@@ -57,7 +56,6 @@
             transform: rotate(180deg);
         }
         
-        /* Popup Animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
@@ -66,7 +64,6 @@
             animation: fadeIn 0.3s ease-out forwards;
         }
 
-        /* Image Hover Zoom */
         .img-zoom-container {
             overflow: hidden;
         }
@@ -75,6 +72,13 @@
         }
         .img-zoom-container:hover img {
             transform: scale(1.05);
+        }
+
+        .review-card {
+            transition: transform 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -104,7 +108,6 @@
     <!-- Navigation -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-2 group">
                 <div class="bg-brand text-white p-2 rounded-lg group-hover:bg-brand-dark transition">
                     <i data-lucide="shield-check" class="w-6 h-6"></i>
@@ -115,28 +118,25 @@
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
                 <a href="#services" class="hover:text-brand transition">Services</a>
-                <a href="#results" class="hover:text-brand transition">Our Results</a>
-                <a href="#about" class="hover:text-brand transition">About</a>
+                <a href="#reviews" class="hover:text-brand transition">Reviews</a>
+                <a href="#process" class="hover:text-brand transition">Our Process</a>
                 <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-brand/30 flex items-center gap-2">
                     <i data-lucide="phone-call" class="w-4 h-4"></i> Book Now
                 </a>
             </nav>
 
-            <!-- Mobile Menu Button -->
             <button class="md:hidden text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4 absolute w-full shadow-lg">
             <div class="flex flex-col gap-4 font-medium">
                 <a href="#services" class="block py-2 hover:text-brand">Services</a>
-                <a href="#results" class="block py-2 hover:text-brand">Our Results</a>
-                <a href="#about" class="block py-2 hover:text-brand">About</a>
+                <a href="#reviews" class="block py-2 hover:text-brand">Reviews</a>
+                <a href="#process" class="block py-2 hover:text-brand">Process</a>
                 <a href="tel:0416013145" class="bg-brand text-white text-center py-3 rounded-lg font-bold">Call 0416 013 145</a>
             </div>
         </div>
@@ -145,42 +145,264 @@
     <!-- Hero Section -->
     <section class="relative bg-brand-light overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1581578731117-104f2a8d275d?q=80&w=2070&auto=format&fit=crop" alt="Clean Living Room" class="w-full h-full object-cover opacity-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=2070&auto=format&fit=crop" alt="Clean Living Room" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
         </div>
         
         <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-sm text-brand-dark text-sm font-semibold mb-6 border border-brand-light">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    Same Day Booking Available in Gold Coast
-                </div>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">
-                    Restore Your Home's <br>
-                    <span class="text-brand">Freshness & Hygiene</span>
-                </h2>
-                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                    Many years in business with 5-star local Gold Coast reviews. We specialize in deep steam cleaning for carpets, couches, and mattresses. Eco-friendly, safe for pets, and incredibly effective.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white text-center px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl shadow-brand/20 flex items-center justify-center gap-2">
-                        <i data-lucide="calendar-check" class="w-5 h-5"></i> Book 24/7 Service
-                    </a>
-                    <a href="#services" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
-                        View Services
-                    </a>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-sm text-brand-dark text-sm font-semibold mb-6 border border-brand-light">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Same Day Booking Available in Gold Coast
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+                        Expert <span class="text-brand">Upholstery & Furniture Cleaning</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Many years in business with 5-star local Gold Coast reviews. We provide expert care for all types of fabric including cotton, linen, microfibre & synthetic, leather, silk & delicate materials.
+                    </p>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg mb-8 border border-slate-100">
+                        <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i data-lucide="check-circle" class="text-brand w-5 h-5"></i>
+                            We Clean All Furniture Types:
+                        </h4>
+                        <div class="grid grid-cols-2 gap-2 text-sm text-slate-600">
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Sofas & Couches</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Armchairs & Recliners</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Office Furniture</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Mattresses</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Cushions & Pillows</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Ottomans & Benches</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Leather Furniture</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Antique Furniture</div>
+                            <div class="flex items-center gap-2"><i data-lucide="dot" class="w-4 h-4 text-brand"></i> Fabric Sectionals</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white text-center px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl shadow-brand/20 flex items-center justify-center gap-2">
+                            <i data-lucide="calendar-check" class="w-5 h-5"></i> Book 24/7 Service
+                        </a>
+                        <a href="#services" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
+                            View Services
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="mt-10 flex items-center gap-6 text-sm text-slate-500 font-medium">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Fully Insured
+                <div class="hidden md:grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Professional Cleaner Working" class="rounded-xl shadow-lg w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1527512860163-54096a80a7f7?q=80&w=800&auto=format&fit=crop" alt="Carpet Cleaning" class="rounded-xl shadow-lg w-full h-64 object-cover">
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Eco-Friendly Products
+                    <div class="space-y-4 pt-8">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" alt="Couch Cleaning" class="rounded-xl shadow-lg w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=800&auto=format&fit=crop" alt="Mattress Cleaning" class="rounded-xl shadow-lg w-full h-48 object-cover">
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Satisfaction Guaranteed
+                </div>
+            </div>
+            
+            <div class="mt-12 flex flex-wrap items-center gap-6 text-sm text-slate-500 font-medium">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Fully Insured
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Eco-Friendly Products
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Satisfaction Guaranteed
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="text-brand w-5 h-5"></i> Gold Coast Locals
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Customer Reviews</h3>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">What Gold Coast Locals Say</h2>
+                <p class="text-slate-600">Many years in business with 5-star local Gold Coast reviews. Read what our satisfied customers have to say.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
                     </div>
+                    <p class="text-slate-600 mb-6 italic">"Absolutely fantastic service! They cleaned our 3-seater couch that had seen better days. The stains are gone and it smells fresh. Best cleaning service on the Gold Coast!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">SM</div>
+                        <div>
+                            <p class="font-bold text-slate-800">Sarah Mitchell</p>
+                            <p class="text-sm text-slate-500">Surfers Paradise, Gold Coast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Called them for emergency carpet cleaning after a wine spill. They arrived within 2 hours and completely removed the stain. Highly recommend EcoShield!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">JT</div>
+                        <div>
+                            <p class="font-bold text-slate-800">James Thompson</p>
+                            <p class="text-sm text-slate-500">Broadbeach, Gold Coast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Professional, punctual and thorough. They cleaned all our furniture including our antique leather chairs. The conditioning treatment made them look brand new!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">EW</div>
+                        <div>
+                            <p class="font-bold text-slate-800">Emma Wilson</p>
+                            <p class="text-sm text-slate-500">Southport, Gold Coast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Had my mattresses cleaned and the difference is incredible. No more dust mites and my allergies have improved. Worth every penny!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">MD</div>
+                        <div>
+                            <p class="font-bold text-slate-800">Michael Davis</p>
+                            <p class="text-sm text-slate-500">Burleigh Heads, Gold Coast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Excellent service for our office furniture. The team was professional and efficient. Our clients have even commented on how fresh our waiting area smells now!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">LC</div>
+                        <div>
+                            <p class="font-bold text-slate-800">Lisa Chen</p>
+                            <p class="text-sm text-slate-500">Robina, Gold Coast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Best upholstery cleaners on the Gold Coast! They handled my delicate silk cushions with such care. The fabric analysis they do really shows their expertise."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">RB</div>
+                        <div>
+                            <p class="font-bold text-slate-800">Robert Brown</p>
+                            <p class="text-sm text-slate-500">Palm Beach, Gold Coast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center gap-4 bg-brand-light px-6 py-4 rounded-xl">
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="star" class="w-6 h-6 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-brand-accent text-brand-accent"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-brand-accent text-brand-accent"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-bold text-brand-dark">4.9/5 Average Rating</p>
+                        <p class="text-sm text-slate-600">Based on 200+ Gold Coast Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Cleaning Process Section -->
+    <section id="process" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Process</h3>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">How We Clean Your Furniture</h2>
+                <p class="text-slate-600">Our comprehensive 4-step cleaning process ensures the best results for all fabric types.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg border border-slate-100">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand">1</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-3">Fabric Analysis</h4>
+                    <p class="text-slate-600 text-sm">We identify your fabric type (cotton, linen, microfibre, leather, silk, or delicate) to determine the safest cleaning method.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg border border-slate-100">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand">2</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-3">Pre-Treatment</h4>
+                    <p class="text-slate-600 text-sm">Specialized solutions are applied to break down dirt, stains, and oils before the main cleaning process begins.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg border border-slate-100">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand">3</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-3">Deep Cleaning</h4>
+                    <p class="text-slate-600 text-sm">Hot water extraction removes embedded dirt, allergens, and bacteria from deep within the fabric fibers.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg border border-slate-100">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand">4</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-3">Protection</h4>
+                    <p class="text-slate-600 text-sm">We apply protective treatments including Scotchgard to guard against future stains and extend furniture life.</p>
                 </div>
             </div>
         </div>
@@ -190,7 +412,7 @@
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Expertise</h3>
+                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Services</h3>
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Premium Cleaning Services</h2>
                 <p class="text-slate-600">Click on a service below to learn more about our process and see examples of our work.</p>
             </div>
@@ -211,15 +433,16 @@
                         <div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
                             <div class="text-slate-600 space-y-3">
                                 <p>Revitalize your lounge suite. Our hot water extraction method removes deep-seated dirt, allergens, and stubborn stains from fabric upholstery.</p>
+                                <p class="font-semibold text-brand-dark">Fabric Types: Cotton, Linen, Microfibre, Synthetic</p>
                                 <ul class="space-y-2 text-sm">
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Removes 99% of bacteria</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Fast drying time</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Safe for children and pets</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Free Scotchgard included</li>
                                 </ul>
                             </div>
                             <div class="h-48 md:h-full rounded-lg overflow-hidden img-zoom-container relative">
-                                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop" alt="Couch Cleaning" class="w-full h-full object-cover">
-                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Steam Clean</div>
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop" alt="Green Couch Cleaning" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -244,11 +467,11 @@
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> High-pressure extraction</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Deodorizing treatment included</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Spot treatment for tough stains</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Free Scotchgard included</li>
                                 </ul>
                             </div>
                             <div class="h-48 md:h-full rounded-lg overflow-hidden img-zoom-container relative">
                                 <img src="https://images.unsplash.com/photo-1527512860163-54096a80a7f7?q=80&w=2069&auto=format&fit=crop" alt="Carpet Cleaning" class="w-full h-full object-cover">
-                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Deep Clean</div>
                             </div>
                         </div>
                     </div>
@@ -273,11 +496,11 @@
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Dust mite elimination</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Sanitization</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Fresh scent finish</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Free Scotchgard included</li>
                                 </ul>
                             </div>
                             <div class="h-48 md:h-full rounded-lg overflow-hidden img-zoom-container relative">
                                 <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=2070&auto=format&fit=crop" alt="Mattress Cleaning" class="w-full h-full object-cover">
-                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Sanitize</div>
                             </div>
                         </div>
                     </div>
@@ -298,15 +521,16 @@
                         <div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
                             <div class="text-slate-600 space-y-3">
                                 <p>Protect your investment. We gently clean leather surfaces and apply a premium conditioner to prevent cracking and fading.</p>
+                                <p class="font-semibold text-brand-dark">Specialty: Leather & Delicate Fabrics</p>
                                 <ul class="space-y-2 text-sm">
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> pH balanced cleaners</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> UV protection</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Restores natural shine</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Free Scotchgard included</li>
                                 </ul>
                             </div>
                             <div class="h-48 md:h-full rounded-lg overflow-hidden img-zoom-container relative">
                                 <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop" alt="Leather Sofa" class="w-full h-full object-cover">
-                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Condition</div>
                             </div>
                         </div>
                     </div>
@@ -331,11 +555,11 @@
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Organic stain removal</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Pet urine neutralizer</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Color-safe bleaching</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Free Scotchgard included</li>
                                 </ul>
                             </div>
                             <div class="h-48 md:h-full rounded-lg overflow-hidden img-zoom-container relative">
                                 <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" alt="Stain Removal" class="w-full h-full object-cover">
-                                <div class="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Spot Clean</div>
                             </div>
                         </div>
                     </div>
@@ -350,7 +574,7 @@
         </div>
     </section>
 
-    <!-- Results Gallery (Before/After) -->
+    <!-- Results Gallery -->
     <section id="results" class="py-20 bg-slate-900 text-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
@@ -364,47 +588,30 @@
                 </a>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1: Couch -->
-                <div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop" alt="Clean Couch" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1: Couch Before/After -->
+                <div class="group relative rounded-xl overflow-hidden aspect-video cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop" alt="Clean Couch Result" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
                     <div class="absolute bottom-0 left-0 p-6">
                         <div class="flex items-center gap-2 mb-2">
                             <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">AFTER</span>
                         </div>
                         <h4 class="text-xl font-bold">Lounge Suite Restoration</h4>
-                        <p class="text-slate-300 text-sm mt-1">Removed deep dust and allergens.</p>
-                    </div>
-                    <!-- Simulated Before Label for effect -->
-                    <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">
-                        View Transformation
+                        <p class="text-slate-300 text-sm mt-1">Removed deep dust and allergens. Free Scotchgard applied.</p>
                     </div>
                 </div>
 
-                <!-- Card 2: Cleaner at Work -->
-                <div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1581578731117-104f2a8d275d?q=80&w=2070&auto=format&fit=crop" alt="Professional Cleaner" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="bg-brand text-white text-xs font-bold px-2 py-1 rounded">PROFESSIONAL</span>
-                        </div>
-                        <h4 class="text-xl font-bold">Expert Technicians</h4>
-                        <p class="text-slate-300 text-sm mt-1">Trained, insured, and uniformed staff.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3: Deep Cleaned Carpet -->
-                <div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1527512860163-54096a80a7f7?q=80&w=2069&auto=format&fit=crop" alt="Clean Carpet" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                <!-- Card 2: Carpet Deep Clean -->
+                <div class="group relative rounded-xl overflow-hidden aspect-video cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1527512860163-54096a80a7f7?q=80&w=2069&auto=format&fit=crop" alt="Clean Carpet Result" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
                     <div class="absolute bottom-0 left-0 p-6">
                         <div class="flex items-center gap-2 mb-2">
                             <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">AFTER</span>
                         </div>
                         <h4 class="text-xl font-bold">Carpet Deep Clean</h4>
-                        <p class="text-slate-300 text-sm mt-1">Extracted years of ground-in dirt.</p>
+                        <p class="text-slate-300 text-sm mt-1">Extracted years of ground-in dirt. Deodorized and protected.</p>
                     </div>
                 </div>
             </div>
@@ -439,7 +646,7 @@
                         <span class="text-xl font-bold">EcoShield</span>
                     </div>
                     <p class="text-sm leading-relaxed max-w-sm">
-                        Gold Coast's trusted cleaning professionals. Dedicated to providing high-quality, eco-friendly cleaning services for your home and business.
+                        Gold Coast's trusted upholstery and furniture cleaning professionals. Dedicated to providing high-quality, eco-friendly cleaning services for your home and business.
                     </p>
                 </div>
                 <div>
@@ -462,7 +669,7 @@
                         <li><a href="#" class="hover:text-brand transition">Couch Cleaning</a></li>
                         <li><a href="#" class="hover:text-brand transition">Carpet Cleaning</a></li>
                         <li><a href="#" class="hover:text-brand transition">Mattress Cleaning</a></li>
-                        <li><a href="#" class="hover:text-brand transition">Stain Removal</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Leather Care</a></li>
                     </ul>
                 </div>
             </div>
@@ -475,7 +682,6 @@
     <!-- Special Offer Popup -->
     <div id="offer-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
-            <!-- Close Button -->
             <button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 bg-slate-100 rounded-full p-1 transition">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
@@ -488,7 +694,7 @@
             <div class="p-8 text-center">
                 <p class="text-slate-600 mb-6">Book any service this week and receive:</p>
                 <div class="bg-brand-light text-brand-dark p-4 rounded-lg font-bold text-lg mb-6 border border-brand/20">
-                    15% OFF + Free Disinfectant Spray & Deodoriser
+                    15% OFF + Free Scotchgard + Free Disinfectant Spray & Deodoriser
                 </div>
                 <p class="text-xs text-slate-500 mb-6">*Valid for limited time only. Gold Coast area.</p>
                 <a href="tel:0416013145" onclick="closePopup()" class="block w-full bg-brand hover:bg-brand-dark text-white font-bold py-3 rounded-lg transition">
@@ -500,15 +706,12 @@
 
     <!-- Scripts -->
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Accordion Logic
         function toggleAccordion(id, button) {
             const content = document.getElementById(id);
             const icon = button.querySelector('.rotate-icon');
             
-            // Close all other accordions (optional, for 'accordion' behavior vs 'toggle' behavior)
             document.querySelectorAll('.accordion-content').forEach(el => {
                 if (el.id !== id) {
                     el.style.maxHeight = null;
@@ -517,7 +720,6 @@
                 }
             });
 
-            // Toggle current
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
                 content.classList.remove('active');
@@ -529,7 +731,6 @@
             }
         }
 
-        // Popup Logic
         const popup = document.getElementById('offer-popup');
         
         function showPopup() {
@@ -538,18 +739,15 @@
 
         function closePopup() {
             popup.classList.add('hidden');
-            // Optional: Set a cookie/localStorage to not show again for 24h
             localStorage.setItem('popupClosed', 'true');
         }
 
-        // Show popup after 3 seconds if not previously closed
         setTimeout(() => {
             if (!localStorage.getItem('popupClosed')) {
                 showPopup();
             }
         }, 3000);
 
-        // Close on outside click
         popup.addEventListener('click', (e) => {
             if (e.target === popup) {
                 closePopup();
