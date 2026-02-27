@@ -1,5 +1,5 @@
 {
-  "name": "ecoshield-site",
+  "name": "ecoshield-cleaning",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,11 +11,13 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "framer-motion": "^11.0.0",
     "lucide-react": "^0.474.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
     "vite": "^5.4.0"
   }
 }
