@@ -1,1097 +1,1202 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoShield Cleaning Services | Gold Coast's Trusted Cleaners</title>
-    <meta name="description" content="Professional upholstery and furniture cleaning services on the Gold Coast. 10+ years experience, 1000+ happy customers. Australian owned and operated.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config for Brand Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            light: '#e0f2fe',
-                            DEFAULT: '#0284c7',
-                            dark: '#0c4a6e',
-                            accent: '#fbbf24',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        .accordion-content {
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .accordion-content.active {
-            opacity: 1;
-        }
-        .rotate-icon {
-            transition: transform 0.3s ease;
-        }
-        .rotate-icon.active {
-            transform: rotate(180deg);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        .popup-animate {
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.4); }
-            50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.8); }
-        }
-        .pulse-glow {
-            animation: pulse-glow 2s infinite;
-        }
-
-        @keyframes slide-down {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-        .slide-down {
-            animation: slide-down 0.5s ease-out forwards;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-        }
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-        .img-zoom-container:hover img {
-            transform: scale(1.05);
-        }
-
-        .review-card {
-            transition: transform 0.3s ease;
-        }
-        .review-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-card {
-            transition: all 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Background overlay for hero section */
-        .hero-bg-overlay {
-            position: absolute;
-            inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1581578731117-104f2a8d275d?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-            pointer-events: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoShield Cleaning Services | Gold Coast's Trusted Cleaners</title>
+<meta name="description" content="Professional upholstery and furniture cleaning services on the Gold Coast. 10+ years experience, 1000+ happy customers. Australian owned and operated.">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Custom Config for Brand Colors -->
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+brand: {
+light: '#e0f2fe',
+DEFAULT: '#0284c7',
+dark: '#0c4a6e',
+accent: '#fbbf24',
+}
+},
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+serif: ['Playfair Display', 'serif'],
+}
+}
+}
+}
+</script>
+<style>
+.accordion-content {
+transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+max-height: 0;
+opacity: 0;
+overflow: hidden;
+}
+.accordion-content.active {
+opacity: 1;
+}
+.rotate-icon {
+transition: transform 0.3s ease;
+}
+.rotate-icon.active {
+transform: rotate(180deg);
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: scale(0.95); }
+to { opacity: 1; transform: scale(1); }
+}
+.popup-animate {
+animation: fadeIn 0.4s ease-out forwards;
+}
+@keyframes pulse-glow {
+0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.4); }
+50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.8); }
+}
+.pulse-glow {
+animation: pulse-glow 2s infinite;
+}
+@keyframes slide-down {
+from { transform: translateY(-100%); }
+to { transform: translateY(0); }
+}
+.slide-down {
+animation: slide-down 0.5s ease-out forwards;
+}
+.img-zoom-container {
+overflow: hidden;
+}
+.img-zoom-container img {
+transition: transform 0.5s ease;
+}
+.img-zoom-container:hover img {
+transform: scale(1.05);
+}
+.review-card {
+transition: transform 0.3s ease;
+}
+.review-card:hover {
+transform: translateY(-5px);
+}
+.stat-card {
+transition: all 0.3s ease;
+}
+.stat-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.hero-bg-overlay {
+position: absolute;
+inset: 0;
+background-image: url('https://image.qwenlm.ai/public_source/bf632072-1092-4d34-b871-21364dd21f6f/18110022b-ab26-4029-9330-896bc5faaaf3.png');
+background-size: cover;
+background-position: center;
+opacity: 0.08;
+z-index: 0;
+pointer-events: none;
+}
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+.float-animation {
+animation: float 3s ease-in-out infinite;
+}
+</style>
 </head>
 <body class="font-sans text-slate-700 bg-slate-50 antialiased selection:bg-brand selection:text-white">
+<!-- Special Offer Banner - TOP OF HOMEPAGE -->
+<div class="bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent text-brand-dark py-4 px-4 relative z-50 slide-down">
+<div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-3 text-center">
+<div class="flex items-center gap-3">
+<i data-lucide="gift" class="w-6 h-6 text-brand-dark"></i>
+<span class="font-bold text-lg">🎉 15% OFF Special Offer - Limited Time Only!</span>
+</div>
+<span class="hidden md:inline text-brand-dark/60">|</span>
+<div class="flex items-center gap-2">
+<i data-lucide="check-circle" class="w-4 h-4 text-brand-dark"></i>
+<span class="font-medium text-sm">* Free Scotchgard, Disinfectant & Deodoriser on all services</span>
+</div>
+<a href="tel:0416013145" class="bg-brand-dark text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-brand transition whitespace-nowrap">
+Call Now: 0416 013 145
+</a>
+</div>
+</div>
+<!-- Top Announcement Bar -->
+<div class="bg-brand-dark text-white text-sm py-3 px-4 relative z-40">
+<div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
+<div class="flex items-center justify-center gap-6 flex-wrap">
+<span class="flex items-center gap-2 font-semibold text-brand-accent">
+<i data-lucide="star" class="w-4 h-4 fill-brand-accent"></i> 5-Star Local Gold Coast Reviews
+</span>
+<span class="hidden md:inline text-slate-400">|</span>
+<span class="flex items-center gap-2">
+<i data-lucide="clock" class="w-4 h-4"></i> Emergency 24/7 Service
+</span>
+<span class="hidden md:inline text-slate-400">|</span>
+<span class="flex items-center gap-2">
+<i data-lucide="award" class="w-4 h-4"></i> 10+ Years Experience
+</span>
+<span class="hidden md:inline text-slate-400">|</span>
+<span class="flex items-center gap-2">
+<i data-lucide="flag" class="w-4 h-4"></i> Australian Owned & Operated
+</span>
+</div>
+<div class="flex items-center justify-center gap-4 flex-wrap">
+<a href="tel:0416013145" class="hover:text-brand-accent transition flex items-center gap-2 font-bold bg-white/10 px-4 py-1.5 rounded-full">
+<i data-lucide="phone" class="w-4 h-4"></i> 0416 013 145
+</a>
+<span class="bg-brand-accent text-brand-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide pulse-glow">Free Quotes</span>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="flex items-center gap-3 group">
+<img src="https://image.qwenlm.ai/public_source/3125371a-3144-4654-a090-d98a09f11c20/1ffe8f579-c0fe-4d6d-86a4-25efbfd64d33.png" alt="EcoShield Logo" class="w-14 h-14 object-contain">
+<div>
+<h1 class="text-2xl font-bold text-brand-dark leading-none tracking-tight">EcoShield</h1>
+<span class="text-xs text-slate-500 font-medium tracking-widest uppercase">Cleaning Services</span>
+</div>
+</a>
+<nav class="hidden lg:flex items-center gap-8 font-medium text-slate-600">
+<a href="#about" class="hover:text-brand transition">About Us</a>
+<a href="#why-us" class="hover:text-brand transition">Why Us</a>
+<a href="#services" class="hover:text-brand transition">Services</a>
+<a href="#reviews" class="hover:text-brand transition">Reviews</a>
+<a href="#contact" class="hover:text-brand transition">Contact</a>
+<a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-brand/30 flex items-center gap-2">
+<i data-lucide="phone-call" class="w-4 h-4"></i> Book Now
+</a>
+</nav>
+<button class="lg:hidden text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<i data-lucide="menu" class="w-7 h-7"></i>
+</button>
+</div>
+<div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 p-4 absolute w-full shadow-lg">
+<div class="flex flex-col gap-4 font-medium">
+<a href="#about" class="block py-2 hover:text-brand">About Us</a>
+<a href="#why-us" class="block py-2 hover:text-brand">Why Us</a>
+<a href="#services" class="block py-2 hover:text-brand">Services</a>
+<a href="#reviews" class="block py-2 hover:text-brand">Reviews</a>
+<a href="#contact" class="block py-2 hover:text-brand">Contact</a>
+<a href="tel:0416013145" class="bg-brand text-white text-center py-3 rounded-lg font-bold">Call 0416 013 145</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-brand-light via-white to-white overflow-hidden">
+<div class="hero-bg-overlay"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-light/50 to-transparent"></div>
+<div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md text-brand-dark text-sm font-semibold mb-6 border border-brand-light">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+Same Day Booking Available in Gold Coast
+</div>
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+Expert <span class="text-brand">Upholstery & Furniture Cleaning</span>
+</h2>
+<p class="text-lg text-slate-600 mb-8 leading-relaxed">
+10+ years in business with 1000+ happy Gold Coast customers. Australian owned and operated. We provide expert care for all types of fabric including cotton, linen, microfibre, synthetic, leather, silk & delicate materials.
+</p>
+<!-- Trust Badges -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
+<div class="text-3xl font-bold text-brand mb-1">10+</div>
+<div class="text-xs text-slate-500">Years Experience</div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
+<div class="text-3xl font-bold text-brand mb-1">1000+</div>
+<div class="text-xs text-slate-500">Happy Customers</div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
+<div class="text-3xl font-bold text-brand mb-1">100%</div>
+<div class="text-xs text-slate-500">Satisfaction Guaranteed</div>
+</div>
+<div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
+<div class="text-3xl font-bold text-brand mb-1">24/7</div>
+<div class="text-xs text-slate-500">Emergency Service</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
+<a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white text-center px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl shadow-brand/30 flex items-center justify-center gap-2">
+<i data-lucide="calendar-check" class="w-5 h-5"></i> Book 24/7 Service
+</a>
+<a href="#contact" class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 text-center px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
+<i data-lucide="file-text" class="w-5 h-5"></i> Get Free Quote
+</a>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
+<i data-lucide="shield-check" class="text-brand w-4 h-4"></i> Fully Insured
+</div>
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
+<i data-lucide="leaf" class="text-brand w-4 h-4"></i> Eco-Friendly
+</div>
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
+<i data-lucide="heart" class="text-brand w-4 h-4"></i> Pet & Kids Safe
+</div>
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
+<i data-lucide="flag" class="text-brand w-4 h-4"></i> Australian Owned
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800&auto=format&fit=crop" alt="Professional Cleaner at Work" class="w-full h-48 object-cover">
+</div>
+<div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" alt="Clean Couch" class="w-full h-56 object-cover">
+</div>
+</div>
+<div class="space-y-4 pt-8">
+<div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
+<img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=800&auto=format&fit=crop" alt="Clean Mattress" class="w-full h-48 object-cover">
+</div>
+<div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
+<img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Clean Leather Furniture" class="w-full h-56 object-cover">
+</div>
+</div>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-4 border border-slate-100">
+<div class="flex items-center gap-3">
+<div class="bg-green-100 p-2 rounded-full">
+<i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+</div>
+<div>
+<div class="font-bold text-slate-800">5-Star Rated</div>
+<div class="text-xs text-slate-500">Gold Coast Locals</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Special Offer Banner - TOP OF HOMEPAGE -->
-    <div class="bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent text-brand-dark py-4 px-4 relative z-50 slide-down">
-        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-3 text-center">
-            <div class="flex items-center gap-3">
-                <i data-lucide="gift" class="w-6 h-6 text-brand-dark"></i>
-                <span class="font-bold text-lg">🎉 15% OFF Special Offer - Limited Time Only!</span>
-            </div>
-            <span class="hidden md:inline text-brand-dark/60">|</span>
-            <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-brand-dark"></i>
-                <span class="font-medium text-sm">* Free Scotchgard, Disinfectant & Deodoriser on all services</span>
-            </div>
-            <a href="tel:0416013145" class="bg-brand-dark text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-brand transition whitespace-nowrap">
-                Call Now: 0416 013 145
-            </a>
-        </div>
-    </div>
+<!-- About Us Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-flex items-center gap-2 bg-brand-light px-4 py-2 rounded-full text-brand-dark text-sm font-semibold mb-6">
+<i data-lucide="building" class="w-4 h-4"></i>
+About EcoShield Cleaning Services
+</div>
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">
+Serving Gold Coast Since <span class="text-brand">2015</span>
+</h2>
+<p class="text-lg text-slate-600 mb-6 leading-relaxed">
+EcoShield Cleaning Services was founded in 2015 with a simple mission: to provide Gold Coast families and businesses with exceptional, eco-friendly cleaning solutions they can trust. What started as a small local operation has grown into one of the region's most trusted cleaning companies.
+</p>
+<p class="text-lg text-slate-600 mb-8 leading-relaxed">
+Over the past decade, we've built our reputation on quality, reliability, and customer satisfaction. Our commitment to using environmentally safe products and cutting-edge cleaning technology has made us the preferred choice for over 1000+ happy customers across the Gold Coast.
+</p>
+<div class="grid sm:grid-cols-2 gap-4 mb-8">
+<div class="flex items-start gap-3">
+<div class="bg-brand-light p-3 rounded-xl flex-shrink-0">
+<i data-lucide="award" class="w-6 h-6 text-brand"></i>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Licensed Technicians</h4>
+<p class="text-sm text-slate-600">All our staff are fully certified and trained</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="bg-brand-light p-3 rounded-xl flex-shrink-0">
+<i data-lucide="shield-check" class="w-6 h-6 text-brand"></i>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Fully Insured</h4>
+<p class="text-sm text-slate-600">Complete coverage for your peace of mind</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="bg-brand-light p-3 rounded-xl flex-shrink-0">
+<i data-lucide="clock" class="w-6 h-6 text-brand"></i>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Quick Response</h4>
+<p class="text-sm text-slate-600">Same day service available</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="bg-brand-light p-3 rounded-xl flex-shrink-0">
+<i data-lucide="leaf" class="w-6 h-6 text-brand"></i>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Eco-Friendly</h4>
+<p class="text-sm text-slate-600">Safe for family and environment</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full font-semibold border border-green-200">
+<i data-lucide="circle-check" class="w-5 h-5"></i>
+Australian Owned
+</div>
+<div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full font-semibold border border-blue-200">
+<i data-lucide="circle-check" class="w-5 h-5"></i>
+10+ Years Experience
+</div>
+<div class="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-2 rounded-full font-semibold border border-amber-200 float-animation">
+<i data-lucide="zap" class="w-5 h-5"></i>
+Quick Response Team
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="rounded-3xl overflow-hidden shadow-2xl">
+<img src="https://image.qwenlm.ai/public_source/bf632072-1092-4d34-b871-21364dd21f6f/18110022b-ab26-4029-9330-896bc5faaaf3.png" alt="EcoShield Professional Cleaning Team" class="w-full h-auto">
+</div>
+<div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-2xl p-6 border border-slate-100 max-w-xs">
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-brand-accent p-3 rounded-full">
+<i data-lucide="phone" class="w-6 h-6 text-brand-dark"></i>
+</div>
+<div>
+<div class="font-bold text-slate-800">24/7 Emergency</div>
+<div class="text-xs text-slate-500">Help Line Available</div>
+</div>
+</div>
+<a href="tel:0416013145" class="block w-full bg-brand hover:bg-brand-dark text-white text-center py-2 rounded-lg font-bold text-sm transition">
+Call 0416 013 145
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-brand-dark text-white text-sm py-3 px-4 relative z-40">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
-            <div class="flex items-center justify-center gap-6 flex-wrap">
-                <span class="flex items-center gap-2 font-semibold text-brand-accent">
-                    <i data-lucide="star" class="w-4 h-4 fill-brand-accent"></i> 5-Star Local Gold Coast Reviews
-                </span>
-                <span class="hidden md:inline text-slate-400">|</span>
-                <span class="flex items-center gap-2">
-                    <i data-lucide="clock" class="w-4 h-4"></i> Emergency 24/7 Service
-                </span>
-                <span class="hidden md:inline text-slate-400">|</span>
-                <span class="flex items-center gap-2">
-                    <i data-lucide="award" class="w-4 h-4"></i> 10+ Years Experience
-                </span>
-                <span class="hidden md:inline text-slate-400">|</span>
-                <span class="flex items-center gap-2">
-                    <i data-lucide="flag" class="w-4 h-4"></i> Australian Owned & Operated
-                </span>
-            </div>
-            <div class="flex items-center justify-center gap-4 flex-wrap">
-                <a href="tel:0416013145" class="hover:text-brand-accent transition flex items-center gap-2 font-bold bg-white/10 px-4 py-1.5 rounded-full">
-                    <i data-lucide="phone" class="w-4 h-4"></i> 0416 013 145
-                </a>
-                <span class="bg-brand-accent text-brand-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide pulse-glow">Free Quotes</span>
-            </div>
-        </div>
-    </div>
+<!-- Why Upholstery Cleaning Section -->
+<section id="why-us" class="py-20 bg-slate-50">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Why Choose Professional Cleaning</h3>
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Why Upholstery Cleaning Matters</h2>
+<p class="text-slate-600">Regular professional cleaning isn't just about appearance—it's about health, longevity, and comfort for your entire family. Australian standards of cleanliness guaranteed.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="stat-card bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 border border-brand/20">
+<div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center mb-6">
+<i data-lucide="heart-pulse" class="w-7 h-7 text-white"></i>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Healthier Home</h4>
+<p class="text-slate-600 text-sm">Removes 99% of allergens, dust mites, and bacteria that vacuuming alone can't reach. Breathe easier today.</p>
+</div>
+<div class="stat-card bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-200">
+<div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+<i data-lucide="leaf" class="w-7 h-7 text-white"></i>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Eco-Friendly Chemicals</h4>
+<p class="text-slate-600 text-sm">We use only biodegradable, non-toxic cleaning solutions that are safe for your family and the Australian environment.</p>
+</div>
+<div class="stat-card bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-200">
+<div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+<i data-lucide="baby" class="w-7 h-7 text-white"></i>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Pet & Kids Safe</h4>
+<p class="text-slate-600 text-sm">Our products are completely safe for children and pets. No harsh chemicals, no toxic residues, just clean comfort.</p>
+</div>
+<div class="stat-card bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200">
+<div class="w-14 h-14 bg-amber-500 rounded-xl flex items-center justify-center mb-6">
+<i data-lucide="shield" class="w-7 h-7 text-white"></i>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Protects Furniture</h4>
+<p class="text-slate-600 text-sm">Regular cleaning extends the life of your furniture. Free Scotchgard protection included to guard against future stains.</p>
+</div>
+</div>
+<div class="mt-12 text-center">
+<div class="inline-flex flex-wrap justify-center items-center gap-8 bg-white rounded-2xl p-6 border border-slate-200">
+<div class="flex items-center gap-2">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+<span class="font-medium text-slate-700">Free Quote</span>
+</div>
+<div class="flex items-center gap-2">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+<span class="font-medium text-slate-700">No Hidden Fees</span>
+</div>
+<div class="flex items-center gap-2">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+<span class="font-medium text-slate-700">Same Day Service</span>
+</div>
+<div class="flex items-center gap-2">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+<span class="font-medium text-slate-700">100% Satisfaction Guaranteed</span>
+</div>
+<div class="flex items-center gap-2">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+<span class="font-medium text-slate-700">Australian Standards</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Navigation -->
-    <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="https://image.qwenlm.ai/public_source/3125371a-3144-4654-a090-d98a09f11c20/1ffe8f579-c0fe-4d6d-86a4-25efbfd64d33.png" alt="EcoShield Logo" class="w-14 h-14 object-contain">
-                <div>
-                    <h1 class="text-2xl font-bold text-brand-dark leading-none tracking-tight">EcoShield</h1>
-                    <span class="text-xs text-slate-500 font-medium tracking-widest uppercase">Cleaning Services</span>
-                </div>
-            </a>
+<!-- Customer Reviews Section -->
+<section id="reviews" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Customer Reviews</h3>
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">What Gold Coast Locals Say</h2>
+<p class="text-slate-600">1000+ happy customers locally. Many years in business with 5-star local Gold Coast reviews.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="review-card bg-slate-50 rounded-2xl p-8 shadow-lg border border-slate-100">
+<div class="flex items-center gap-1 mb-4">
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+</div>
+<p class="text-slate-600 mb-6 italic">"Absolutely fantastic service! They cleaned our 3-seater couch that had seen better days. The stains are gone and it smells fresh. Best cleaning service on the Gold Coast!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">SM</div>
+<div>
+<p class="font-bold text-slate-800">Sarah Mitchell</p>
+<p class="text-sm text-slate-500">Surfers Paradise, Gold Coast</p>
+</div>
+</div>
+</div>
+<div class="review-card bg-slate-50 rounded-2xl p-8 shadow-lg border border-slate-100">
+<div class="flex items-center gap-1 mb-4">
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+</div>
+<p class="text-slate-600 mb-6 italic">"Called them for emergency cleaning after a wine spill. They arrived within 2 hours and completely removed the stain. Highly recommend EcoShield!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">JT</div>
+<div>
+<p class="font-bold text-slate-800">James Thompson</p>
+<p class="text-sm text-slate-500">Broadbeach, Gold Coast</p>
+</div>
+</div>
+</div>
+<div class="review-card bg-slate-50 rounded-2xl p-8 shadow-lg border border-slate-100">
+<div class="flex items-center gap-1 mb-4">
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
+</div>
+<p class="text-slate-600 mb-6 italic">"Professional, punctual and thorough. They cleaned all our furniture including our antique leather chairs. The conditioning treatment made them look brand new!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">EW</div>
+<div>
+<p class="font-bold text-slate-800">Emma Wilson</p>
+<p class="text-sm text-slate-500">Southport, Gold Coast</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<div class="inline-flex items-center gap-4 bg-slate-50 px-8 py-5 rounded-2xl shadow-lg border border-slate-200">
+<div class="flex items-center gap-1">
+<i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
+<i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
+</div>
+<div class="text-left">
+<p class="font-bold text-brand-dark text-lg">4.9/5 Average Rating</p>
+<p class="text-sm text-slate-600">Based on 1000+ Gold Coast Reviews</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-            <nav class="hidden lg:flex items-center gap-8 font-medium text-slate-600">
-                <a href="#why-us" class="hover:text-brand transition">Why Us</a>
-                <a href="#services" class="hover:text-brand transition">Services</a>
-                <a href="#reviews" class="hover:text-brand transition">Reviews</a>
-                <a href="#process" class="hover:text-brand transition">Our Process</a>
-                <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-brand/30 flex items-center gap-2">
-                    <i data-lucide="phone-call" class="w-4 h-4"></i> Book Now
-                </a>
-            </nav>
+<!-- Our Cleaning Process Section -->
+<section id="process" class="py-20 bg-slate-50">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Process</h3>
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">How We Clean Your Furniture</h2>
+<p class="text-slate-600">Our comprehensive 4-step cleaning process ensures the best results for all fabric types. Australian quality standards guaranteed.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-6">
+<div class="bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 text-center shadow-lg border border-brand/20 hover:shadow-xl transition">
+<div class="w-16 h-16 bg-brand rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+<span class="text-2xl font-bold text-white">1</span>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Fabric Analysis</h4>
+<p class="text-slate-600 text-sm">We identify your fabric type (cotton, linen, microfibre, leather, silk, or delicate) to determine the safest cleaning method.</p>
+</div>
+<div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 text-center shadow-lg border border-green-200 hover:shadow-xl transition">
+<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+<span class="text-2xl font-bold text-white">2</span>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Pre-Treatment</h4>
+<p class="text-slate-600 text-sm">Specialized eco-friendly solutions are applied to break down dirt, stains, and oils before the main cleaning process begins.</p>
+</div>
+<div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 text-center shadow-lg border border-blue-200 hover:shadow-xl transition">
+<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+<span class="text-2xl font-bold text-white">3</span>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Deep Cleaning</h4>
+<p class="text-slate-600 text-sm">Hot water extraction removes embedded dirt, allergens, and bacteria from deep within the fabric fibers.</p>
+</div>
+<div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 text-center shadow-lg border border-amber-200 hover:shadow-xl transition">
+<div class="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+<span class="text-2xl font-bold text-white">4</span>
+</div>
+<h4 class="font-bold text-lg text-slate-800 mb-3">Protection</h4>
+<p class="text-slate-600 text-sm">We apply FREE Scotchgard protective treatments to guard against future stains and extend furniture life.</p>
+</div>
+</div>
+</div>
+</section>
 
-            <button class="lg:hidden text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
-        </div>
+<!-- Services Accordion Section -->
+<section id="services" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Services</h3>
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Premium Cleaning Services</h2>
+<p class="text-slate-600">Click on a service below to learn more about our process. Get a free estimate and call for booking!</p>
+</div>
+<div class="max-w-4xl mx-auto space-y-4">
+<div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service1', this)">
+<div class="flex items-center gap-4">
+<div class="bg-brand-light p-3 rounded-xl text-brand">
+<i data-lucide="armchair" class="w-6 h-6"></i>
+</div>
+<span class="text-xl font-bold text-slate-800">Steam Couch Cleaning</span>
+</div>
+<i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
+</button>
+<div id="service1" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
+<div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
+<div class="text-slate-600 space-y-4">
+<p class="font-medium text-slate-700">Revitalize your lounge suite with our professional hot water extraction method. We remove deep-seated dirt, allergens, pet dander, and stubborn stains from all fabric upholstery.</p>
+<div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
+<p class="font-semibold text-brand-dark text-sm mb-2">✓ Fabric Types We Clean:</p>
+<p class="text-sm text-slate-600">Cotton, Linen, Microfibre, Synthetic, Blends</p>
+</div>
+<ul class="space-y-2 text-sm">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Removes 99% of bacteria & allergens</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Fast drying time (2-4 hours)</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Safe for children and pets</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
+</ul>
+<div class="pt-4 border-t border-slate-200">
+<p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
+<div class="flex flex-col sm:flex-row gap-2">
+<a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
+</a>
+<a href="#contact" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
+</a>
+</div>
+</div>
+</div>
+<div class="h-56 md:h-full rounded-xl overflow-hidden img-zoom-container relative">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" alt="Professional Couch Cleaning Service" class="w-full h-full object-cover">
+<div class="absolute bottom-3 right-3 bg-brand text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+Most Popular
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service2', this)">
+<div class="flex items-center gap-4">
+<div class="bg-brand-light p-3 rounded-xl text-brand">
+<i data-lucide="layers" class="w-6 h-6"></i>
+</div>
+<span class="text-xl font-bold text-slate-800">Steam Deep Carpet Cleaning</span>
+</div>
+<i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
+</button>
+<div id="service2" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
+<div class="p-6 pt-0">
+<div class="text-slate-600 space-y-4 max-w-3xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center">
+<i data-lucide="layers" class="w-10 h-10 text-brand"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg text-slate-800">Professional Carpet Care</h4>
+<p class="text-sm text-slate-500">Australian Standards Certified</p>
+</div>
+</div>
+<p class="font-medium text-slate-700">Bring your carpets back to life! We use industrial-grade truck-mounted or portable steam cleaners to extract years of ground-in grime, restoring your carpet's original beauty.</p>
+<div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
+<p class="font-semibold text-brand-dark text-sm mb-2">✓ All Carpet Types:</p>
+<p class="text-sm text-slate-600">Wool, Nylon, Polyester, Blends, Oriental Rugs</p>
+</div>
+<ul class="grid md:grid-cols-2 gap-2 text-sm">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> High-pressure hot water extraction</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Deodorizing treatment included</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Spot treatment for tough stains</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Fast drying technology</li>
+</ul>
+<div class="pt-4 border-t border-slate-200">
+<p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
+<div class="flex flex-col sm:flex-row gap-2">
+<a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
+</a>
+<a href="#contact" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service3', this)">
+<div class="flex items-center gap-4">
+<div class="bg-brand-light p-3 rounded-xl text-brand">
+<i data-lucide="bed" class="w-6 h-6"></i>
+</div>
+<span class="text-xl font-bold text-slate-800">Mattress Cleaning</span>
+</div>
+<i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
+</button>
+<div id="service3" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
+<div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
+<div class="text-slate-600 space-y-4">
+<p class="font-medium text-slate-700">Sleep better tonight! We remove dust mites, sweat, body oils, and allergens from your mattress, extending its life and dramatically improving your bedroom air quality.</p>
+<div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
+<p class="font-semibold text-brand-dark text-sm mb-2">✓ All Mattress Types:</p>
+<p class="text-sm text-slate-600">Memory Foam, Spring, Hybrid, Pillow Top</p>
+</div>
+<ul class="space-y-2 text-sm">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Dust mite elimination (99%)</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Complete sanitization</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Fresh scent finish</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
+</ul>
+<div class="pt-4 border-t border-slate-200">
+<p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
+<div class="flex flex-col sm:flex-row gap-2">
+<a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
+</a>
+<a href="#contact" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
+</a>
+</div>
+</div>
+</div>
+<div class="h-56 md:h-full rounded-xl overflow-hidden img-zoom-container relative">
+<img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=1000&auto=format&fit=crop" alt="Professional Mattress Cleaning Service" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</div>
+<div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service4', this)">
+<div class="flex items-center gap-4">
+<div class="bg-brand-light p-3 rounded-xl text-brand">
+<i data-lucide="sparkles" class="w-6 h-6"></i>
+</div>
+<span class="text-xl font-bold text-slate-800">Leather Cleaning & Conditioning</span>
+</div>
+<i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
+</button>
+<div id="service4" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
+<div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
+<div class="text-slate-600 space-y-4">
+<p class="font-medium text-slate-700">Protect your investment! We gently clean leather surfaces and apply a premium conditioner to prevent cracking, fading, and wear. Perfect for luxury furniture and automotive interiors.</p>
+<div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
+<p class="font-semibold text-brand-dark text-sm mb-2">✓ Specialty Care:</p>
+<p class="text-sm text-slate-600">Genuine Leather, Faux Leather, Suede, Nubuck</p>
+</div>
+<ul class="space-y-2 text-sm">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> pH balanced gentle cleaners</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> UV protection treatment</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Restores natural shine & softness</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
+</ul>
+<div class="pt-4 border-t border-slate-200">
+<p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
+<div class="flex flex-col sm:flex-row gap-2">
+<a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
+</a>
+<a href="#contact" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
+</a>
+</div>
+</div>
+</div>
+<div class="h-56 md:h-full rounded-xl overflow-hidden img-zoom-container relative">
+<img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000&auto=format&fit=crop" alt="Professional Leather Chair Cleaning Service" class="w-full h-full object-cover">
+<div class="absolute bottom-3 right-3 bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+Premium Care
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service5', this)">
+<div class="flex items-center gap-4">
+<div class="bg-brand-light p-3 rounded-xl text-brand">
+<i data-lucide="droplet" class="w-6 h-6"></i>
+</div>
+<span class="text-xl font-bold text-slate-800">Specialized Stain Treatment</span>
+</div>
+<i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
+</button>
+<div id="service5" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
+<div class="p-6 pt-0">
+<div class="text-slate-600 space-y-4 max-w-3xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center">
+<i data-lucide="droplet" class="w-10 h-10 text-brand"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg text-slate-800">Expert Stain Removal</h4>
+<p class="text-sm text-slate-500">99% Success Rate</p>
+</div>
+</div>
+<p class="font-medium text-slate-700">Don't let spills ruin your furniture! We have specialized enzymes and solvents for wine, coffee, pet urine, ink, grease, and all types of stubborn stains.</p>
+<div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
+<p class="font-semibold text-brand-dark text-sm mb-2">✓ Stain Types We Remove:</p>
+<p class="text-sm text-slate-600">Wine, Coffee, Pet Urine, Ink, Grease, Food, Blood</p>
+</div>
+<ul class="grid md:grid-cols-2 gap-2 text-sm">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Organic enzyme stain removal</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Pet urine neutralizer</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Color-safe bleaching options</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Emergency stain response</li>
+</ul>
+<div class="pt-4 border-t border-slate-200">
+<p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
+<div class="flex flex-col sm:flex-row gap-2">
+<a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
+</a>
+<a href="#contact" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
+<i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-slate-50 rounded-2xl p-6 shadow-lg border border-slate-200">
+<p class="text-slate-600 font-medium">Need a custom quote for multiple items?</p>
+<a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-lg font-bold transition flex items-center gap-2">
+<i data-lucide="phone" class="w-4 h-4"></i> Call 0416 013 145
+</a>
+</div>
+</div>
+</div>
+</section>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 p-4 absolute w-full shadow-lg">
-            <div class="flex flex-col gap-4 font-medium">
-                <a href="#why-us" class="block py-2 hover:text-brand">Why Us</a>
-                <a href="#services" class="block py-2 hover:text-brand">Services</a>
-                <a href="#reviews" class="block py-2 hover:text-brand">Reviews</a>
-                <a href="#process" class="block py-2 hover:text-brand">Process</a>
-                <a href="tel:0416013145" class="bg-brand text-white text-center py-3 rounded-lg font-bold">Call 0416 013 145</a>
-            </div>
-        </div>
-    </header>
+<!-- Customer Enquiry Form Section -->
+<section id="contact" class="py-20 bg-gradient-to-br from-brand-dark to-brand">
+<div class="container mx-auto px-4">
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="text-white">
+<div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-brand-accent text-sm font-semibold mb-6">
+<i data-lucide="mail" class="w-4 h-4"></i>
+Get In Touch
+</div>
+<h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Request a Free Quote</h2>
+<p class="text-brand-light text-lg mb-8">Fill out the form and our team will get back to you within 24 hours. For urgent enquiries, call our 24/7 emergency helpline.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-3 rounded-xl">
+<i data-lucide="phone" class="w-6 h-6 text-brand-accent"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Main Contact</h4>
+<a href="tel:0416013145" class="text-2xl font-bold text-white hover:text-brand-accent transition">0416 013 145</a>
+<p class="text-brand-light text-sm">Call for bookings & enquiries</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-3 rounded-xl">
+<i data-lucide="phone-call" class="w-6 h-6 text-brand-accent"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">24/7 Emergency Helpline</h4>
+<a href="tel:0416013145" class="text-2xl font-bold text-brand-accent hover:text-white transition">0416 013 145</a>
+<p class="text-brand-light text-sm">Available anytime for emergencies</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-3 rounded-xl">
+<i data-lucide="mail" class="w-6 h-6 text-brand-accent"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Email</h4>
+<a href="mailto:ecoshieldservices.au@gmail.com" class="text-white hover:text-brand-accent transition">ecoshieldservices.au@gmail.com</a>
+<p class="text-brand-light text-sm">We respond within 24 hours</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-3 rounded-xl">
+<i data-lucide="map-pin" class="w-6 h-6 text-brand-accent"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Service Area</h4>
+<p class="text-white">Gold Coast, QLD & Surrounding Areas</p>
+<p class="text-brand-light text-sm">Same day service available</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
+<i data-lucide="clock" class="w-4 h-4 text-brand-accent"></i>
+<span>24/7 Emergency Service</span>
+</div>
+<div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
+<i data-lucide="zap" class="w-4 h-4 text-brand-accent"></i>
+<span>Quick Response</span>
+</div>
+<div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
+<i data-lucide="shield-check" class="w-4 h-4 text-brand-accent"></i>
+<span>Fully Insured</span>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-3xl p-8 shadow-2xl">
+<h3 class="text-2xl font-bold text-slate-800 mb-6">Send Us an Enquiry</h3>
+<form id="enquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+<div class="grid md:grid-cols-2 gap-5">
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
+<input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition" placeholder="John Smith">
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+<input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition" placeholder="0416 013 145">
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-5">
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+<input type="email" name="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition" placeholder="john@example.com">
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-2">Service Type *</label>
+<select name="service" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition">
+<option value="">Select a service</option>
+<option value="couch">Couch Cleaning</option>
+<option value="carpet">Carpet Cleaning</option>
+<option value="mattress">Mattress Cleaning</option>
+<option value="leather">Leather Cleaning</option>
+<option value="stain">Stain Removal</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-2">Message / Details</label>
+<textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition resize-none" placeholder="Tell us about your cleaning needs..."></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input type="checkbox" id="terms" required class="mt-1 w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand">
+<label for="terms" class="text-sm text-slate-600">I agree to receive communications from EcoShield Cleaning Services regarding my enquiry *</label>
+</div>
+<button type="submit" class="w-full bg-gradient-to-r from-brand to-brand-dark hover:from-brand-dark hover:to-brand text-white font-bold py-4 rounded-lg transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+<i data-lucide="send" class="w-5 h-5"></i>
+Submit Enquiry
+</button>
+<p class="text-xs text-slate-500 text-center">Or call us directly at <a href="tel:0416013145" class="text-brand font-bold hover:underline">0416 013 145</a> for immediate assistance</p>
+</form>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-brand-light via-white to-white overflow-hidden">
-        <!-- Transparent Background Image of Cleaners Working -->
-        <div class="hero-bg-overlay"></div>
-        
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-light/50 to-transparent"></div>
-        
-        <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md text-brand-dark text-sm font-semibold mb-6 border border-brand-light">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        Same Day Booking Available in Gold Coast
-                    </div>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">
-                        Expert <span class="text-brand">Upholstery & Furniture Cleaning</span>
-                    </h2>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        10+ years in business with 1000+ happy Gold Coast customers. Australian owned and operated. We provide expert care for all types of fabric including cotton, linen, microfibre, synthetic, leather, silk & delicate materials.
-                    </p>
-                    
-                    <!-- Trust Badges -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
-                            <div class="text-3xl font-bold text-brand mb-1">10+</div>
-                            <div class="text-xs text-slate-500">Years Experience</div>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
-                            <div class="text-3xl font-bold text-brand mb-1">1000+</div>
-                            <div class="text-xs text-slate-500">Happy Customers</div>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
-                            <div class="text-3xl font-bold text-brand mb-1">100%</div>
-                            <div class="text-xs text-slate-500">Satisfaction Guaranteed</div>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 shadow-md border border-slate-100 text-center">
-                            <div class="text-3xl font-bold text-brand mb-1">24/7</div>
-                            <div class="text-xs text-slate-500">Emergency Service</div>
-                        </div>
-                    </div>
+<!-- Results Gallery -->
+<section id="results" class="py-20 bg-slate-900 text-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h3 class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">The EcoShield Difference</h3>
+<h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Real Results</h2>
+<p class="text-slate-400 max-w-xl">See the transformation for yourself. We don't just clean surfaces; we restore them.</p>
+</div>
+<a href="tel:0416013145" class="bg-brand hover:bg-brand-light hover:text-brand-dark text-white px-6 py-3 rounded-lg font-bold transition">
+Get This Result
+</a>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="group relative rounded-2xl overflow-hidden aspect-video cursor-pointer">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop" alt="Clean Couch Result" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">AFTER</span>
+</div>
+<h4 class="text-xl font-bold">Lounge Suite Restoration</h4>
+<p class="text-slate-300 text-sm mt-1">Removed deep dust and allergens. Free Scotchgard applied.</p>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden aspect-video cursor-pointer">
+<img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1200&auto=format&fit=crop" alt="Clean Leather Furniture Result" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">AFTER</span>
+</div>
+<h4 class="text-xl font-bold">Leather Furniture Restoration</h4>
+<p class="text-slate-300 text-sm mt-1">Conditioned and protected. Restored natural shine.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white text-center px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl shadow-brand/30 flex items-center justify-center gap-2">
-                            <i data-lucide="calendar-check" class="w-5 h-5"></i> Book 24/7 Service
-                        </a>
-                        <a href="#services" class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 text-center px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
-                            <i data-lucide="file-text" class="w-5 h-5"></i> Get Free Quote
-                        </a>
-                    </div>
+<!-- Urgency / CTA Section -->
+<section class="py-20 bg-gradient-to-r from-brand to-brand-dark">
+<div class="container mx-auto px-4 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Ready for a Cleaner Home?</h2>
+<p class="text-brand-light text-lg md:text-xl mb-8">
+Same Day Booking Available in Gold Coast and surrounding areas. Don't wait for stains to set in.
+</p>
+<div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<div class="flex items-center gap-3 text-white">
+<i data-lucide="clock" class="w-6 h-6 text-brand-accent"></i>
+<span class="font-medium">10+ Years Experience</span>
+</div>
+<div class="hidden sm:block w-px h-8 bg-white/30"></div>
+<div class="flex items-center gap-3 text-white">
+<i data-lucide="users" class="w-6 h-6 text-brand-accent"></i>
+<span class="font-medium">1000+ Happy Customers</span>
+</div>
+<div class="hidden sm:block w-px h-8 bg-white/30"></div>
+<div class="flex items-center gap-3 text-white">
+<i data-lucide="award" class="w-6 h-6 text-brand-accent"></i>
+<span class="font-medium">100% Satisfaction Guaranteed</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="tel:0416013145" class="bg-white text-brand-dark hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg flex items-center justify-center gap-2">
+<i data-lucide="phone" class="w-5 h-5"></i> Call 0416 013 145
+</a>
+<a href="mailto:ecoshieldservices.au@gmail.com" class="bg-transparent text-white hover:bg-white/10 border-2 border-white px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
+<i data-lucide="mail" class="w-5 h-5"></i> Email Us
+</a>
+</div>
+</div>
+</div>
+</section>
 
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
-                        <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
-                            <i data-lucide="shield-check" class="text-brand w-4 h-4"></i> Fully Insured
-                        </div>
-                        <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
-                            <i data-lucide="leaf" class="text-brand w-4 h-4"></i> Eco-Friendly
-                        </div>
-                        <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
-                            <i data-lucide="heart" class="text-brand w-4 h-4"></i> Pet & Kids Safe
-                        </div>
-                        <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm">
-                            <i data-lucide="flag" class="text-brand w-4 h-4"></i> Australian Owned
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-4">
-                            <!-- Professional Cleaner at Work -->
-                            <div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
-                                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800&auto=format&fit=crop" alt="Professional Cleaner at Work" class="w-full h-48 object-cover">
-                            </div>
-                            <!-- Clean Couch Image -->
-                            <div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
-                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" alt="Clean Couch" class="w-full h-56 object-cover">
-                            </div>
-                        </div>
-                        <div class="space-y-4 pt-8">
-                            <!-- Clean Carpet Image -->
-                            <div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
-                                <img src="https://images.unsplash.com/photo-1527512860163-54096a80a7f7?q=80&w=800&auto=format&fit=crop" alt="Professional Carpet Cleaning" class="w-full h-48 object-cover">
-                            </div>
-                            <!-- Clean Mattress Image -->
-                            <div class="rounded-2xl overflow-hidden shadow-xl img-zoom-container">
-                                <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=800&auto=format&fit=crop" alt="Clean Mattress" class="w-full h-56 object-cover">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-4 border border-slate-100">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-green-100 p-2 rounded-full">
-                                <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-slate-800">5-Star Rated</div>
-                                <div class="text-xs text-slate-500">Gold Coast Locals</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+<div class="container mx-auto px-4">
+<div class="grid md:grid-cols-4 gap-8 mb-8">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 text-white mb-4">
+<img src="https://image.qwenlm.ai/public_source/3125371a-3144-4654-a090-d98a09f11c20/1ffe8f579-c0fe-4d6d-86a4-25efbfd64d33.png" alt="EcoShield Logo" class="w-12 h-12 object-contain">
+<span class="text-xl font-bold">EcoShield</span>
+</div>
+<p class="text-sm leading-relaxed max-w-sm mb-4">
+Gold Coast's trusted upholstery and furniture cleaning professionals. 10+ years of experience with 1000+ happy customers. Australian owned and operated.
+</p>
+<div class="flex items-center gap-3">
+<a href="#" class="w-10 h-10 bg-slate-800 hover:bg-brand rounded-lg flex items-center justify-center transition">
+<i data-lucide="facebook" class="w-5 h-5"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-slate-800 hover:bg-brand rounded-lg flex items-center justify-center transition">
+<i data-lucide="instagram" class="w-5 h-5"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-slate-800 hover:bg-brand rounded-lg flex items-center justify-center transition">
+<i data-lucide="message-circle" class="w-5 h-5"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Contact</h4>
+<ul class="space-y-3 text-sm">
+<li class="flex items-center gap-2">
+<i data-lucide="phone" class="w-4 h-4 text-brand"></i> 0416 013 145
+</li>
+<li class="flex items-center gap-2">
+<i data-lucide="phone-call" class="w-4 h-4 text-brand"></i> 24/7 Emergency: 0416 013 145
+</li>
+<li class="flex items-center gap-2">
+<i data-lucide="mail" class="w-4 h-4 text-brand"></i> ecoshieldservices.au@gmail.com
+</li>
+<li class="flex items-center gap-2">
+<i data-lucide="map-pin" class="w-4 h-4 text-brand"></i> Gold Coast, QLD
+</li>
+<li class="flex items-center gap-2">
+<i data-lucide="clock" class="w-4 h-4 text-brand"></i> 24/7 Emergency Service
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Services</h4>
+<ul class="space-y-2 text-sm">
+<li><a href="#services" class="hover:text-brand transition">Couch Cleaning</a></li>
+<li><a href="#services" class="hover:text-brand transition">Carpet Cleaning</a></li>
+<li><a href="#services" class="hover:text-brand transition">Mattress Cleaning</a></li>
+<li><a href="#services" class="hover:text-brand transition">Leather Care</a></li>
+<li><a href="#services" class="hover:text-brand transition">Stain Removal</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-900 pt-8 text-center text-xs">
+<p>&copy; 2024 EcoShield Cleaning Services. All rights reserved.</p>
+<p class="mt-2 text-slate-500">Serving Gold Coast Since 2015 | 10+ Years Experience | 1000+ Happy Customers</p>
+<p class="mt-1 text-slate-600">Australian Owned & Operated | Licensed & Fully Insured | 24/7 Emergency Service</p>
+</div>
+</div>
+</footer>
 
-    <!-- Why Upholstery Cleaning Section -->
-    <section id="why-us" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Why Choose Professional Cleaning</h3>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Why Upholstery Cleaning Matters</h2>
-                <p class="text-slate-600">Regular professional cleaning isn't just about appearance—it's about health, longevity, and comfort for your entire family. Australian standards of cleanliness guaranteed.</p>
-            </div>
+<!-- Special Offer Popup -->
+<div id="offer-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+<div class="bg-white rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
+<div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent"></div>
+<button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition z-10">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+<div class="bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent p-8 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-4 left-4 w-20 h-20 bg-white rounded-full"></div>
+<div class="absolute bottom-4 right-4 w-16 h-16 bg-white rounded-full"></div>
+</div>
+<i data-lucide="gift" class="w-16 h-16 text-brand-dark mx-auto mb-3 relative z-10"></i>
+<h3 class="text-2xl font-bold text-brand-dark relative z-10">🎉 Limited Time Offer!</h3>
+</div>
+<div class="p-8 text-center">
+<p class="text-slate-600 mb-4 text-lg">Book any service this week and receive:</p>
+<div class="bg-gradient-to-r from-brand-light to-brand/10 p-6 rounded-2xl mb-6 border-2 border-brand/30">
+<div class="text-3xl font-bold text-brand mb-2">15% OFF</div>
+<div class="text-lg font-semibold text-slate-700 mb-3">+ FREE Bonuses:</div>
+<ul class="text-sm text-slate-600 space-y-2">
+<li class="flex items-center justify-center gap-2">
+<i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+Free Scotchgard Protection
+</li>
+<li class="flex items-center justify-center gap-2">
+<i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+Free Disinfectant Spray
+</li>
+<li class="flex items-center justify-center gap-2">
+<i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+Free Deodoriser Treatment
+</li>
+</ul>
+</div>
+<p class="text-xs text-slate-500 mb-6 bg-slate-100 inline-block px-4 py-2 rounded-full">*Valid for limited time only. Gold Coast area.</p>
+<a href="tel:0416013145" onclick="closePopup()" class="block w-full bg-gradient-to-r from-brand to-brand-dark hover:from-brand-dark hover:to-brand text-white font-bold py-4 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-lg">
+<i data-lucide="phone-call" class="w-5 h-5"></i> Claim Offer Now
+</a>
+<p class="text-xs text-slate-400 mt-4">Or call 0416 013 145 to book</p>
+</div>
+</div>
+</div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="stat-card bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 border border-brand/20">
-                    <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="heart-pulse" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Healthier Home</h4>
-                    <p class="text-slate-600 text-sm">Removes 99% of allergens, dust mites, and bacteria that vacuuming alone can't reach. Breathe easier today.</p>
-                </div>
+<!-- Scripts -->
+<script>
+// Initialize Lucide Icons
+lucide.createIcons();
 
-                <div class="stat-card bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-200">
-                    <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="leaf" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Eco-Friendly Chemicals</h4>
-                    <p class="text-slate-600 text-sm">We use only biodegradable, non-toxic cleaning solutions that are safe for your family and the Australian environment.</p>
-                </div>
+// Accordion Logic
+function toggleAccordion(id, button) {
+const content = document.getElementById(id);
+const icon = button.querySelector('.rotate-icon');
+// Close all other accordions
+document.querySelectorAll('.accordion-content').forEach(el => {
+if (el.id !== id) {
+el.style.maxHeight = null;
+el.classList.remove('active');
+el.previousElementSibling.querySelector('.rotate-icon').classList.remove('active');
+}
+});
+// Toggle current
+if (content.style.maxHeight) {
+content.style.maxHeight = null;
+content.classList.remove('active');
+icon.classList.remove('active');
+} else {
+content.style.maxHeight = content.scrollHeight + "px";
+content.classList.add('active');
+icon.classList.add('active');
+}
+}
 
-                <div class="stat-card bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-200">
-                    <div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="baby" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Pet & Kids Safe</h4>
-                    <p class="text-slate-600 text-sm">Our products are completely safe for children and pets. No harsh chemicals, no toxic residues, just clean comfort.</p>
-                </div>
+// Popup Logic
+const popup = document.getElementById('offer-popup');
+function showPopup() {
+popup.classList.remove('hidden');
+}
+function closePopup() {
+popup.classList.add('hidden');
+localStorage.setItem('popupClosed', 'true');
+}
+// Show popup after 2 seconds if not previously closed
+setTimeout(() => {
+if (!localStorage.getItem('popupClosed')) {
+showPopup();
+}
+}, 2000);
+// Close on outside click
+popup.addEventListener('click', (e) => {
+if (e.target === popup) {
+closePopup();
+}
+});
 
-                <div class="stat-card bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200">
-                    <div class="w-14 h-14 bg-amber-500 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="shield" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Protects Furniture</h4>
-                    <p class="text-slate-600 text-sm">Regular cleaning extends the life of your furniture. Free Scotchgard protection included to guard against future stains.</p>
-                </div>
-            </div>
+// Header scroll effect
+window.addEventListener('scroll', () => {
+const header = document.querySelector('header');
+if (window.scrollY > 50) {
+header.classList.add('shadow-lg');
+} else {
+header.classList.remove('shadow-lg');
+}
+});
 
-            <div class="mt-12 text-center">
-                <div class="inline-flex flex-wrap justify-center items-center gap-8 bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
-                        <span class="font-medium text-slate-700">Free Quote</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
-                        <span class="font-medium text-slate-700">No Hidden Fees</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
-                        <span class="font-medium text-slate-700">Same Day Service</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
-                        <span class="font-medium text-slate-700">100% Satisfaction Guaranteed</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
-                        <span class="font-medium text-slate-700">Australian Standards</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Customer Reviews Section -->
-    <section id="reviews" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Customer Reviews</h3>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">What Gold Coast Locals Say</h2>
-                <p class="text-slate-600">1000+ happy customers locally. Many years in business with 5-star local Gold Coast reviews.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="review-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <p class="text-slate-600 mb-6 italic">"Absolutely fantastic service! They cleaned our 3-seater couch that had seen better days. The stains are gone and it smells fresh. Best cleaning service on the Gold Coast!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">SM</div>
-                        <div>
-                            <p class="font-bold text-slate-800">Sarah Mitchell</p>
-                            <p class="text-sm text-slate-500">Surfers Paradise, Gold Coast</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="review-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <p class="text-slate-600 mb-6 italic">"Called them for emergency cleaning after a wine spill. They arrived within 2 hours and completely removed the stain. Highly recommend EcoShield!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">JT</div>
-                        <div>
-                            <p class="font-bold text-slate-800">James Thompson</p>
-                            <p class="text-sm text-slate-500">Broadbeach, Gold Coast</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="review-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <p class="text-slate-600 mb-6 italic">"Professional, punctual and thorough. They cleaned all our furniture including our antique leather chairs. The conditioning treatment made them look brand new!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">EW</div>
-                        <div>
-                            <p class="font-bold text-slate-800">Emma Wilson</p>
-                            <p class="text-sm text-slate-500">Southport, Gold Coast</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="review-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <p class="text-slate-600 mb-6 italic">"Had my mattresses cleaned and the difference is incredible. No more dust mites and my allergies have improved. Worth every penny!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">MD</div>
-                        <div>
-                            <p class="font-bold text-slate-800">Michael Davis</p>
-                            <p class="text-sm text-slate-500">Burleigh Heads, Gold Coast</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="review-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <p class="text-slate-600 mb-6 italic">"Excellent service for our office furniture. The team was professional and efficient. Our clients have even commented on how fresh our waiting area smells now!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">LC</div>
-                        <div>
-                            <p class="font-bold text-slate-800">Lisa Chen</p>
-                            <p class="text-sm text-slate-500">Robina, Gold Coast</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 6 -->
-                <div class="review-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <p class="text-slate-600 mb-6 italic">"Best upholstery cleaners on the Gold Coast! They handled my delicate silk cushions with such care. The fabric analysis they do really shows their expertise."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center text-brand font-bold">RB</div>
-                        <div>
-                            <p class="font-bold text-slate-800">Robert Brown</p>
-                            <p class="text-sm text-slate-500">Palm Beach, Gold Coast</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <div class="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-lg border border-slate-200">
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
-                        <i data-lucide="star" class="w-7 h-7 fill-brand-accent text-brand-accent"></i>
-                    </div>
-                    <div class="text-left">
-                        <p class="font-bold text-brand-dark text-lg">4.9/5 Average Rating</p>
-                        <p class="text-sm text-slate-600">Based on 1000+ Gold Coast Reviews</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Cleaning Process Section -->
-    <section id="process" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Process</h3>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">How We Clean Your Furniture</h2>
-                <p class="text-slate-600">Our comprehensive 4-step cleaning process ensures the best results for all fabric types. Australian quality standards guaranteed.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 text-center shadow-lg border border-brand/20 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-brand rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <span class="text-2xl font-bold text-white">1</span>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Fabric Analysis</h4>
-                    <p class="text-slate-600 text-sm">We identify your fabric type (cotton, linen, microfibre, leather, silk, or delicate) to determine the safest cleaning method.</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 text-center shadow-lg border border-green-200 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <span class="text-2xl font-bold text-white">2</span>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Pre-Treatment</h4>
-                    <p class="text-slate-600 text-sm">Specialized eco-friendly solutions are applied to break down dirt, stains, and oils before the main cleaning process begins.</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 text-center shadow-lg border border-blue-200 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <span class="text-2xl font-bold text-white">3</span>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Deep Cleaning</h4>
-                    <p class="text-slate-600 text-sm">Hot water extraction removes embedded dirt, allergens, and bacteria from deep within the fabric fibers.</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 text-center shadow-lg border border-amber-200 hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <span class="text-2xl font-bold text-white">4</span>
-                    </div>
-                    <h4 class="font-bold text-lg text-slate-800 mb-3">Protection</h4>
-                    <p class="text-slate-600 text-sm">We apply FREE Scotchgard protective treatments to guard against future stains and extend furniture life.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Accordion Section -->
-    <section id="services" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Services</h3>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Premium Cleaning Services</h2>
-                <p class="text-slate-600">Click on a service below to learn more about our process. Get a free estimate and call for booking!</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto space-y-4">
-                <!-- Service 1: Steam Couch Cleaning -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service1', this)">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-brand-light p-3 rounded-xl text-brand">
-                                <i data-lucide="armchair" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xl font-bold text-slate-800">Steam Couch Cleaning</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
-                    </button>
-                    <div id="service1" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
-                        <div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
-                            <div class="text-slate-600 space-y-4">
-                                <p class="font-medium text-slate-700">Revitalize your lounge suite with our professional hot water extraction method. We remove deep-seated dirt, allergens, pet dander, and stubborn stains from all fabric upholstery.</p>
-                                <div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
-                                    <p class="font-semibold text-brand-dark text-sm mb-2">✓ Fabric Types We Clean:</p>
-                                    <p class="text-sm text-slate-600">Cotton, Linen, Microfibre, Synthetic, Blends</p>
-                                </div>
-                                <ul class="space-y-2 text-sm">
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Removes 99% of bacteria & allergens</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Fast drying time (2-4 hours)</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Safe for children and pets</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
-                                </ul>
-                                <div class="pt-4 border-t border-slate-200">
-                                    <p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
-                                    <div class="flex flex-col sm:flex-row gap-2">
-                                        <a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
-                                        </a>
-                                        <a href="mailto:ecoshieldservices.au@gmail.com" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="h-56 md:h-full rounded-xl overflow-hidden img-zoom-container relative">
-                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" alt="Professional Couch Cleaning Service" class="w-full h-full object-cover">
-                                <div class="absolute bottom-3 right-3 bg-brand text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                                    Most Popular
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 2: Steam Deep Carpet Cleaning (NO IMAGE - Icon Only) -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service2', this)">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-brand-light p-3 rounded-xl text-brand">
-                                <i data-lucide="layers" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xl font-bold text-slate-800">Steam Deep Carpet Cleaning</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
-                    </button>
-                    <div id="service2" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
-                        <div class="p-6 pt-0">
-                            <div class="text-slate-600 space-y-4 max-w-3xl">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center">
-                                        <i data-lucide="layers" class="w-10 h-10 text-brand"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-lg text-slate-800">Professional Carpet Care</h4>
-                                        <p class="text-sm text-slate-500">Australian Standards Certified</p>
-                                    </div>
-                                </div>
-                                <p class="font-medium text-slate-700">Bring your carpets back to life! We use industrial-grade truck-mounted or portable steam cleaners to extract years of ground-in grime, restoring your carpet's original beauty.</p>
-                                <div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
-                                    <p class="font-semibold text-brand-dark text-sm mb-2">✓ All Carpet Types:</p>
-                                    <p class="text-sm text-slate-600">Wool, Nylon, Polyester, Blends, Oriental Rugs</p>
-                                </div>
-                                <ul class="grid md:grid-cols-2 gap-2 text-sm">
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> High-pressure hot water extraction</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Deodorizing treatment included</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Spot treatment for tough stains</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Fast drying technology</li>
-                                </ul>
-                                <div class="pt-4 border-t border-slate-200">
-                                    <p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
-                                    <div class="flex flex-col sm:flex-row gap-2">
-                                        <a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
-                                        </a>
-                                        <a href="mailto:ecoshieldservices.au@gmail.com" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 3: Mattress Cleaning -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service3', this)">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-brand-light p-3 rounded-xl text-brand">
-                                <i data-lucide="bed" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xl font-bold text-slate-800">Mattress Cleaning</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
-                    </button>
-                    <div id="service3" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
-                        <div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
-                            <div class="text-slate-600 space-y-4">
-                                <p class="font-medium text-slate-700">Sleep better tonight! We remove dust mites, sweat, body oils, and allergens from your mattress, extending its life and dramatically improving your bedroom air quality.</p>
-                                <div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
-                                    <p class="font-semibold text-brand-dark text-sm mb-2">✓ All Mattress Types:</p>
-                                    <p class="text-sm text-slate-600">Memory Foam, Spring, Hybrid, Pillow Top</p>
-                                </div>
-                                <ul class="space-y-2 text-sm">
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Dust mite elimination (99%)</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Complete sanitization</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Fresh scent finish</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
-                                </ul>
-                                <div class="pt-4 border-t border-slate-200">
-                                    <p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
-                                    <div class="flex flex-col sm:flex-row gap-2">
-                                        <a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
-                                        </a>
-                                        <a href="mailto:ecoshieldservices.au@gmail.com" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="h-56 md:h-full rounded-xl overflow-hidden img-zoom-container relative">
-                                <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=1000&auto=format&fit=crop" alt="Professional Mattress Cleaning Service" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 4: Leather Cleaning & Conditioning -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service4', this)">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-brand-light p-3 rounded-xl text-brand">
-                                <i data-lucide="sparkles" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xl font-bold text-slate-800">Leather Cleaning & Conditioning</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
-                    </button>
-                    <div id="service4" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
-                        <div class="p-6 pt-0 grid md:grid-cols-2 gap-6">
-                            <div class="text-slate-600 space-y-4">
-                                <p class="font-medium text-slate-700">Protect your investment! We gently clean leather surfaces and apply a premium conditioner to prevent cracking, fading, and wear. Perfect for luxury furniture and automotive interiors.</p>
-                                <div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
-                                    <p class="font-semibold text-brand-dark text-sm mb-2">✓ Specialty Care:</p>
-                                    <p class="text-sm text-slate-600">Genuine Leather, Faux Leather, Suede, Nubuck</p>
-                                </div>
-                                <ul class="space-y-2 text-sm">
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> pH balanced gentle cleaners</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> UV protection treatment</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Restores natural shine & softness</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
-                                </ul>
-                                <div class="pt-4 border-t border-slate-200">
-                                    <p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
-                                    <div class="flex flex-col sm:flex-row gap-2">
-                                        <a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
-                                        </a>
-                                        <a href="mailto:ecoshieldservices.au@gmail.com" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="h-56 md:h-full rounded-xl overflow-hidden img-zoom-container relative">
-                                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000&auto=format&fit=crop" alt="Professional Leather Chair Cleaning Service" class="w-full h-full object-cover">
-                                <div class="absolute bottom-3 right-3 bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                                    Premium Care
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 5: Stain Treatment (NO IMAGE - Icon Only) -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition bg-white">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion('service5', this)">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-brand-light p-3 rounded-xl text-brand">
-                                <i data-lucide="droplet" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xl font-bold text-slate-800">Specialized Stain Treatment</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="rotate-icon text-slate-400 w-6 h-6"></i>
-                    </button>
-                    <div id="service5" class="accordion-content bg-gradient-to-r from-slate-50 to-white">
-                        <div class="p-6 pt-0">
-                            <div class="text-slate-600 space-y-4 max-w-3xl">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center">
-                                        <i data-lucide="droplet" class="w-10 h-10 text-brand"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-lg text-slate-800">Expert Stain Removal</h4>
-                                        <p class="text-sm text-slate-500">99% Success Rate</p>
-                                    </div>
-                                </div>
-                                <p class="font-medium text-slate-700">Don't let spills ruin your furniture! We have specialized enzymes and solvents for wine, coffee, pet urine, ink, grease, and all types of stubborn stains.</p>
-                                <div class="bg-brand-light/50 rounded-xl p-4 border border-brand/20">
-                                    <p class="font-semibold text-brand-dark text-sm mb-2">✓ Stain Types We Remove:</p>
-                                    <p class="text-sm text-slate-600">Wine, Coffee, Pet Urine, Ink, Grease, Food, Blood</p>
-                                </div>
-                                <ul class="grid md:grid-cols-2 gap-2 text-sm">
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Organic enzyme stain removal</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Pet urine neutralizer</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Color-safe bleaching options</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE Scotchgard protection included</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> <strong>FREE disinfectant spray & deodoriser</strong></li>
-                                    <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Emergency stain response</li>
-                                </ul>
-                                <div class="pt-4 border-t border-slate-200">
-                                    <p class="text-sm text-slate-500 mb-3">Ready to book? Get your free estimate now!</p>
-                                    <div class="flex flex-col sm:flex-row gap-2">
-                                        <a href="tel:0416013145" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="phone" class="w-4 h-4"></i> Call for Booking
-                                        </a>
-                                        <a href="mailto:ecoshieldservices.au@gmail.com" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-center px-4 py-3 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2">
-                                            <i data-lucide="mail" class="w-4 h-4"></i> Get Free Estimate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
-                    <p class="text-slate-600 font-medium">Need a custom quote for multiple items?</p>
-                    <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-lg font-bold transition flex items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i> Call 0416 013 145
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Gallery -->
-    <section id="results" class="py-20 bg-slate-900 text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                <div>
-                    <h3 class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">The EcoShield Difference</h3>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Real Results</h2>
-                    <p class="text-slate-400 max-w-xl">See the transformation for yourself. We don't just clean surfaces; we restore them.</p>
-                </div>
-                <a href="tel:0416013145" class="bg-brand hover:bg-brand-light hover:text-brand-dark text-white px-6 py-3 rounded-lg font-bold transition">
-                    Get This Result
-                </a>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Card 1: Couch Before/After -->
-                <div class="group relative rounded-2xl overflow-hidden aspect-video cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop" alt="Clean Couch Result" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">AFTER</span>
-                        </div>
-                        <h4 class="text-xl font-bold">Lounge Suite Restoration</h4>
-                        <p class="text-slate-300 text-sm mt-1">Removed deep dust and allergens. Free Scotchgard applied.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2: Leather Furniture Result -->
-                <div class="group relative rounded-2xl overflow-hidden aspect-video cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1200&auto=format&fit=crop" alt="Clean Leather Furniture Result" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">AFTER</span>
-                        </div>
-                        <h4 class="text-xl font-bold">Leather Furniture Restoration</h4>
-                        <p class="text-slate-300 text-sm mt-1">Conditioned and protected. Restored natural shine.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Urgency / CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-brand to-brand-dark">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Ready for a Cleaner Home?</h2>
-                <p class="text-brand-light text-lg md:text-xl mb-8">
-                    Same Day Booking Available in Gold Coast and surrounding areas. Don't wait for stains to set in.
-                </p>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <div class="flex items-center gap-3 text-white">
-                            <i data-lucide="clock" class="w-6 h-6 text-brand-accent"></i>
-                            <span class="font-medium">10+ Years Experience</span>
-                        </div>
-                        <div class="hidden sm:block w-px h-8 bg-white/30"></div>
-                        <div class="flex items-center gap-3 text-white">
-                            <i data-lucide="users" class="w-6 h-6 text-brand-accent"></i>
-                            <span class="font-medium">1000+ Happy Customers</span>
-                        </div>
-                        <div class="hidden sm:block w-px h-8 bg-white/30"></div>
-                        <div class="flex items-center gap-3 text-white">
-                            <i data-lucide="award" class="w-6 h-6 text-brand-accent"></i>
-                            <span class="font-medium">100% Satisfaction Guaranteed</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="tel:0416013145" class="bg-white text-brand-dark hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg flex items-center justify-center gap-2">
-                        <i data-lucide="phone" class="w-5 h-5"></i> Call 0416 013 145
-                    </a>
-                    <a href="mailto:ecoshieldservices.au@gmail.com" class="bg-transparent text-white hover:bg-white/10 border-2 border-white px-8 py-4 rounded-lg font-bold text-lg transition flex items-center justify-center gap-2">
-                        <i data-lucide="mail" class="w-5 h-5"></i> Email Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 text-white mb-4">
-                        <img src="https://image.qwenlm.ai/public_source/3125371a-3144-4654-a090-d98a09f11c20/1ffe8f579-c0fe-4d6d-86a4-25efbfd64d33.png" alt="EcoShield Logo" class="w-12 h-12 object-contain">
-                        <span class="text-xl font-bold">EcoShield</span>
-                    </div>
-                    <p class="text-sm leading-relaxed max-w-sm mb-4">
-                        Gold Coast's trusted upholstery and furniture cleaning professionals. 10+ years of experience with 1000+ happy customers. Australian owned and operated.
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-brand rounded-lg flex items-center justify-center transition">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-brand rounded-lg flex items-center justify-center transition">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-brand rounded-lg flex items-center justify-center transition">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Contact</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4 text-brand"></i> 0416 013 145
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="mail" class="w-4 h-4 text-brand"></i> ecoshieldservices.au@gmail.com
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-brand"></i> Gold Coast, QLD
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="clock" class="w-4 h-4 text-brand"></i> 24/7 Emergency Service
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Services</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#services" class="hover:text-brand transition">Couch Cleaning</a></li>
-                        <li><a href="#services" class="hover:text-brand transition">Carpet Cleaning</a></li>
-                        <li><a href="#services" class="hover:text-brand transition">Mattress Cleaning</a></li>
-                        <li><a href="#services" class="hover:text-brand transition">Leather Care</a></li>
-                        <li><a href="#services" class="hover:text-brand transition">Stain Removal</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-900 pt-8 text-center text-xs">
-                <p>&copy; 2024 EcoShield Cleaning Services. All rights reserved.</p>
-                <p class="mt-2 text-slate-500">10+ Years Experience | 1000+ Happy Customers | 100% Satisfaction Guaranteed</p>
-                <p class="mt-1 text-slate-600">Australian Owned & Operated | Serving Gold Coast & Surrounding Areas</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Special Offer Popup -->
-    <div id="offer-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
-            <!-- Decorative Top -->
-            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent"></div>
-            
-            <button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition z-10">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-            
-            <div class="bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent p-8 text-center relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10">
-                    <div class="absolute top-4 left-4 w-20 h-20 bg-white rounded-full"></div>
-                    <div class="absolute bottom-4 right-4 w-16 h-16 bg-white rounded-full"></div>
-                </div>
-                <i data-lucide="gift" class="w-16 h-16 text-brand-dark mx-auto mb-3 relative z-10"></i>
-                <h3 class="text-2xl font-bold text-brand-dark relative z-10">🎉 Limited Time Offer!</h3>
-            </div>
-            
-            <div class="p-8 text-center">
-                <p class="text-slate-600 mb-4 text-lg">Book any service this week and receive:</p>
-                <div class="bg-gradient-to-r from-brand-light to-brand/10 p-6 rounded-2xl mb-6 border-2 border-brand/30">
-                    <div class="text-3xl font-bold text-brand mb-2">15% OFF</div>
-                    <div class="text-lg font-semibold text-slate-700 mb-3">+ FREE Bonuses:</div>
-                    <ul class="text-sm text-slate-600 space-y-2">
-                        <li class="flex items-center justify-center gap-2">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
-                            Free Scotchgard Protection
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
-                            Free Disinfectant Spray
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
-                            Free Deodoriser Treatment
-                        </li>
-                    </ul>
-                </div>
-                <p class="text-xs text-slate-500 mb-6 bg-slate-100 inline-block px-4 py-2 rounded-full">*Valid for limited time only. Gold Coast area.</p>
-                <a href="tel:0416013145" onclick="closePopup()" class="block w-full bg-gradient-to-r from-brand to-brand-dark hover:from-brand-dark hover:to-brand text-white font-bold py-4 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-lg">
-                    <i data-lucide="phone-call" class="w-5 h-5"></i> Claim Offer Now
-                </a>
-                <p class="text-xs text-slate-400 mt-4">Or call 0416 013 145 to book</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Accordion Logic
-        function toggleAccordion(id, button) {
-            const content = document.getElementById(id);
-            const icon = button.querySelector('.rotate-icon');
-            
-            // Close all other accordions
-            document.querySelectorAll('.accordion-content').forEach(el => {
-                if (el.id !== id) {
-                    el.style.maxHeight = null;
-                    el.classList.remove('active');
-                    el.previousElementSibling.querySelector('.rotate-icon').classList.remove('active');
-                }
-            });
-
-            // Toggle current
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                content.classList.remove('active');
-                icon.classList.remove('active');
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                content.classList.add('active');
-                icon.classList.add('active');
-            }
-        }
-
-        // Popup Logic
-        const popup = document.getElementById('offer-popup');
-        
-        function showPopup() {
-            popup.classList.remove('hidden');
-        }
-
-        function closePopup() {
-            popup.classList.add('hidden');
-            localStorage.setItem('popupClosed', 'true');
-        }
-
-        // Show popup after 2 seconds if not previously closed
-        setTimeout(() => {
-            if (!localStorage.getItem('popupClosed')) {
-                showPopup();
-            }
-        }, 2000);
-
-        // Close on outside click
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) {
-                closePopup();
-            }
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-    </script>
+// Form Submit Handler
+function handleFormSubmit(event) {
+event.preventDefault();
+const form = event.target;
+const formData = new FormData(form);
+const data = Object.fromEntries(formData);
+// Create WhatsApp message
+const message = `New Enquiry from Website:%0A%0AName: ${data.name}%0APhone: ${data.phone}%0AEmail: ${data.email || 'N/A'}%0AService: ${data.service}%0AMessage: ${data.message || 'N/A'}`;
+// Open WhatsApp with pre-filled message
+window.open(`https://wa.me/61416013145?text=${message}`, '_blank');
+// Show success message
+alert('Thank you for your enquiry! You will be redirected to WhatsApp to send your message. For urgent matters, please call 0416 013 145 (24/7 Emergency Helpline).');
+form.reset();
+}
+</script>
 </body>
 </html>
 
