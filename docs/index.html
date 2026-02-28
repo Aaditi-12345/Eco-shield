@@ -7,7 +7,6 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'AW-17981676865');
 </script>
 <meta charset="UTF-8">
@@ -291,7 +290,6 @@ Expert <span class="text-brand">Upholstery & Furniture Cleaning</span>
 </div>
 </div>
 </section>
-
 <!-- About Us Section -->
 <section id="about" class="py-20 bg-white">
 <div class="container mx-auto px-4">
@@ -385,7 +383,6 @@ Call 0416 013 145
 </div>
 </div>
 </section>
-
 <!-- Why Upholstery Cleaning Section -->
 <section id="why-us" class="py-20 bg-slate-50">
 <div class="container mx-auto px-4">
@@ -450,7 +447,6 @@ Call 0416 013 145
 </div>
 </div>
 </section>
-
 <!-- Customer Reviews Section -->
 <section id="reviews" class="py-20 bg-white">
 <div class="container mx-auto px-4">
@@ -529,7 +525,6 @@ Call 0416 013 145
 </div>
 </div>
 </section>
-
 <!-- Our Cleaning Process Section -->
 <section id="process" class="py-20 bg-slate-50">
 <div class="container mx-auto px-4">
@@ -570,7 +565,6 @@ Call 0416 013 145
 </div>
 </div>
 </section>
-
 <!-- Services Accordion Section -->
 <section id="services" class="py-20 bg-white">
 <div class="container mx-auto px-4">
@@ -826,7 +820,6 @@ Premium Care
 </div>
 </div>
 </section>
-
 <!-- Customer Enquiry Form Section -->
 <section id="contact" class="py-20 bg-gradient-to-br from-brand-dark to-brand">
 <div class="container mx-auto px-4">
@@ -935,8 +928,8 @@ Get In Touch
 <label for="terms" class="text-sm text-slate-600">I agree to receive communications from EcoShield Cleaning Services regarding my enquiry *</label>
 </div>
 <button type="submit" class="w-full bg-gradient-to-r from-brand to-brand-dark hover:from-brand-dark hover:to-brand text-white font-bold py-4 rounded-lg transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-<i data-lucide="send" class="w-5 h-5"></i>
-Submit Enquiry
+<i data-lucide="message-circle" class="w-5 h-5"></i>
+Send via iMessage/SMS
 </button>
 <p class="text-xs text-slate-500 text-center">Or call us directly at <a href="tel:0416013145" class="text-brand font-bold hover:underline">0416 013 145</a> for immediate assistance</p>
 </form>
@@ -944,7 +937,6 @@ Submit Enquiry
 </div>
 </div>
 </section>
-
 <!-- Results Gallery -->
 <section id="results" class="py-20 bg-slate-900 text-white">
 <div class="container mx-auto px-4">
@@ -984,7 +976,6 @@ Get This Result
 </div>
 </div>
 </section>
-
 <!-- Urgency / CTA Section -->
 <section class="py-20 bg-gradient-to-r from-brand to-brand-dark">
 <div class="container mx-auto px-4 text-center">
@@ -1022,7 +1013,6 @@ Same Day Booking Available in Gold Coast and surrounding areas. Don't wait for s
 </div>
 </div>
 </section>
-
 <!-- Footer -->
 <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
 <div class="container mx-auto px-4">
@@ -1085,7 +1075,6 @@ Gold Coast's trusted upholstery and furniture cleaning professionals. 10+ years 
 </div>
 </div>
 </footer>
-
 <!-- Special Offer Popup -->
 <div id="offer-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
 <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
@@ -1129,12 +1118,10 @@ Free Deodoriser Treatment
 </div>
 </div>
 </div>
-
 <!-- Scripts -->
 <script>
 // Initialize Lucide Icons
 lucide.createIcons();
-
 // Accordion Logic
 function toggleAccordion(id, button) {
 const content = document.getElementById(id);
@@ -1158,7 +1145,6 @@ content.classList.add('active');
 icon.classList.add('active');
 }
 }
-
 // Popup Logic
 const popup = document.getElementById('offer-popup');
 function showPopup() {
@@ -1180,7 +1166,6 @@ if (e.target === popup) {
 closePopup();
 }
 });
-
 // Header scroll effect
 window.addEventListener('scroll', () => {
 const header = document.querySelector('header');
@@ -1190,19 +1175,31 @@ header.classList.add('shadow-lg');
 header.classList.remove('shadow-lg');
 }
 });
-
-// Form Submit Handler
+// Form Submit Handler - Redirects to iMessage/SMS
 function handleFormSubmit(event) {
 event.preventDefault();
 const form = event.target;
 const formData = new FormData(form);
 const data = Object.fromEntries(formData);
-// Create WhatsApp message
-const message = `New Enquiry from Website:%0A%0AName: ${data.name}%0APhone: ${data.phone}%0AEmail: ${data.email || 'N/A'}%0AService: ${data.service}%0AMessage: ${data.message || 'N/A'}`;
-// Open WhatsApp with pre-filled message
-window.open(`https://wa.me/61416013145?text=${message}`, '_blank');
+// Create SMS/iMessage with enquiry details
+const message = `New Enquiry from Website:\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email || 'N/A'}\nService: ${data.service}\nMessage: ${data.message || 'N/A'}`;
+// Encode message for URL
+const encodedMessage = encodeURIComponent(message);
+// Detect device type for proper SMS protocol
+const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+let smsUrl;
+// iOS devices use '&' for body parameter, Android uses '?'
+if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+// iOS (iMessage/SMS)
+smsUrl = `sms:0416013145&body=${encodedMessage}`;
+} else {
+// Android and other devices (SMS)
+smsUrl = `sms:0416013145?body=${encodedMessage}`;
+}
+// Open SMS/iMessage app with pre-filled message
+window.location.href = smsUrl;
 // Show success message
-alert('Thank you for your enquiry! You will be redirected to WhatsApp to send your message. For urgent matters, please call 0416 013 145 (24/7 Emergency Helpline).');
+alert('Thank you for your enquiry! You will be redirected to iMessage/SMS to send your message directly to 0416 013 145. For urgent matters, please call 0416 013 145 (24/7 Emergency Helpline).');
 form.reset();
 }
 </script>
