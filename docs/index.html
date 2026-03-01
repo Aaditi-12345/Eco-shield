@@ -137,55 +137,6 @@ transition: all 0.3s ease;
 transform: translateY(-5px);
 box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
-/* Recent Results Section Styles */
-.result-card {
-transition: all 0.3s ease;
-}
-.result-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-.before-after-label {
-position: absolute;
-top: 10px;
-right: 10px;
-background: rgba(0,0,0,0.7);
-color: white;
-padding: 4px 12px;
-border-radius: 20px;
-font-size: 0.75rem;
-font-weight: 600;
-text-transform: uppercase;
-}
-.before-after-split {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2px;
-}
-.before-after-split img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-.before-label, .after-label {
-position: absolute;
-top: 10px;
-padding: 4px 12px;
-border-radius: 20px;
-font-size: 0.75rem;
-font-weight: 600;
-text-transform: uppercase;
-}
-.before-label {
-left: 10px;
-background: rgba(239, 68, 68, 0.9);
-color: white;
-}
-.after-label {
-right: 10px;
-background: rgba(34, 197, 94, 0.9);
-color: white;
-}
 </style>
 </head>
 <body class="font-sans text-slate-700 bg-slate-50 antialiased selection:bg-brand selection:text-white">
@@ -249,7 +200,6 @@ Call Now: 0416 013 145
 <a href="#why-us" class="hover:text-brand transition">Why Us</a>
 <a href="#offers" class="hover:text-brand transition">Special Offers</a>
 <a href="#services" class="hover:text-brand transition">Services</a>
-<a href="#recent-results" class="hover:text-brand transition">Recent Results</a>
 <a href="#reviews" class="hover:text-brand transition">Reviews</a>
 <a href="#contact" class="hover:text-brand transition">Contact</a>
 <a href="tel:0416013145" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-brand/30 flex items-center gap-2">
@@ -266,7 +216,6 @@ Call Now: 0416 013 145
 <a href="#why-us" class="block py-2 hover:text-brand">Why Us</a>
 <a href="#offers" class="block py-2 hover:text-brand">Special Offers</a>
 <a href="#services" class="block py-2 hover:text-brand">Services</a>
-<a href="#recent-results" class="block py-2 hover:text-brand">Recent Results</a>
 <a href="#reviews" class="block py-2 hover:text-brand">Reviews</a>
 <a href="#contact" class="block py-2 hover:text-brand">Contact</a>
 <a href="tel:0416013145" class="bg-brand text-white text-center py-3 rounded-lg font-bold">Call 0416 013 145</a>
@@ -918,89 +867,8 @@ Premium Care
 </div>
 </div>
 </section>
-
-<!-- RECENT RESULTS SECTION (NEW) -->
-<section id="recent-results" class="py-20 bg-slate-50">
-<div class="container mx-auto px-4">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Work</h3>
-<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Recent Results</h2>
-<p class="text-slate-600">See the difference professional cleaning makes. Real transformations from our Gold Coast customers.</p>
-</div>
-
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Result 1: Carpet Cleaning -->
-<div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
-<div class="relative h-64 overflow-hidden">
-<div class="before-after-label">Carpet Cleaning</div>
-<img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Carpet Cleaning Line" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-<p class="text-white font-semibold text-sm">Deep Extraction</p>
-</div>
-</div>
-<div class="p-4">
-<h4 class="font-bold text-slate-800">Carpet Restoration</h4>
-<p class="text-xs text-slate-500 mt-1">Removing years of ground-in dirt.</p>
-</div>
-</div>
-
-<!-- Result 2: Grey Sofa Before/After -->
-<div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
-<div class="relative h-64 overflow-hidden">
-<div class="before-after-label">Before & After</div>
-<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" alt="Grey Sofa Before After" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-<p class="text-white font-semibold text-sm">Velvet Restoration</p>
-</div>
-</div>
-<div class="p-4">
-<h4 class="font-bold text-slate-800">Velvet Sofa Revival</h4>
-<p class="text-xs text-slate-500 mt-1">Stain removal and fabric rejuvenation.</p>
-</div>
-</div>
-
-<!-- Result 3: Upholstery Tool Action -->
-<div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
-<div class="relative h-64 overflow-hidden">
-<div class="before-after-label">In Action</div>
-<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800&auto=format&fit=crop" alt="Upholstery Cleaning Tool" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-<p class="text-white font-semibold text-sm">Hot Water Extraction</p>
-</div>
-</div>
-<div class="p-4">
-<h4 class="font-bold text-slate-800">Deep Fabric Cleaning</h4>
-<p class="text-xs text-slate-500 mt-1">Extracting hidden dirt and allergens.</p>
-</div>
-</div>
-
-<!-- Result 4: Light Sofa Stain Removal -->
-<div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
-<div class="relative h-64 overflow-hidden">
-<div class="before-after-label">Stain Removal</div>
-<img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Light Sofa Stain Removal" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-<p class="text-white font-semibold text-sm">Spot Treatment</p>
-</div>
-</div>
-<div class="p-4">
-<h4 class="font-bold text-slate-800">Tough Stain Removal</h4>
-<p class="text-xs text-slate-500 mt-1">Eliminating stubborn marks safely.</p>
-</div>
-</div>
-</div>
-
-<div class="mt-12 text-center">
-<a href="#contact" class="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-3 rounded-full font-bold transition shadow-lg">
-Get Similar Results <i data-lucide="arrow-right" class="w-4 h-4"></i>
-</a>
-</div>
-</div>
-</section>
-<!-- END RECENT RESULTS SECTION -->
-
 <!-- Customer Reviews Section -->
-<section id="reviews" class="py-20 bg-white">
+<section id="reviews" class="py-20 bg-slate-50">
 <div class="container mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16">
 <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Customer Reviews</h3>
@@ -1078,7 +946,7 @@ Get Similar Results <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </div>
 </section>
 <!-- Our Cleaning Process Section -->
-<section id="process" class="py-20 bg-slate-50">
+<section id="process" class="py-20 bg-white">
 <div class="container mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16">
 <h3 class="text-brand font-bold tracking-wider uppercase text-sm mb-2">Our Process</h3>
@@ -1479,12 +1347,7 @@ const form = event.target;
 const formData = new FormData(form);
 const data = Object.fromEntries(formData);
 // Create SMS/iMessage with enquiry details
-const message = `New Enquiry from Website:
-Name: ${data.name}
-Phone: ${data.phone}
-Email: ${data.email || 'N/A'}
-Service: ${data.service}
-Message: ${data.message || 'N/A'}`;
+const message = `New Enquiry from Website:\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email || 'N/A'}\nService: ${data.service}\nMessage: ${data.message || 'N/A'}`;
 // Encode message for URL
 const encodedMessage = encodeURIComponent(message);
 // Detect device type for proper SMS protocol
