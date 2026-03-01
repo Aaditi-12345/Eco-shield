@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -138,7 +137,7 @@ transition: all 0.3s ease;
 transform: translateY(-5px);
 box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
-/* New Styles for Recent Results */
+/* Recent Results Section Styles */
 .result-card {
 transition: all 0.3s ease;
 }
@@ -157,6 +156,35 @@ border-radius: 20px;
 font-size: 0.75rem;
 font-weight: 600;
 text-transform: uppercase;
+}
+.before-after-split {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2px;
+}
+.before-after-split img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.before-label, .after-label {
+position: absolute;
+top: 10px;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.75rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+.before-label {
+left: 10px;
+background: rgba(239, 68, 68, 0.9);
+color: white;
+}
+.after-label {
+right: 10px;
+background: rgba(34, 197, 94, 0.9);
+color: white;
 }
 </style>
 </head>
@@ -905,7 +933,7 @@ Premium Care
 <div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
 <div class="relative h-64 overflow-hidden">
 <div class="before-after-label">Carpet Cleaning</div>
-<img src="https://image.qwenlm.ai/output/18110022b-ab26-4029-9330-896bc5faaaf3_0.png" alt="Carpet Cleaning Line" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Carpet Cleaning Line" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
 <p class="text-white font-semibold text-sm">Deep Extraction</p>
 </div>
@@ -920,7 +948,7 @@ Premium Care
 <div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
 <div class="relative h-64 overflow-hidden">
 <div class="before-after-label">Before & After</div>
-<img src="https://image.qwenlm.ai/output/18110022b-ab26-4029-9330-896bc5faaaf3_1.png" alt="Grey Sofa Before After" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" alt="Grey Sofa Before After" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
 <p class="text-white font-semibold text-sm">Velvet Restoration</p>
 </div>
@@ -935,7 +963,7 @@ Premium Care
 <div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
 <div class="relative h-64 overflow-hidden">
 <div class="before-after-label">In Action</div>
-<img src="https://image.qwenlm.ai/output/18110022b-ab26-4029-9330-896bc5faaaf3_2.png" alt="Upholstery Cleaning Tool" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800&auto=format&fit=crop" alt="Upholstery Cleaning Tool" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
 <p class="text-white font-semibold text-sm">Hot Water Extraction</p>
 </div>
@@ -950,7 +978,7 @@ Premium Care
 <div class="result-card bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group">
 <div class="relative h-64 overflow-hidden">
 <div class="before-after-label">Stain Removal</div>
-<img src="https://image.qwenlm.ai/output/18110022b-ab26-4029-9330-896bc5faaaf3_3.png" alt="Light Sofa Stain Removal" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Light Sofa Stain Removal" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
 <p class="text-white font-semibold text-sm">Spot Treatment</p>
 </div>
@@ -1479,4 +1507,3 @@ form.reset();
 </script>
 </body>
 </html>
-```
