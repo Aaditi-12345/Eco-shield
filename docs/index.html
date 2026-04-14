@@ -339,6 +339,15 @@ pointer-events: none;
 border: 1px solid #e2e8f0;
 }
 
+/* Seniors Badge Pulse */
+@keyframes seniors-glow {
+0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+}
+.seniors-glow {
+animation: seniors-glow 2s infinite;
+}
+
 /* Mobile Specific Adjustments */
 @media (max-width: 768px) {
 .hero-bg-overlay {
@@ -371,12 +380,12 @@ height: 56px;
 <div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-2 text-center">
 <div class="flex items-center gap-2">
 <i data-lucide="gift" class="w-5 h-5 text-brand-dark"></i>
-<span class="font-bold text-sm md:text-lg">🎉 $25 OFF for New Customers + FREE Scotchgard!</span>
+<span class="font-bold text-sm md:text-lg">🎉 25% OFF for First Time Customers!</span>
 </div>
 <span class="hidden md:inline text-brand-dark/60">|</span>
 <div class="flex items-center gap-2">
 <i data-lucide="check-circle" class="w-4 h-4 text-brand-dark"></i>
-<span class="font-medium text-xs md:text-sm">* Valid for quotes above $250 - Limited Time Only!</span>
+<span class="font-medium text-xs md:text-sm">* New Customers Only - Limited Time Only!</span>
 </div>
 <a href="tel:0416013145" class="bg-brand-dark text-white px-5 py-2 rounded-full font-bold text-xs md:text-sm hover:bg-brand transition whitespace-nowrap w-full md:w-auto text-center">
 Call Now: 0416 013 145
@@ -539,13 +548,70 @@ Professional <span class="text-brand">Steam Cleaning</span> Solutions
 </div>
 </section>
 
+<!-- Special Discounts Section -->
+<section class="py-16 md:py-20 bg-gradient-to-br from-green-50 via-white to-brand-light/50">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+<h3 class="text-green-600 font-bold tracking-wider uppercase text-xs md:text-sm mb-2">Exclusive Discounts</h3>
+<h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Special Offers & Discounts</h2>
+<p class="text-slate-600 text-sm md:text-base">We believe everyone deserves a clean, healthy home. Take advantage of our special discounts today!</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+<!-- First Time Customer Discount -->
+<div class="offer-card bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-2 border-brand/30">
+<div class="bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent p-4 md:p-6 text-center">
+<div class="inline-flex items-center gap-2 bg-white/80 px-3 py-1 rounded-full text-brand-dark text-xs font-bold mb-2">
+<i data-lucide="star" class="w-3 h-3 fill-brand-dark"></i>
+New Customers Only
+</div>
+<h3 class="text-3xl md:text-4xl font-bold text-brand-dark">25% OFF</h3>
+<p class="text-brand-dark/80 text-sm font-medium">First Time Customer Discount</p>
+</div>
+<div class="p-5 md:p-6 text-center">
+<p class="text-slate-600 mb-4 text-sm">Welcome to EcoShield! Enjoy a generous 25% discount on any cleaning service when you book with us for the first time.</p>
+<ul class="text-left space-y-2 mb-5 text-sm text-slate-600">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500 flex-shrink-0"></i> Valid on all cleaning services</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500 flex-shrink-0"></i> Gold Coast area only</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-cross" class="w-4 h-4 text-red-400 flex-shrink-0"></i> Cannot be used with other offers</li>
+</ul>
+<a href="tel:0416013145" class="block w-full bg-brand hover:bg-brand-dark text-white text-center py-3 rounded-lg font-bold text-sm transition">
+Claim 25% Off Now
+</a>
+</div>
+</div>
+<!-- Seniors Discount -->
+<div class="offer-card bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-2 border-green-300">
+<div class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 p-4 md:p-6 text-center">
+<div class="inline-flex items-center gap-2 bg-white/80 px-3 py-1 rounded-full text-green-800 text-xs font-bold mb-2">
+<i data-lucide="heart" class="w-3 h-3 fill-green-700"></i>
+Senior Citizens
+</div>
+<h3 class="text-3xl md:text-4xl font-bold text-white">30% OFF</h3>
+<p class="text-white/90 text-sm font-medium">Seniors Discount</p>
+</div>
+<div class="p-5 md:p-6 text-center">
+<p class="text-slate-600 mb-4 text-sm">Our way of giving back to the community. Seniors receive an exclusive 30% discount on all professional cleaning services. Just mention when booking!</p>
+<ul class="text-left space-y-2 mb-5 text-sm text-slate-600">
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500 flex-shrink-0"></i> Valid on all cleaning services</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500 flex-shrink-0"></i> Simply mention your senior status</li>
+<li class="flex items-center gap-2"><i data-lucide="circle-cross" class="w-4 h-4 text-red-400 flex-shrink-0"></i> Cannot be used with other offers</li>
+</ul>
+<a href="tel:0416013145" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-3 rounded-lg font-bold text-sm transition seniors-glow">
+Claim 30% Off Now
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- Services Section (Combined with Rug & Fabric Cleaning) -->
 <section id="services" class="py-16 md:py-20 bg-white">
 <div class="container mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
 <h3 class="text-brand font-bold tracking-wider uppercase text-xs md:text-sm mb-2">Our Cleaning Services</h3>
 <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Premium Cleaning Services</h2>
-<p class="text-slate-600 text-sm md:text-base">Explore our range of professional cleaning services. All treatments include FREE Scotchgard protection and disinfectant spray.</p>
+<p class="text-slate-600 text-sm md:text-base">Explore our range of professional cleaning services. All treatments include disinfectant spray and protective treatments.</p>
 </div>
 
 <!-- Cleaning Services Grid -->
@@ -565,7 +631,7 @@ Professional <span class="text-brand">Steam Cleaning</span> Solutions
 </div>
 <p class="text-slate-600 mb-4 text-sm">Revitalize your lounge suite with our professional hot water extraction method. We remove deep-seated dirt, allergens, pet dander, and stubborn stains from all fabric upholstery.</p>
 <div class="bg-brand-light/50 rounded-lg p-3 mb-4">
-<p class="text-xs text-brand-dark font-semibold">✓ Includes FREE Scotchgard & Disinfectant</p>
+<p class="text-xs text-brand-dark font-semibold">✓ Includes Disinfectant & Protective Treatment</p>
 </div>
 <ul class="space-y-2 text-sm text-slate-600 mb-6">
 <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> Removes 99% of bacteria</li>
@@ -592,7 +658,7 @@ Book Couch Cleaning
 </div>
 <p class="text-slate-600 mb-4 text-sm">Bring your carpets back to life! We use industrial-grade truck-mounted or portable steam cleaners to extract years of ground-in grime, restoring your carpet's original beauty.</p>
 <div class="bg-brand-light/50 rounded-lg p-3 mb-4">
-<p class="text-xs text-brand-dark font-semibold">✓ Includes FREE Scotchgard & Deodoriser</p>
+<p class="text-xs text-brand-dark font-semibold">✓ Includes Disinfectant & Deodoriser</p>
 </div>
 <ul class="space-y-2 text-sm text-slate-600 mb-6">
 <li class="flex items-center gap-2"><i data-lucide="circle-check" class="w-4 h-4 text-green-500"></i> High-pressure extraction</li>
@@ -1586,13 +1652,9 @@ Gold Coast's trusted upholstery and professional steam cleaning specialists. 10+
 <div class="p-6 md:p-8 text-center">
 <p class="text-slate-600 mb-3 md:mb-4 text-sm md:text-lg">Book any service this week and receive:</p>
 <div class="bg-gradient-to-r from-brand-light to-brand/10 p-4 md:p-6 rounded-xl md:rounded-2xl mb-4 md:mb-6 border-2 border-brand/30">
-<div class="text-2xl md:text-3xl font-bold text-brand mb-1 md:mb-2">$25 OFF</div>
+<div class="text-2xl md:text-3xl font-bold text-brand mb-1 md:mb-2">25% OFF</div>
 <div class="text-base md:text-lg font-semibold text-slate-700 mb-2 md:mb-3">+ FREE Protection Package:</div>
 <ul class="text-xs md:text-sm text-slate-600 space-y-1 md:space-y-2">
-<li class="flex items-center justify-center gap-2">
-<i data-lucide="check-circle" class="w-3 h-3 md:w-4 md:h-4 text-green-500"></i>
-Free Scotchgard Protection
-</li>
 <li class="flex items-center justify-center gap-2">
 <i data-lucide="check-circle" class="w-3 h-3 md:w-4 md:h-4 text-green-500"></i>
 Free Disinfectant Spray
@@ -1601,11 +1663,46 @@ Free Disinfectant Spray
 <i data-lucide="check-circle" class="w-3 h-3 md:w-4 md:h-4 text-green-500"></i>
 Free Deodoriser Treatment
 </li>
+<li class="flex items-center justify-center gap-2">
+<i data-lucide="check-circle" class="w-3 h-3 md:w-4 md:h-4 text-green-500"></i>
+Protective Treatment Included
+</li>
 </ul>
 </div>
-<p class="text-[10px] md:text-xs text-slate-500 mb-4 md:mb-6 bg-slate-100 inline-block px-3 md:px-4 py-1 md:py-2 rounded-full">*Valid for quotes above $250. Gold Coast area only.</p>
+<p class="text-[10px] md:text-xs text-slate-500 mb-4 md:mb-6 bg-slate-100 inline-block px-3 md:px-4 py-1 md:py-2 rounded-full">*First time customers only. Gold Coast area only. Cannot be used with other offers.</p>
 <a href="tel:0416013145" onclick="closePopup()" class="block w-full bg-gradient-to-r from-brand to-brand-dark hover:from-brand-dark hover:to-brand text-white font-bold py-3 md:py-4 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-base md:text-lg">
 <i data-lucide="phone-call" class="w-4 h-4 md:w-5 md:h-5"></i> Claim Offer Now
+</a>
+<p class="text-[10px] md:text-xs text-slate-400 mt-3 md:mt-4">Or call 0416 013 145 to book</p>
+</div>
+</div>
+</div>
+
+<!-- Seniors Discount Popup -->
+<div id="seniors-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+<div class="bg-white rounded-2xl md:rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
+<div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500"></div>
+<button onclick="closeSeniorsPopup()" class="absolute top-3 right-3 md:top-4 md:right-4 text-slate-400 hover:text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition z-10">
+<i data-lucide="x" class="w-4 h-4 md:w-5 md:h-5"></i>
+</button>
+<div class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 p-6 md:p-8 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-4 left-4 w-20 h-20 bg-white rounded-full"></div>
+<div class="absolute bottom-4 right-4 w-16 h-16 bg-white rounded-full"></div>
+</div>
+<i data-lucide="heart" class="w-12 h-12 md:w-16 md:h-16 text-white mx-auto mb-3 relative z-10"></i>
+<h3 class="text-xl md:text-2xl font-bold text-white relative z-10">💚 Seniors Exclusive Discount!</h3>
+</div>
+<div class="p-6 md:p-8 text-center">
+<p class="text-slate-600 mb-3 md:mb-4 text-sm md:text-lg">We appreciate our senior community. Enjoy:</p>
+<div class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 md:p-6 rounded-xl md:rounded-2xl mb-4 md:mb-6 border-2 border-green-300">
+<div class="text-2xl md:text-3xl font-bold text-green-600 mb-1 md:mb-2">30% OFF</div>
+<div class="text-base md:text-lg font-semibold text-slate-700 mb-2 md:mb-3">Seniors Discount on All Services</div>
+<p class="text-xs md:text-sm text-slate-600">Simply mention your senior status when booking. No proof required — we trust you!</p>
+</div>
+<p class="text-[10px] md:text-xs text-slate-500 mb-4 md:mb-6 bg-slate-100 inline-block px-3 md:px-4 py-1 md:py-2 rounded-full">*Valid for seniors aged 60+. Gold Coast area only. Cannot be used with other offers.</p>
+<a href="tel:0416013145" onclick="closeSeniorsPopup()" class="block w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 md:py-4 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-base md:text-lg seniors-glow">
+<i data-lucide="phone-call" class="w-4 h-4 md:w-5 md:h-5"></i> Claim 30% Off Now
 </a>
 <p class="text-[10px] md:text-xs text-slate-400 mt-3 md:mt-4">Or call 0416 013 145 to book</p>
 </div>
@@ -1662,7 +1759,7 @@ icon.classList.add('active');
 }
 }
 
-// Popup Logic
+// Main Offer Popup Logic
 const popup = document.getElementById('offer-popup');
 function showPopup() {
 popup.classList.remove('hidden');
@@ -1672,17 +1769,39 @@ popup.classList.add('hidden');
 localStorage.setItem('popupClosed', 'true');
 }
 
-// Show popup after 2 seconds if not previously closed
+// Seniors Popup Logic
+const seniorsPopup = document.getElementById('seniors-popup');
+function showSeniorsPopup() {
+seniorsPopup.classList.remove('hidden');
+}
+function closeSeniorsPopup() {
+seniorsPopup.classList.add('hidden');
+localStorage.setItem('seniorsPopupClosed', 'true');
+}
+
+// Show main popup after 2 seconds if not previously closed
 setTimeout(() => {
 if (!localStorage.getItem('popupClosed')) {
 showPopup();
 }
 }, 2000);
 
+// Show seniors popup after 15 seconds if not previously closed
+setTimeout(() => {
+if (!localStorage.getItem('seniorsPopupClosed')) {
+showSeniorsPopup();
+}
+}, 15000);
+
 // Close on outside click
 popup.addEventListener('click', (e) => {
 if (e.target === popup) {
 closePopup();
+}
+});
+seniorsPopup.addEventListener('click', (e) => {
+if (e.target === seniorsPopup) {
+closeSeniorsPopup();
 }
 });
 
