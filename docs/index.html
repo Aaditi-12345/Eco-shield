@@ -44,7 +44,6 @@ serif: ['Playfair Display', 'serif'],
 }
 </script>
 <style>
-/* Mobile Optimizations */
 html {
 scroll-behavior: smooth;
 -webkit-text-size-adjust: 100%;
@@ -53,7 +52,6 @@ body {
 font-size: 16px;
 line-height: 1.5;
 }
-/* Touch Targets */
 button, a, input, select, textarea {
 min-height: 44px;
 }
@@ -79,7 +77,6 @@ to { opacity: 1; transform: scale(1); }
 .popup-animate {
 animation: fadeIn 0.4s ease-out forwards;
 }
-/* Enhanced Flashing Animation for Call Button */
 @keyframes pulse-glow {
 0%, 100% { 
 box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.7); 
@@ -201,7 +198,6 @@ background: linear-gradient(180deg, transparent 60%, rgba(12,74,110,0.8) 100%);
 pointer-events: none;
 }
 
-/* Premium Floating Button Styles */
 .floating-call-btn {
 position: fixed;
 bottom: 24px;
@@ -230,7 +226,6 @@ transition: all 0.3s ease;
 position: relative;
 z-index: 10;
 }
-/* Flashing Ring Effect */
 .floating-call-btn .btn-content::before {
 content: '';
 position: absolute;
@@ -248,7 +243,7 @@ box-shadow:
 0 0 0 1px rgba(2, 132, 199, 0.2);
 }
 .floating-call-btn i {
-color: #0284c7; /* Brand Blue */
+color: #0284c7;
 transition: transform 0.3s ease;
 }
 .floating-call-btn:hover i {
@@ -280,66 +275,6 @@ transform: translateY(0);
 background: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 100%);
 }
 
-/* Before/After Slider Styles */
-.before-after-slider {
-position: relative;
-overflow: hidden;
-touch-action: none;
-background: #000;
-}
-.before-after-slider img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-.before-after-slider .after-image {
-position: absolute;
-top: 0;
-left: 0;
-width: 50%;
-height: 100%;
-overflow: hidden;
-border-right: 2px solid white;
-z-index: 10;
-}
-.before-after-slider .after-image img {
-width: 200%;
-max-width: none;
-height: 100%;
-object-fit: cover;
-}
-.before-after-slider input[type="range"] {
-position: absolute;
-top: 50%;
-left: 0;
-width: 100%;
-transform: translateY(-50%);
-z-index: 20;
-opacity: 0;
-cursor: ew-resize;
-margin: 0;
--webkit-appearance: none;
-}
-.before-after-slider .slider-handle {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 40px;
-height: 40px;
-background: white;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-z-index: 15;
-pointer-events: none;
-border: 1px solid #e2e8f0;
-}
-
-/* Seniors Badge Pulse */
 @keyframes seniors-glow {
 0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
 50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
@@ -348,7 +283,6 @@ border: 1px solid #e2e8f0;
 animation: seniors-glow 2s infinite;
 }
 
-/* Mobile Specific Adjustments */
 @media (max-width: 768px) {
 .hero-bg-overlay {
 opacity: 0.15;
@@ -525,7 +459,7 @@ Professional <span class="text-brand">Steam Cleaning</span> Solutions
 </div>
 <div class="space-y-3 md:space-y-4 pt-6 md:pt-8">
 <div class="rounded-xl md:rounded-2xl overflow-hidden shadow-xl img-zoom-container">
-<img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=800&auto=format&fit=crop" alt="Professional Mattress Cleaning" class="w-full h-40 md:h-48 object-cover">
+<img src="https://image.qwenlm.ai/public_source/65da2b61-b2eb-4f18-9c8b-551dcf62b08b/106986f46-3da7-4001-9339-2a50452843b0.png" alt="Professional Mattress Cleaning" class="w-full h-40 md:h-48 object-cover">
 </div>
 <div class="rounded-xl md:rounded-2xl overflow-hidden shadow-xl img-zoom-container">
 <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Professional Leather Furniture Cleaning" class="w-full h-48 md:h-56 object-cover">
@@ -605,7 +539,7 @@ Claim 20% Off Now
 </div>
 </section>
 
-<!-- Services Section (Combined with Rug & Fabric Cleaning) -->
+<!-- Services Section -->
 <section id="services" class="py-16 md:py-20 bg-white">
 <div class="container mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -617,7 +551,7 @@ Claim 20% Off Now
 <!-- Cleaning Services Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-<!-- Couch Cleaning Card - NEW IMAGE -->
+<!-- Couch Cleaning Card -->
 <div class="service-card bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100">
 <div class="h-48 md:h-56 overflow-hidden">
 <img src="https://image.qwenlm.ai/public_source/65da2b61-b2eb-4f18-9c8b-551dcf62b08b/179e8839e-eefb-493d-9021-2f48c09d666c.png" alt="Professional Couch Cleaning Service" class="w-full h-full object-cover">
@@ -644,7 +578,7 @@ Book Couch Cleaning
 </div>
 </div>
 
-<!-- Carpet Cleaning Card - NEW IMAGE -->
+<!-- Carpet Cleaning Card -->
 <div class="service-card bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100">
 <div class="h-48 md:h-56 overflow-hidden">
 <img src="https://image.qwenlm.ai/public_source/65da2b61-b2eb-4f18-9c8b-551dcf62b08b/1bf3f5088-8a37-403f-b841-b169e35cfbf0.png" alt="Professional Carpet Steam Cleaning" class="w-full h-full object-cover">
@@ -671,10 +605,10 @@ Book Carpet Cleaning
 </div>
 </div>
 
-<!-- Mattress Cleaning Card -->
+<!-- Mattress Cleaning Card - NEW IMAGE -->
 <div class="service-card bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100">
 <div class="h-48 md:h-56 overflow-hidden">
-<img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?q=80&w=1000&auto=format&fit=crop" alt="Professional Mattress Cleaning" class="w-full h-full object-cover">
+<img src="https://image.qwenlm.ai/public_source/65da2b61-b2eb-4f18-9c8b-551dcf62b08b/106986f46-3da7-4001-9339-2a50452843b0.png" alt="Professional Mattress Cleaning Service" class="w-full h-full object-cover">
 </div>
 <div class="p-5 md:p-6">
 <div class="flex items-center gap-3 mb-4">
@@ -683,7 +617,7 @@ Book Carpet Cleaning
 </div>
 <h3 class="text-lg md:text-xl font-bold text-slate-800">Mattress Cleaning</h3>
 </div>
-<p class="text-slate-600 mb-4 text-sm">Sleep better tonight! We remove dust mites, sweat, body oils, and allergens. Our specialized anti-bacterial and anti-mould solutions eliminate harmful microorganisms.</p>
+<p class="text-slate-600 mb-4 text-sm">Sleep better tonight! We remove dust mites, sweat, body oils, and allergens. Our specialized anti-bacterial and anti-mould solutions eliminate harmful microorganisms from your mattress for a healthier sleep environment.</p>
 <div class="bg-green-50 rounded-lg p-3 mb-4">
 <p class="text-xs text-green-700 font-semibold">✓ Anti-Bacterial & Anti-Mould Treatment</p>
 </div>
@@ -710,7 +644,7 @@ Book Mattress Cleaning
 </div>
 <h3 class="text-lg md:text-xl font-bold text-slate-800">Rug & Fabric Cleaning</h3>
 </div>
-<p class="text-slate-600 mb-4 text-sm">Specialized care for all fabric types including rugs, curtains, and delicate materials. We use gentle yet effective techniques to remove dirt, stains, and allergens without damaging sensitive fibers. Safe for wool, silk, synthetic, and blended fabrics.</p>
+<p class="text-slate-600 mb-4 text-sm">Specialized care for all fabric types including rugs, curtains, and delicate materials. We use gentle yet effective techniques to remove dirt, stains, and allergens without damaging sensitive fibers.</p>
 <div class="bg-brand-light/50 rounded-lg p-3 mb-4">
 <p class="text-xs text-brand-dark font-semibold">✓ Safe for All Fabric Types</p>
 </div>
@@ -951,7 +885,7 @@ Book Curtain Cleaning
 </div>
 </section>
 
-<!-- Before & After Results Gallery -->
+<!-- Before & After Results Gallery - Slider Bar Removed -->
 <section id="results" class="py-16 md:py-20 bg-slate-900 text-white">
 <div class="container mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -959,21 +893,12 @@ Book Curtain Cleaning
 <h2 class="text-2xl md:text-4xl font-serif font-bold mb-4">Real Transformations</h2>
 <p class="text-slate-400 text-sm md:text-base">See the dramatic difference professional steam cleaning makes. Real results from real Gold Coast homes.</p>
 </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-<!-- Before/After Card 1 - Carpet (Slider) -->
+<div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+<!-- Before/After Card 1 - Carpet (Static Image) -->
 <div class="bg-slate-800 rounded-xl md:rounded-2xl overflow-hidden shadow-xl">
-<div class="relative aspect-video before-after-slider" id="slider1">
-<!-- Base Image (Dirty/Action) -->
-<img src="https://image.qwenlm.ai/public_source/b46bdd9a-2ffa-453b-8365-fcd9e4c6c453/1aafff6d1-fb13-4656-b58f-57eaffdea3f1.png" alt="Carpet Cleaning Process" class="w-full h-full object-cover">
-<!-- Overlay Image (Clean) - Using same image but cropped to show clean part if possible, or just using the right side -->
-<!-- Since the image is Left=Dirty, Right=Clean, we use the same image but shift it -->
-<div class="after-image" id="after1">
-<img src="https://image.qwenlm.ai/public_source/b46bdd9a-2ffa-453b-8365-fcd9e4c6c453/1aafff6d1-fb13-4656-b58f-57eaffdea3f1.png" alt="Clean Carpet Result">
-</div>
-<input type="range" min="0" max="100" value="50" class="slider" oninput="updateSlider(this, 'after1')" ontouchstart="updateSlider(this, 'after1')" ontouchmove="updateSlider(this, 'after1')">
-<div class="slider-handle" id="handle1">
-<i data-lucide="arrows-left-right" class="w-4 h-4 md:w-5 md:h-5 text-brand"></i>
-</div>
+<div class="relative aspect-video">
+<img src="https://raw.githubusercontent.com/Aaditi-12345/Eco-shield/main/docs/images/carpet-before-after.jpg" alt="Carpet Cleaning Before and After" class="w-full h-full object-cover">
+<div class="absolute top-2 left-2 bg-black/60 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded">BEFORE & AFTER</div>
 </div>
 <div class="p-4 md:p-6">
 <div class="flex items-center justify-between mb-2">
@@ -984,10 +909,10 @@ Book Curtain Cleaning
 </div>
 </div>
 
-<!-- Before/After Card 2 - Grey Couch (Stacked Vertical) -->
+<!-- Before/After Card 2 - Couch (Stacked Vertical) -->
 <div class="bg-slate-800 rounded-xl md:rounded-2xl overflow-hidden shadow-xl flex flex-col">
 <div class="relative flex-1 min-h-[200px]">
-<img src="https://image.qwenlm.ai/public_source/b46bdd9a-2ffa-453b-8365-fcd9e4c6c453/1c6a28ceb-ae4c-490e-85c7-7ab0b50cbb99.png" alt="Grey Couch Before and After" class="w-full h-full object-cover object-top">
+<img src="https://raw.githubusercontent.com/Aaditi-12345/Eco-shield/main/docs/images/couch-before-after.jpg" alt="Grey Couch Before and After" class="w-full h-full object-cover object-top">
 <div class="absolute top-2 left-2 bg-black/60 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded">BEFORE (Top) / AFTER (Bottom)</div>
 </div>
 <div class="p-4 md:p-6">
@@ -996,29 +921,6 @@ Book Curtain Cleaning
 </div>
 <h4 class="text-lg md:text-xl font-bold mb-2">Fabric Restoration</h4>
 <p class="text-slate-400 text-xs md:text-sm">Removed heavy soiling and water marks. Restored original texture and color.</p>
-</div>
-</div>
-
-<!-- Before/After Card 3 - Beige Couch (Slider) -->
-<div class="bg-slate-800 rounded-xl md:rounded-2xl overflow-hidden shadow-xl">
-<div class="relative aspect-video before-after-slider" id="slider3">
-<!-- Base Image (Dirty) -->
-<img src="https://image.qwenlm.ai/public_source/b46bdd9a-2ffa-453b-8365-fcd9e4c6c453/1cc5b2746-ed83-4b27-9821-005000fe881d.png" alt="Beige Couch Cleaning" class="w-full h-full object-cover">
-<!-- Overlay Image (Clean) -->
-<div class="after-image" id="after3">
-<img src="https://image.qwenlm.ai/public_source/b46bdd9a-2ffa-453b-8365-fcd9e4c6c453/1cc5b2746-ed83-4b27-9821-005000fe881d.png" alt="Clean Beige Couch">
-</div>
-<input type="range" min="0" max="100" value="50" class="slider" oninput="updateSlider(this, 'after3')" ontouchstart="updateSlider(this, 'after3')" ontouchmove="updateSlider(this, 'after3')">
-<div class="slider-handle" id="handle3">
-<i data-lucide="arrows-left-right" class="w-4 h-4 md:w-5 md:h-5 text-brand"></i>
-</div>
-</div>
-<div class="p-4 md:p-6">
-<div class="flex items-center justify-between mb-2">
-<span class="bg-purple-500 text-white text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 rounded-full">Spot Cleaning</span>
-</div>
-<h4 class="text-lg md:text-xl font-bold mb-2">Stain Removal</h4>
-<p class="text-slate-400 text-xs md:text-sm">Targeted treatment for stubborn stains. Gentle on fabric, tough on dirt.</p>
 </div>
 </div>
 </div>
@@ -1482,8 +1384,8 @@ Get In Touch
 <option value="">Select a service</option>
 <option value="couch">Couch Cleaning</option>
 <option value="carpet">Carpet Cleaning</option>
-<option value="rug">Rug & Fabric Cleaning</option>
 <option value="mattress">Mattress Cleaning</option>
+<option value="rug">Rug & Fabric Cleaning</option>
 <option value="curtain">Curtain Cleaning</option>
 <option value="leather">Leather Cleaning</option>
 <option value="stain">Stain Removal</option>
@@ -1617,8 +1519,8 @@ Gold Coast's trusted upholstery and professional steam cleaning specialists. 10+
 <ul class="space-y-1 md:space-y-2 text-xs md:text-sm">
 <li><a href="#services" class="hover:text-brand transition">Couch Cleaning</a></li>
 <li><a href="#services" class="hover:text-brand transition">Carpet Cleaning</a></li>
-<li><a href="#services" class="hover:text-brand transition">Rug & Fabric Cleaning</a></li>
 <li><a href="#services" class="hover:text-brand transition">Mattress Cleaning</a></li>
+<li><a href="#services" class="hover:text-brand transition">Rug & Fabric Cleaning</a></li>
 <li><a href="#services" class="hover:text-brand transition">Curtain Cleaning</a></li>
 <li><a href="#services" class="hover:text-brand transition">Leather Care</a></li>
 <li><a href="#services" class="hover:text-brand transition">Stain Removal</a></li>
@@ -1635,7 +1537,7 @@ Gold Coast's trusted upholstery and professional steam cleaning specialists. 10+
 </div>
 </footer>
 
-<!-- Special Offer Popup - Updated to 15% -->
+<!-- Special Offer Popup - 15% -->
 <div id="offer-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
 <div class="bg-white rounded-2xl md:rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
 <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-accent via-yellow-400 to-brand-accent"></div>
@@ -1679,7 +1581,7 @@ Protective Treatment Included
 </div>
 </div>
 
-<!-- Seniors Discount Popup - Updated to 20% -->
+<!-- Seniors Discount Popup - 20% -->
 <div id="seniors-popup" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
 <div class="bg-white rounded-2xl md:rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden popup-animate">
 <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500"></div>
@@ -1727,20 +1629,10 @@ Protective Treatment Included
 // Initialize Lucide Icons
 lucide.createIcons();
 
-// Before/After Slider Function (Touch & Mouse Support)
-function updateSlider(slider, afterId) {
-const value = slider.value;
-const afterImage = document.getElementById(afterId);
-const handle = document.getElementById('handle' + afterId.slice(-1));
-afterImage.style.width = value + '%';
-handle.style.left = value + '%';
-}
-
 // Accordion Logic
 function toggleAccordion(id, button) {
 const content = document.getElementById(id);
 const icon = button.querySelector('.rotate-icon');
-// Close all other accordions
 document.querySelectorAll('.accordion-content').forEach(el => {
 if (el.id !== id) {
 el.style.maxHeight = null;
@@ -1748,7 +1640,6 @@ el.classList.remove('active');
 el.previousElementSibling.querySelector('.rotate-icon').classList.remove('active');
 }
 });
-// Toggle current
 if (content.style.maxHeight) {
 content.style.maxHeight = null;
 content.classList.remove('active');
@@ -1822,29 +1713,21 @@ event.preventDefault();
 const form = event.target;
 const formData = new FormData(form);
 const data = Object.fromEntries(formData);
-// Create SMS/iMessage with enquiry details
 const message = `New Enquiry from Website:
 Name: ${data.name}
 Phone: ${data.phone}
 Email: ${data.email || 'N/A'}
 Service: ${data.service}
 Message: ${data.message || 'N/A'}`;
-// Encode message for URL
 const encodedMessage = encodeURIComponent(message);
-// Detect device type for proper SMS protocol
 const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 let smsUrl;
-// iOS devices use '&' for body parameter, Android uses '?'
 if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-// iOS (iMessage/SMS)
 smsUrl = `sms:0416013145&body=${encodedMessage}`;
 } else {
-// Android and other devices (SMS)
 smsUrl = `sms:0416013145?body=${encodedMessage}`;
 }
-// Open SMS/iMessage app with pre-filled message
 window.location.href = smsUrl;
-// Show success message
 alert('Thank you for your enquiry! You will be redirected to iMessage/SMS to send your message directly to 0416 013 145. For urgent matters, please call 0416 013 145 (24/7 Emergency Helpline).');
 form.reset();
 }
